@@ -4,11 +4,9 @@
   <body class="abm-site">
     {% include nav.html %}
     <main class="abm-main">
-      {{ content }}
-      {% include sections/features.html %}
-      {% include sections/pricing.html %}
-      {% include sections/blog-highlights.html %}
-      {% include sections/faq.html %}
+      <div class="abm-container">
+        {{ content }}
+      </div>
     </main>
     {% include footer.html %}
   </body>

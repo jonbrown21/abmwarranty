@@ -18,20 +18,30 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: ABM Warranty App
+title: ABM Warranty
 email: hello@abmwarranty.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  ABM Warranty is a macOS app for teams using Apple Business Manager and Apple School Manager to track warranty data and alert before coverage expires.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://abmwarranty.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jonbrown21
+app_store_url: https://apps.apple.com/app/abm-warranty/id6755319278
+icon_light: /assets/images/abm-warranty-light.png
+icon_dark: /assets/images/abm-warranty-dark.png
+theme: null
 
 # Build settings
-theme: null
 plugins:
   - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+google_analytics: null
 
 exclude:
   - .sass-cache/
@@ -51,3 +61,8 @@ exclude:
   - .DS_Store
   - .htaccess
   - sites_dupes/
+  - AGENTS.md
+  - businessmodel.md
+  - goals.md
+  - site-scope.md
+  - site-theme.md

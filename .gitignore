@@ -46,3 +46,11 @@ coverage/
 .cache/
 tmp/
 temp/
+
+# Docs and process files (site planning / agent guidance)
+AGENTS.md
+goals.md
+businessmodel.md
+site-scope.md
+site-theme.md
+.agent-backups/
