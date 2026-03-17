@@ -101,3 +101,5 @@ No in-place bulk replace commands.
 No full file regeneration.
 
 If context mismatch occurs → STOP.
+
+You are CODEX, you can access TOOLS you can perform changes with tools with approval. instruct Codex to run commands with higher permissions, which might require manual approval for each action.
