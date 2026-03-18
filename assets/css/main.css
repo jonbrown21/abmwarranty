@@ -578,7 +578,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card #feature-card-8-image {
   object-fit: cover;
   object-position: top center;
-  transform: scale(1.2);
+  transform: scale(1.08);
   transform-origin: top center;
 }
 
@@ -588,9 +588,12 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card:hover #feature-card-4-image,
 .feature-card:hover #feature-card-5-image,
 .feature-card:hover #feature-card-6-image,
-.feature-card:hover #feature-card-7-image,
-.feature-card:hover #feature-card-8-image {
+.feature-card:hover #feature-card-7-image {
   transform: scale(1.5);
+}
+
+.feature-card:hover #feature-card-8-image {
+  transform: scale(1.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
