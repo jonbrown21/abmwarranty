@@ -1,0 +1,80 @@
+---
+layout: page
+---
+
+{% assign category_slug = page.category | slugify %}
+{% assign category_title = page.category_title | default: page.title %}
+
+<section class="abm-section">
+  <div class="abm-container">
+    <p class="eyebrow">Category</p>
+    <h1>{{ category_title }}</h1>
+    <p class="abm-note">Posts tagged with “{{ category_title | downcase }}”.</p>
+
+    <div class="abm-blog-grid">
+      {% assign has_posts = false %}
+
+      {% for post in site.posts %}
+        {% assign post_has_category = false %}
+
+        {% if post.categories %}
+          {% for item in post.categories %}
+            {% if item | slugify == category_slug %}
+              {% assign post_has_category = true %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% if post.tags %}
+          {% for item in post.tags %}
+            {% if item | slugify == category_slug %}
+              {% assign post_has_category = true %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% if post.meta_categories %}
+          {% for item in post.meta_categories %}
+            {% if item.label %}
+              {% assign meta_label = item.label %}
+            {% else %}
+              {% assign meta_label = item %}
+            {% endif %}
+            {% if meta_label and meta_label | slugify == category_slug %}
+              {% assign post_has_category = true %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% if post_has_category %}
+          {% assign has_posts = true %}
+          <article class="abm-card blog-card">
+            <div class="blog-cover" role="img" aria-label="Blog cover image">
+              {% assign cover = post.image | default: post.cover %}
+              {% if cover %}
+                <img src="{{ cover | relative_url }}" alt="{{ post.title | escape }} cover image">
+              {% else %}
+                <span>Blog cover image</span>
+              {% endif %}
+            </div>
+            <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+            <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
+          </article>
+        {% endif %}
+      {% endfor %}
+
+      {% unless has_posts %}
+      <article class="abm-card blog-card">
+        <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
+          <span>Blog cover image</span>
+        </div>
+        <h2>No posts yet</h2>
+        <p>There are no posts for this category yet.</p>
+        <a href="/blog" class="abm-btn full-width blog-read-btn">Visit the blog</a>
+      </article>
+      {% endunless %}
+    </div>
+  </div>
+</section>

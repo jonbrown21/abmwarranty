@@ -49,7 +49,13 @@
             {% elsif category_key == "roadmap" %}
               {% assign chip_class = "blog-meta-chip--roadmap" %}
             {% endif %}
-            <span class="blog-meta-chip {{ chip_class }}">{{ category_label }}</span>
+            <a
+              href="{{ '/blog/category/' | append: category_key | append: '/' | relative_url }}"
+              class="blog-meta-chip {{ chip_class }}"
+              aria-label="View {{ category_label | escape }} posts"
+            >
+              {{ category_label }}
+            </a>
           {% endfor %}
         </div>
         <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
@@ -63,7 +69,13 @@
         <h3>Blog is ready to publish</h3>
         <p>Publish your first update and this section will feature it automatically.</p>
         <div class="blog-meta-row">
-          <span class="blog-meta-chip blog-meta-chip--0">Ready to launch</span>
+          <a
+            href="/blog"
+            class="blog-meta-chip blog-meta-chip--0"
+            aria-label="View blog posts"
+          >
+            Ready to launch
+          </a>
         </div>
         <a href="/blog" class="abm-btn full-width blog-read-btn">Read post</a>
       </article>
