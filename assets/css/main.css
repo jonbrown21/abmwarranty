@@ -275,6 +275,10 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   flex-direction: column;
 }
 
+.feature-card {
+  box-shadow: 0 12px 26px -22px rgba(15, 23, 42, 0.3);
+}
+
 .feature-card h3 {
   margin-top: 0.8rem;
 }
