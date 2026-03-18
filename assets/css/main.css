@@ -177,10 +177,22 @@ p { color: var(--text-muted); line-height: 1.6; }
 .eyebrow { color: var(--primary); text-transform: uppercase; font-size: 0.84rem; letter-spacing: 0.08em; margin: 0 0 0.3rem; font-weight: 700; }
 
 .abm-glass { background: rgba(255,255,255,0.35); border: 1px solid rgba(111,127,192,0.22); backdrop-filter: blur(12px); border-radius: 16px; }
- .abm-grid {
-   display: grid;
-   gap: 1rem;
-   grid-template-columns: repeat(3, minmax(0, 1fr));
+.abm-grid,
+.pricing-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.abm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.abm-grid--2-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 
