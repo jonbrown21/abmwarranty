@@ -14,9 +14,17 @@
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
         <div class="blog-meta-row">
-          <span class="blog-meta-chip">category: {{ post.categories | join: ", " | default: "guide" }}</span>
-          <a href="{{ post.url | relative_url }}">Read post →</a>
+          {% if post.categories and post.categories != empty %}
+            {% assign shown_categories = post.categories | slice: 0, 4 %}
+          {% else %}
+            {% assign shown_categories = "guide" | split: "," %}
+          {% endif %}
+          {% for category in shown_categories %}
+            {% assign chip_color = forloop.index0 | modulo: 4 %}
+            <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category }}</span>
+          {% endfor %}
         </div>
+        <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
       </article>
       {% endfor %}
       {% if recent_posts == empty %}
@@ -27,8 +35,9 @@
         <h3>Blog is ready to publish</h3>
         <p>Publish your first update and this section will feature it automatically.</p>
         <div class="blog-meta-row">
-          <span class="blog-meta-chip">Ready to launch</span>
+          <span class="blog-meta-chip blog-meta-chip--0">Ready to launch</span>
         </div>
+        <a href="/blog" class="abm-btn full-width blog-read-btn">Read post</a>
       </article>
       {% endif %}
     </div>
