@@ -257,6 +257,25 @@ p { color: var(--text-muted); line-height: 1.6; }
   text-align: center;
 }
 
+.blog-cover {
+  aspect-ratio: 16 / 9;
+  min-height: 140px;
+  margin: 0 0 0.8rem;
+  border-radius: 14px;
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--surface) 88%, transparent),
+    color-mix(in srgb, var(--muted-surface) 78%, transparent)
+  );
+  color: color-mix(in srgb, var(--text-muted) 88%, transparent);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
  .abm-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; border-radius: 10px; padding: 0.7rem 1.05rem; font-weight: 600; margin-right: 0.6rem; }
  .abm-btn.full-width { width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; }
 .abm-btn:hover { background: var(--primary-hover); }
