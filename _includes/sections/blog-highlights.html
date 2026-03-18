@@ -8,7 +8,12 @@
       {% for post in recent_posts limit: 3 %}
       <article class="abm-card blog-card">
         <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
-          <span>Blog cover image</span>
+          {% assign cover = post.image | default: post.cover %}
+          {% if cover %}
+            <img src="{{ cover | relative_url }}" alt="{{ post.title | escape }} cover image">
+          {% else %}
+            <span>Blog cover image</span>
+          {% endif %}
         </div>
         <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
