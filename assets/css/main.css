@@ -169,7 +169,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .abm-section { padding: 2.2rem 0; }
 .hero-band {
   position: relative;
-  padding: 0 0 0;
+  padding-top: 3.8rem;
 }
 
 .hero-shell {
@@ -208,6 +208,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 
 .hero-band + #features {
   position: relative;
+  padding-top: 3.4rem;
 }
 
 .hero-band + #features::before {
