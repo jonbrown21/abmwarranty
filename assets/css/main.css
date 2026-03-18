@@ -528,9 +528,9 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 
 .feature-card #feature-card-2-image {
   object-fit: cover;
-  object-position: left center;
+  object-position: center right;
   transform: scale(1.45);
-  transform-origin: left center;
+  transform-origin: center right;
 }
 
 .feature-kicker {
