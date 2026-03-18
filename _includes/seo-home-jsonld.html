@@ -1,0 +1,24 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ABM Warranty",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "macOS",
+  "url": "{{ site.url }}{{ page.url }}",
+  "description": "{{ page.description | default: site.description | escape }}",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "ABM Warranty"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Apple IT teams"
+  }
+}
+</script>

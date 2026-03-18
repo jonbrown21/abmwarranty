@@ -3,8 +3,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ page.description | default: site.description }}">
   <meta name="theme-color" content="#7080c0">
+  <meta name="robots" content="index, follow">
   <title>{{ page.title | default: site.title }}</title>
   {% seo %}
+  {% if page.url == "/" %}
+    {% include seo-home-jsonld.html %}
+  {% endif %}
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

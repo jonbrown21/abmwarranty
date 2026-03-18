@@ -10,7 +10,13 @@
         <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
           {% assign cover = post.image | default: post.cover %}
           {% if cover %}
-            <img src="{{ cover | relative_url }}" alt="{{ post.title | escape }} cover image">
+            <img
+              src="{{ cover | relative_url }}"
+              alt="{{ post.title | escape }} cover image"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450">
           {% else %}
             <span>Blog cover image</span>
           {% endif %}
@@ -58,7 +64,7 @@
             </a>
           {% endfor %}
         </div>
-        <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
+      <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
       </article>
       {% endfor %}
       {% if recent_posts == empty %}
