@@ -184,7 +184,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 1.1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: start;
+  align-items: end;
   overflow: visible;
 }
 
@@ -205,16 +205,17 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  align-self: start;
-  margin-bottom: 0;
+  align-self: end;
+  margin-bottom: calc(-1 * clamp(1.1rem, 2.4vw, 1.6rem));
   margin-right: -8vw;
   overflow: visible;
   margin-top: 0;
+  padding-bottom: clamp(0.8rem, 2vw, 1.2rem);
 }
 
 .hero-shot img {
-  width: 132%;
-  max-width: 132%;
+  width: 144%;
+  max-width: 144%;
   height: auto;
   object-fit: contain;
   object-position: center top;
