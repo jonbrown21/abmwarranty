@@ -15,7 +15,9 @@
         <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
         <div class="blog-meta-row">
           {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
-          {% if post.categories and post.categories != empty %}
+          {% if post.meta_categories and post.meta_categories != empty %}
+            {% assign base_categories = post.meta_categories %}
+          {% elsif post.categories and post.categories != empty %}
             {% assign base_categories = post.categories %}
           {% elsif post.tags and post.tags != empty %}
             {% assign base_categories = post.tags %}
@@ -26,7 +28,12 @@
           {% assign shown_categories = merged_categories | uniq | slice: 0, 4 %}
           {% for category in shown_categories %}
             {% assign chip_color = forloop.index0 | modulo: 8 %}
-            <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category }}</span>
+            {% if category.label %}
+              {% assign category_label = category.label %}
+            {% else %}
+              {% assign category_label = category %}
+            {% endif %}
+            <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category_label }}</span>
           {% endfor %}
         </div>
         <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>

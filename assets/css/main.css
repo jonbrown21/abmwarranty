@@ -578,13 +578,14 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .blog-meta-row {
-  margin-top: auto;
+  margin-top: 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
-  margin-bottom: 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .blog-meta-chip {
@@ -597,55 +598,55 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .blog-meta-chip--0 {
-  background: color-mix(in srgb, var(--primary) 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, var(--primary) 46%, transparent);
+  background: color-mix(in srgb, var(--primary) 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, var(--primary) 36%, transparent);
   color: color-mix(in srgb, var(--primary) 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--1 {
-  background: color-mix(in srgb, #4f7c8a 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #4f7c8a 46%, transparent);
+  background: color-mix(in srgb, #4f7c8a 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #4f7c8a 36%, transparent);
   color: color-mix(in srgb, #4f7c8a 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--2 {
-  background: color-mix(in srgb, #7a6fbf 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #7a6fbf 46%, transparent);
+  background: color-mix(in srgb, #7a6fbf 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #7a6fbf 36%, transparent);
   color: color-mix(in srgb, #7a6fbf 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--3 {
-  background: color-mix(in srgb, #7c8a4f 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #7c8a4f 46%, transparent);
+  background: color-mix(in srgb, #7c8a4f 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #7c8a4f 36%, transparent);
   color: color-mix(in srgb, #7c8a4f 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--4 {
-  background: color-mix(in srgb, #8d5a73 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #8d5a73 46%, transparent);
+  background: color-mix(in srgb, #8d5a73 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #8d5a73 36%, transparent);
   color: color-mix(in srgb, #8d5a73 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--5 {
-  background: color-mix(in srgb, #5b8d6d 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #5b8d6d 46%, transparent);
+  background: color-mix(in srgb, #5b8d6d 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #5b8d6d 36%, transparent);
   color: color-mix(in srgb, #5b8d6d 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--6 {
-  background: color-mix(in srgb, #6f6fb9 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #6f6fb9 46%, transparent);
+  background: color-mix(in srgb, #6f6fb9 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #6f6fb9 36%, transparent);
   color: color-mix(in srgb, #6f6fb9 92%, var(--text) 8%);
 }
 
 .blog-meta-chip--7 {
-  background: color-mix(in srgb, #6f8ca4 30%, var(--surface) 70%);
-  border-color: color-mix(in srgb, #6f8ca4 46%, transparent);
+  background: color-mix(in srgb, #6f8ca4 20%, #ffffff 80%);
+  border-color: color-mix(in srgb, #6f8ca4 36%, transparent);
   color: color-mix(in srgb, #6f8ca4 92%, var(--text) 8%);
 }
 
 .blog-read-btn {
-  margin-top: auto;
+  margin-top: 0.5rem;
   width: 100%;
   text-align: center;
 }
