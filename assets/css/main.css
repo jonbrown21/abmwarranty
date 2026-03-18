@@ -578,7 +578,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card #feature-card-8-image {
   object-fit: cover;
   object-position: top center;
-  transform: scale(1.45);
+  transform: scale(1.2);
   transform-origin: top center;
 }
 
