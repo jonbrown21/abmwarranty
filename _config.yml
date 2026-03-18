@@ -40,6 +40,11 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: "/blog/:title/"
 
 google_analytics: null
 
