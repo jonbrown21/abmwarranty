@@ -19,7 +19,8 @@ layout: page
 
         {% if post.categories %}
           {% for item in post.categories %}
-            {% if item | slugify == category_slug %}
+            {% assign item_slug = item | slugify %}
+            {% if item_slug == category_slug %}
               {% assign post_has_category = true %}
             {% endif %}
           {% endfor %}
@@ -27,7 +28,8 @@ layout: page
 
         {% if post.tags %}
           {% for item in post.tags %}
-            {% if item | slugify == category_slug %}
+            {% assign item_slug = item | slugify %}
+            {% if item_slug == category_slug %}
               {% assign post_has_category = true %}
             {% endif %}
           {% endfor %}
@@ -40,8 +42,11 @@ layout: page
             {% else %}
               {% assign meta_label = item %}
             {% endif %}
-            {% if meta_label and meta_label | slugify == category_slug %}
-              {% assign post_has_category = true %}
+            {% if meta_label %}
+              {% assign meta_slug = meta_label | slugify %}
+              {% if meta_slug == category_slug %}
+                {% assign post_has_category = true %}
+              {% endif %}
             {% endif %}
           {% endfor %}
         {% endif %}
