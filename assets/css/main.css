@@ -541,7 +541,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   object-position: right center;
   transform: scale(1.45);
   transform-origin: right top;
-  translate: 20px -30px;
+  translate: 20px -60px;
 }
 
 .feature-card:hover #feature-card-1-image,
