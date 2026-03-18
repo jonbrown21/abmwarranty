@@ -238,13 +238,23 @@ p { color: var(--text-muted); line-height: 1.6; }
 }
 
 
- .feature-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 0.5rem;
-  display: block;
+.feature-screenshot {
+  aspect-ratio: 16 / 9;
+  min-height: 168px;
+  margin: 0 0 0.9rem;
+  border-radius: 14px;
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--surface) 90%, transparent),
+    color-mix(in srgb, var(--muted-surface) 82%, transparent)
+  );
+  color: color-mix(in srgb, var(--text-muted) 88%, transparent);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
  .abm-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; border-radius: 10px; padding: 0.7rem 1.05rem; font-weight: 600; margin-right: 0.6rem; }
