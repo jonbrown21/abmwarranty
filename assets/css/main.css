@@ -58,6 +58,10 @@ img { max-width: 100%; height: auto; display: block; }
 .abm-site { background: var(--bg); }
 .abm-container { width: min(1080px, 100% - 2rem); margin: 0 auto; }
 
+#features .abm-container {
+  width: min(1220px, 100% - 1.5rem);
+}
+
 .abm-header { position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 10; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--bg) 88%, transparent); }
 .nav-shell { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
 .brand-link { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font-weight: 700; color: var(--text); }
@@ -387,6 +391,14 @@ p { color: var(--text-muted); line-height: 1.6; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+#features + #pricing {
+  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+#features + #pricing .abm-container {
+  padding-top: 1.2rem;
+}
+
 .feature-list {
   margin: 0 0 1rem;
   padding: 0;
@@ -500,4 +512,7 @@ p { color: var(--text-muted); line-height: 1.6; }
 
 @media (max-width: 767px) {
   .hero-shot { display: none; }
+  #features .abm-grid--2-cols {
+    grid-template-columns: 1fr;
+  }
 }
