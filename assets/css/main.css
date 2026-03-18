@@ -563,7 +563,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card #feature-card-6-image {
   object-fit: cover;
   object-position: left top;
-  transform: scale(1.45);
+  transform: scale(1.65);
   transform-origin: left top;
 }
 
