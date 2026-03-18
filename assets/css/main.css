@@ -497,3 +497,7 @@ p { color: var(--text-muted); line-height: 1.6; }
 @media (min-width: 901px) {
   .nav-toggle-btn { display: none; }
 }
+
+@media (max-width: 767px) {
+  .hero-shot { display: none; }
+}
