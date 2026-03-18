@@ -169,6 +169,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .abm-section { padding: 2.2rem 0; }
 .hero-band {
   position: relative;
+  padding: 0 0 0;
 }
 
 .hero-shell {
@@ -191,7 +192,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 
 .hero-shot {
   min-height: 100%;
-  height: calc(100% + 0.4rem);
+  height: calc(100% + clamp(1.6rem, 4vw, 2.2rem));
   border: 1px solid var(--border);
   border-radius: 0;
   display: flex;
@@ -202,7 +203,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   align-self: end;
-  margin-bottom: -1.8rem;
+  margin-bottom: calc(-1 * clamp(1.6rem, 4vw, 2.2rem));
 }
 
 .hero-band + #features {
@@ -217,8 +218,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   background: color-mix(in srgb, var(--border) 72%, transparent);
   margin-left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.2rem;
-  margin-bottom: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .hero-copy {
