@@ -14,11 +14,16 @@
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
         <div class="blog-meta-row">
+          {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
           {% if post.categories and post.categories != empty %}
-            {% assign shown_categories = post.categories | slice: 0, 4 %}
+            {% assign base_categories = post.categories %}
+          {% elsif post.tags and post.tags != empty %}
+            {% assign base_categories = post.tags %}
           {% else %}
-            {% assign shown_categories = "guide" | split: "," %}
+            {% assign base_categories = fallback_categories %}
           {% endif %}
+          {% assign merged_categories = base_categories | concat: fallback_categories %}
+          {% assign shown_categories = merged_categories | uniq | slice: 0, 4 %}
           {% for category in shown_categories %}
             {% assign chip_color = forloop.index0 | modulo: 8 %}
             <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category }}</span>
