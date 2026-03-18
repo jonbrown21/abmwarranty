@@ -10,7 +10,7 @@
         <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
           <span>Blog cover image</span>
         </div>
-        <p class="meta">{{ post.date | date: "%b %d, %Y" }} · {% if post.tags %}{{ post.tags | size }} tags{% else %}tips{% endif %}</p>
+        <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
         <div class="blog-meta-row">
@@ -20,7 +20,7 @@
             {% assign shown_categories = "guide" | split: "," %}
           {% endif %}
           {% for category in shown_categories %}
-            {% assign chip_color = forloop.index0 | modulo: 4 %}
+            {% assign chip_color = forloop.index0 | modulo: 8 %}
             <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category }}</span>
           {% endfor %}
         </div>

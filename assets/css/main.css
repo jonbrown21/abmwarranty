@@ -620,6 +620,30 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   color: color-mix(in srgb, #7c8a4f 82%, var(--text) 18%);
 }
 
+.blog-meta-chip--4 {
+  background: color-mix(in srgb, #8d5a73 12%, var(--surface) 88%);
+  border-color: color-mix(in srgb, #8d5a73 24%, transparent);
+  color: color-mix(in srgb, #8d5a73 82%, var(--text) 18%);
+}
+
+.blog-meta-chip--5 {
+  background: color-mix(in srgb, #5b8d6d 12%, var(--surface) 88%);
+  border-color: color-mix(in srgb, #5b8d6d 24%, transparent);
+  color: color-mix(in srgb, #5b8d6d 82%, var(--text) 18%);
+}
+
+.blog-meta-chip--6 {
+  background: color-mix(in srgb, #6f6fb9 12%, var(--surface) 88%);
+  border-color: color-mix(in srgb, #6f6fb9 24%, transparent);
+  color: color-mix(in srgb, #6f6fb9 82%, var(--text) 18%);
+}
+
+.blog-meta-chip--7 {
+  background: color-mix(in srgb, #6f8ca4 12%, var(--surface) 88%);
+  border-color: color-mix(in srgb, #6f8ca4 24%, transparent);
+  color: color-mix(in srgb, #6f8ca4 82%, var(--text) 18%);
+}
+
 .blog-read-btn {
   margin-top: auto;
   width: 100%;
