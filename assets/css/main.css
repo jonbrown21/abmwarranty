@@ -507,6 +507,9 @@ p { color: var(--text-muted); line-height: 1.6; }
 }
 
 @media (min-width: 901px) {
+  .hero-band .abm-container {
+    width: min(1220px, 100% - 1.5rem);
+  }
   .nav-toggle-btn { display: none; }
 }
 
