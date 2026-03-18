@@ -5,6 +5,7 @@
   var root = document.documentElement;
   var toggle = document.getElementById('theme-toggle');
   var logo = document.getElementById('site-logo');
+  var heroImage = document.getElementById('hero-shot-image');
   var toggleLabel = null;
   if (toggle && toggle.nextElementSibling) {
     toggleLabel = toggle.nextElementSibling;
@@ -36,6 +37,15 @@
       var next = theme === DARK ? darkLogo : lightLogo;
       if (next) {
         logo.src = next;
+      }
+    }
+
+    if (heroImage) {
+      var lightHero = heroImage.getAttribute('data-light');
+      var darkHero = heroImage.getAttribute('data-dark');
+      var heroSrc = theme === DARK ? darkHero : lightHero;
+      if (heroSrc) {
+        heroImage.src = heroSrc;
       }
     }
   }

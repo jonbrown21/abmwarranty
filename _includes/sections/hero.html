@@ -14,8 +14,19 @@
           </p>
         </div>
         <div class="hero-shot" role="img" aria-label="ABM Warranty app screenshot">
-          <img src="{{ '/assets/images/home/screens/hero.png' | relative_url }}" alt="ABM Warranty dashboard screenshot">
+          <img
+            id="hero-shot-image"
+            src="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/hero_dk.png' | relative_url }}"
+            alt="ABM Warranty dashboard screenshot">
         </div>
+      </div>
+        <div class="beta-cta-bar">
+          <p class="beta-cta-bar__text">Join the Beta - Version 0.4.2</p>
+        <a class="abm-btn abm-btn--pill" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">
+          Download Now
+        </a>
       </div>
     </div>
   </div>
