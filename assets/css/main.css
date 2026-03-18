@@ -584,8 +584,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.95rem;
+  margin-bottom: 0.75rem;
 }
 
 .blog-meta-chip {
@@ -645,8 +645,32 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   color: color-mix(in srgb, #6f8ca4 92%, var(--text) 8%);
 }
 
+.blog-meta-chip--operations {
+  background: color-mix(in srgb, #0ea5e9 22%, #ffffff 78%);
+  border-color: color-mix(in srgb, #0ea5e9 42%, transparent);
+  color: color-mix(in srgb, #0ea5e9 92%, var(--text) 8%);
+}
+
+.blog-meta-chip--beta {
+  background: color-mix(in srgb, #ec4899 22%, #ffffff 78%);
+  border-color: color-mix(in srgb, #ec4899 42%, transparent);
+  color: color-mix(in srgb, #ec4899 92%, var(--text) 8%);
+}
+
+.blog-meta-chip--changelog {
+  background: color-mix(in srgb, #7c3aed 22%, #ffffff 78%);
+  border-color: color-mix(in srgb, #7c3aed 42%, transparent);
+  color: color-mix(in srgb, #7c3aed 92%, var(--text) 8%);
+}
+
+.blog-meta-chip--roadmap {
+  background: color-mix(in srgb, #14b8a6 22%, #ffffff 78%);
+  border-color: color-mix(in srgb, #14b8a6 42%, transparent);
+  color: color-mix(in srgb, #14b8a6 92%, var(--text) 8%);
+}
+
 .blog-read-btn {
-  margin-top: 0.5rem;
+  margin-top: auto;
   width: 100%;
   text-align: center;
 }

@@ -33,7 +33,18 @@
             {% else %}
               {% assign category_label = category %}
             {% endif %}
-            <span class="blog-meta-chip blog-meta-chip--{{ chip_color }}">{{ category_label }}</span>
+            {% assign category_key = category_label | slugify %}
+            {% assign chip_class = "blog-meta-chip--" | append: chip_color %}
+            {% if category_key == "operations" %}
+              {% assign chip_class = "blog-meta-chip--operations" %}
+            {% elsif category_key == "beta" %}
+              {% assign chip_class = "blog-meta-chip--beta" %}
+            {% elsif category_key == "changelog" %}
+              {% assign chip_class = "blog-meta-chip--changelog" %}
+            {% elsif category_key == "roadmap" %}
+              {% assign chip_class = "blog-meta-chip--roadmap" %}
+            {% endif %}
+            <span class="blog-meta-chip {{ chip_class }}">{{ category_label }}</span>
           {% endfor %}
         </div>
         <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
