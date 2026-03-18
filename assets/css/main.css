@@ -256,7 +256,14 @@ p { color: var(--text-muted); line-height: 1.6; }
 .faq-list summary { cursor: pointer; font-weight: 600; color: var(--text); }
 .faq-list p { margin: 0.6rem 0 0; }
 .meta { font-size: 0.83rem; color: var(--text-muted); margin: 0 0 0.4rem; }
-.price { font-size: 1.6rem; color: var(--primary); font-weight: 700; }
+.price {
+  font-size: 2rem;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
 
 .abm-footer { background: var(--muted-surface); border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
