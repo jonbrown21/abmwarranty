@@ -2,6 +2,11 @@
 title: "ABM Warranty is now structured for changelog and roadmap"
 date: 2026-03-15
 categories: [changelog]
+meta_categories:
+  - label: changelog
+  - label: release
+  - label: roadmap
+  - label: beta
 tags: [release, launch, monitoring]
 ---
 
