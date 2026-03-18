@@ -174,13 +174,15 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .hero-shell {
   position: relative;
   padding: clamp(1.8rem, 3.2vw, 2.4rem) 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: end;
+  align-items: stretch;
 }
 
 .hero-copy-col {
@@ -188,7 +190,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .hero-shot {
-  min-height: clamp(220px, 30vw, 360px);
+  min-height: 100%;
+  height: calc(100% + 0.4rem);
   border: 1px solid var(--border);
   border-radius: 0;
   display: flex;
@@ -198,6 +201,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  align-self: end;
+  margin-bottom: -1.8rem;
 }
 
 .hero-band + #features {
