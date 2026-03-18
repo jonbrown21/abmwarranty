@@ -517,6 +517,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   object-fit: cover;
   object-position: left top;
   display: block;
+  transition: transform 240ms ease;
+  will-change: transform;
 }
 
 .feature-card #feature-card-1-image {
@@ -531,6 +533,17 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   object-position: center right;
   transform: scale(1.45);
   transform-origin: center right;
+}
+
+.feature-card:hover #feature-card-1-image,
+.feature-card:hover #feature-card-2-image {
+  transform: scale(1.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card .feature-screenshot img {
+    transition: none;
+  }
 }
 
 .feature-kicker {
