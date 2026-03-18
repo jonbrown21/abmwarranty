@@ -176,10 +176,6 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   padding: clamp(1.8rem, 3.2vw, 2.4rem) 0;
 }
 
-.hero-band {
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
-}
-
 .hero-band + #features {
   position: relative;
 }
