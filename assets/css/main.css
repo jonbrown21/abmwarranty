@@ -544,9 +544,18 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   translate: 20px -60px;
 }
 
+.feature-card #feature-card-4-image {
+  object-fit: cover;
+  object-position: center right;
+  transform: scale(1.45);
+  transform-origin: center right;
+  translate: 0 0;
+}
+
 .feature-card:hover #feature-card-1-image,
 .feature-card:hover #feature-card-2-image,
-.feature-card:hover #feature-card-3-image {
+.feature-card:hover #feature-card-3-image,
+.feature-card:hover #feature-card-4-image {
   transform: scale(1.5);
 }
 
