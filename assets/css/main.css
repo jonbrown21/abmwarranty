@@ -217,7 +217,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   width: 144%;
   max-width: 144%;
   height: auto;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   object-fit: contain;
   object-position: center top;
   display: block;
