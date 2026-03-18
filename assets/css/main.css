@@ -572,7 +572,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   object-position: right bottom;
   transform: scale(1.45);
   transform-origin: right bottom;
-  translate: 25px 0;
+  translate: 20px 20px;
 }
 
 .feature-card:hover #feature-card-1-image,
