@@ -191,6 +191,15 @@ p { color: var(--text-muted); line-height: 1.6; }
   padding: 1rem;
 }
 
+.pricing-grid .abm-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-grid .abm-card .abm-cta-row {
+  margin-top: auto;
+}
+
 .abm-grid--2-cols {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
