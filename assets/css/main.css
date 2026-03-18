@@ -254,6 +254,10 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   color: var(--text-muted);
 }
 
+.hero-copy-col .abm-cta-row {
+  margin-bottom: 20px;
+}
+
 .abm-grid,
 .pricing-grid,
 .abm-blog-grid {
