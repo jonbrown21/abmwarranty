@@ -582,6 +582,13 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   transform-origin: top center;
 }
 
+.feature-card #feature-card-9-image {
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.08);
+  transform-origin: top center;
+}
+
 .feature-card:hover #feature-card-1-image,
 .feature-card:hover #feature-card-2-image,
 .feature-card:hover #feature-card-3-image,
@@ -593,6 +600,10 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .feature-card:hover #feature-card-8-image {
+  transform: scale(1.15);
+}
+
+.feature-card:hover #feature-card-9-image {
   transform: scale(1.15);
 }
 
