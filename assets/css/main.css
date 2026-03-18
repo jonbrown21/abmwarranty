@@ -596,6 +596,13 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   font-size: 0.78rem;
   padding: 0.2rem 0.56rem;
   text-transform: lowercase;
+  text-decoration: none;
+}
+
+.blog-meta-chip:hover,
+.blog-meta-chip:focus,
+.blog-meta-chip:focus-visible {
+  text-decoration: none;
 }
 
 .blog-meta-chip--0 {
