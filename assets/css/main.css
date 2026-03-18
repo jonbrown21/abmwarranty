@@ -533,6 +533,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   object-position: center right;
   transform: scale(1.45);
   transform-origin: center right;
+  translate: 20px 0;
 }
 
 .feature-card #feature-card-3-image {
