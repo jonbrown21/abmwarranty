@@ -6,6 +6,7 @@
   var toggle = document.getElementById('theme-toggle');
   var logo = document.getElementById('site-logo');
   var heroImage = document.getElementById('hero-shot-image');
+  var featureCardImage = document.getElementById('feature-card-1-image');
   var toggleLabel = null;
   if (toggle && toggle.nextElementSibling) {
     toggleLabel = toggle.nextElementSibling;
@@ -46,6 +47,15 @@
       var heroSrc = theme === DARK ? darkHero : lightHero;
       if (heroSrc) {
         heroImage.src = heroSrc;
+      }
+    }
+
+    if (featureCardImage) {
+      var lightFeature = featureCardImage.getAttribute('data-light');
+      var darkFeature = featureCardImage.getAttribute('data-dark');
+      var featureSrc = theme === DARK ? darkFeature : lightFeature;
+      if (featureSrc) {
+        featureCardImage.src = featureSrc;
       }
     }
   }
