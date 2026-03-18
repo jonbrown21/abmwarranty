@@ -206,11 +206,11 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   align-self: end;
-  margin-bottom: calc(-1 * clamp(1.1rem, 2.4vw, 1.6rem));
+  margin-bottom: calc(-1 * clamp(1.1rem, 2.4vw, 1.6rem) + 3px);
   margin-right: -8vw;
   overflow: visible;
   margin-top: 0;
-  padding-bottom: clamp(0.8rem, 2vw, 1.2rem);
+  padding-bottom: calc(clamp(0.8rem, 2vw, 1.2rem) - 3px);
 }
 
 .hero-shot img {
