@@ -567,12 +567,20 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   transform-origin: left top;
 }
 
+.feature-card #feature-card-7-image {
+  object-fit: cover;
+  object-position: right bottom;
+  transform: scale(1.45);
+  transform-origin: right bottom;
+}
+
 .feature-card:hover #feature-card-1-image,
 .feature-card:hover #feature-card-2-image,
 .feature-card:hover #feature-card-3-image,
 .feature-card:hover #feature-card-4-image,
 .feature-card:hover #feature-card-5-image,
-.feature-card:hover #feature-card-6-image {
+.feature-card:hover #feature-card-6-image,
+.feature-card:hover #feature-card-7-image {
   transform: scale(1.5);
 }
 
