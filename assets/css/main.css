@@ -1713,6 +1713,15 @@ p { color: var(--text-muted); line-height: 1.6; }
   text-decoration: none;
 }
 
+.post-content a.app-support-cta__button {
+  color: #fff;
+}
+
+.post-content a.app-support-cta__button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Minimal utility compatibility for hard-coded post markup */
 .w-full { width: 100%; }
 .block { display: block; }
