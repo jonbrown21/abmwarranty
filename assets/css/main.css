@@ -855,18 +855,18 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   flex: 0 0 10%;
   min-width: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  text-align: left;
+  text-align: right;
 }
 
 .roadmap-date {
   display: inline-flex;
   align-items: center;
   gap: 0.34rem;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 0;
-  text-align: left;
+  text-align: right;
   width: auto;
 }
 
