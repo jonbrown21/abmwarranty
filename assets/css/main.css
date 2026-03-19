@@ -264,6 +264,19 @@ html[data-theme='dark'] .newsletter-form .abm-btn:hover {
   min-height: 200px;
 }
 
+html[data-theme='dark'] .roadmap-hero-form input,
+html[data-theme='dark'] .roadmap-hero-form textarea {
+  background: #22395f;
+  border-color: #5f79a8;
+  color: #eef4ff;
+}
+
+html[data-theme='dark'] .roadmap-hero-form input::placeholder,
+html[data-theme='dark'] .roadmap-hero-form textarea::placeholder {
+  color: #d6e2fb;
+  opacity: 1;
+}
+
 .roadmap-hero-form button {
   width: 100%;
   align-self: stretch;
