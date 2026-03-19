@@ -6,16 +6,19 @@ permalink: /blog/introducing-abm-warranty/
 published: true
 title: "Introducing ABM Warranty for macOS"
 description: "A new macOS utility that brings powerful, enterprise-grade warranty management and AppleCare+ oversight to Apple Business Manager administrators."
+Description: "If you manage Apple devices at scale, you already know that **Apple Business Manager (ABM)** provides warranty data — but in practice, it’s extremely limited. It doesn’t provide workflow-friendly insights, it doesn’t surface actionable coverage states, and it doesn’t help you wrangle the ever-growing complexity of **AppleCare+ renewals** across hundreds or thousands of devices."
 blogimgpath: 202408034Up
-tags: [abm-warranty, apple-business-manager, warranty, operations]
-categories: [updates]
+tags:
+categories:
+  - updates
 meta_categories:
-  - label: updates
-  - label: apple-business-manager
-  - label: guide
-  - label: operations
-image: /assets/images/blog/2025/warranty/1.png
-thumbnail: /assets/images/blog/2025/warranty/1.png
+  - updates
+  - apple-business-manager
+  - guide
+  - operations
+image: /assets/images/covers/2025/warranty_header_010.png
+thumbnail: /assets/images/covers/2025/warranty_header_010.png
+body_image: /assets/images/blog/2025/warranty/1.png
 cta: 2
 comments: true
 series: abmwarranty

@@ -6,16 +6,18 @@ permalink: /blog/abm-asm-warranty-dashboard-gap/
 published: true
 title: "The warranty dashboard Apple doesn’t provide… yet"
 description: "Apple Business Manager and Apple School Manager show you what devices you own — but not which ones are becoming liabilities."
+Description: "Apple Business Manager and Apple School Manager are excellent systems of record. They tell you exactly what devices you own, who they’re assigned to, and how they’re enrolled. For inventory, they are authoritative. For risk, they are silent."
 blogimgpath: 202408034Up
-tags: [dashboard, apple-business-manager, warranty, lifecycle]
-categories: [guide]
+tags:
+categories:
+  - guide
 meta_categories:
-  - label: guide
-  - label: apple-business-manager
-  - label: operations
-  - label: support
-image: /assets/images/home/screens/dashboard.png
-thumbnail: /assets/images/home/screens/dashboard.png
+  - guide
+  - apple-business-manager
+  - operations
+  - support
+image: /assets/images/covers/2026/abm_dashboard.png
+thumbnail: /assets/images/covers/2026/abm_dashboard.png
 cta: 2
 comments: true
 ---

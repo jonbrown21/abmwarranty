@@ -6,16 +6,18 @@ permalink: /blog/abm-warranty-0-4-1-walkthrough-introduction/
 published: true
 title: "ABM Warranty 0.4.1 Walkthrough: Introduction"
 description: "An introduction to ABM Warranty 0.4.1 covering the dashboard, warranty lifecycle views, release-device logic, credential setup, local storage, and what the app solves for Apple admins."
+Description: "In this first ABM Warranty 0.4.1 walkthrough, I want to show you what the app actually does before I get into the more specific feature videos. This is the broad introduction. I’m walking through the dashboard, how I think about the warranty cards, how released devices are handled, how the filters work, how to add credentials, where the data is stored locally, and what the logging and security model looks like."
 blogimgpath: 202408034Up
-tags: [walkthrough, video, setup, dashboard]
-categories: [guide]
+tags:
+categories:
+  - guide
 meta_categories:
-  - label: guide
-  - label: support
-  - label: updates
-  - label: beta
-image: /assets/images/blog/2026/warranty/4/1.png
-thumbnail: /assets/images/blog/2026/warranty/4/1.png
+  - guide
+  - support
+  - operations
+  - updates
+image: /assets/images/covers/2026/ABM_Introduction.png
+thumbnail: /assets/images/covers/2026/ABM_Introduction.png
 cta: 2
 comments: true
 series: abmwarranty041walkthrough

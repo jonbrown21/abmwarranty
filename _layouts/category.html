@@ -109,7 +109,7 @@ show_home_sections: false
             </div>
             <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+            <p>{{ post.Description | default: post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
             <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
           </article>
         {% endif %}

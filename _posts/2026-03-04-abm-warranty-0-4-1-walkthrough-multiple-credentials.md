@@ -6,16 +6,18 @@ permalink: /blog/abm-warranty-0-4-1-walkthrough-multiple-credentials/
 published: true
 title: "ABM Warranty 0.4.1 Walkthrough: Multiple Credentials"
 description: "A walkthrough of the ABM Warranty 0.4.1 multiple credentials workflow covering how I remove a credential, add multiple ABM contexts, switch between them, and how the app stores each credential set separately."
+Description: "In this part of the ABM Warranty 0.4.1 walkthrough series, I’m focusing on multiple credentials. In the first video, I showed the basic setup and how to add a single credential. In this one, I want to show what happens when I remove a credential, what changes when I add more than one, and how the app behaves once there are multiple contexts in play."
 blogimgpath: 202408034Up
-tags: [walkthrough, multi-credentials, video, support]
-categories: [guide]
+tags:
+categories:
+  - guide
 meta_categories:
-  - label: guide
-  - label: support
-  - label: operations
-  - label: updates
-image: /assets/images/blog/2026/warranty/4/3.png
-thumbnail: /assets/images/blog/2026/warranty/4/3.png
+  - guide
+  - support
+  - operations
+  - updates
+image: /assets/images/covers/2026/ABM_Creds.png
+thumbnail: /assets/images/covers/2026/ABM_Creds.png
 cta: 2
 comments: true
 series: abmwarranty041walkthrough

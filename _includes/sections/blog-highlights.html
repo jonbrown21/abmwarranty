@@ -23,7 +23,7 @@
         </div>
         <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+        <p>{{ post.Description | default: post.description | default: post.excerpt | strip_html | truncate: 130 }}</p>
         <div class="blog-meta-row">
           {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
           {% if post.meta_categories and post.meta_categories != empty %}
