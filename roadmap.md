@@ -1,22 +1,45 @@
 ---
-layout: page
-title: ABM Warranty Roadmap | Planned Features
-description: Planned features and milestones for the ABM Warranty macOS app.
+layout: home
+show_home_sections: false
+title: Roadmap
+description: Forward roadmap for ABM Warranty features, versions, and planned improvements.
 permalink: /roadmap/
 ---
 
-## Roadmap
+{% assign app_store_url = site.app_store_url %}
 
-### Now
-- Improve tenant alerts with stronger priority grouping.
-- Expand changelog-to-roadmap traceability.
+<section class="abm-section hero-band">
+  <div class="abm-container">
+    <div class="hero-shell">
+      <div class="hero-layout">
+        <div class="hero-copy-col">
+          <p class="eyebrow">Product direction</p>
+          <h1>Roadmap</h1>
+          <p class="hero-copy">Planned features, milestones, and versioned priorities for ABM Warranty, shared as a transparent public roadmap to help teams plan adoption and feedback.</p>
+          <div class="changelog-release-actions">
+            <a class="abm-btn changelog-release-btn" href="{{ app_store_url }}" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+          </div>
+        </div>
+        <div class="hero-shot" role="img" aria-label="ABM Warranty roadmap preview">
+          <img
+            id="hero-shot-image"
+            src="{{ '/assets/images/changelog/screens/change.png' | relative_url }}"
+            data-light="{{ '/assets/images/changelog/screens/change.png' | relative_url }}"
+            data-dark="{{ '/assets/images/changelog/screens/change_dk.png' | relative_url }}"
+            alt="ABM Warranty roadmap and planning timeline preview"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1160"
+            height="780">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Next
-- Add deeper analytics on expiring warranties by team.
-- Improve beta visibility and onboarding workflows.
+{% include sections/roadmap.html %}
 
-### Later
-- Multi-admin role controls and enterprise onboarding improvements.
+{% include sections/pricing.html %}
 
-<p class="abm-cta-row"><a class="abm-btn" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download on the App Store</a></p>
-
+{% include sections/newsletter.html %}

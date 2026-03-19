@@ -7,6 +7,7 @@
   var logo = document.getElementById('site-logo');
   var heroImage = document.getElementById('hero-shot-image');
   var featureCardImages = document.querySelectorAll('.feature-screenshot img[data-light][data-dark]');
+  var roadmapProgressBars = document.querySelectorAll('.roadmap-progress-bar[data-added][data-target]');
   var toggleLabel = null;
   if (toggle && toggle.nextElementSibling) {
     toggleLabel = toggle.nextElementSibling;
@@ -50,7 +51,7 @@
       }
     }
 
-    if (featureCardImages && featureCardImages.length > 0) {
+  if (featureCardImages && featureCardImages.length > 0) {
       for (var i = 0; i < featureCardImages.length; i++) {
         var featureCardImage = featureCardImages[i];
         var lightFeature = featureCardImage.getAttribute('data-light');
@@ -58,6 +59,41 @@
         var featureSrc = theme === DARK ? darkFeature : lightFeature;
         if (featureSrc) {
           featureCardImage.src = featureSrc;
+        }
+      }
+    }
+
+    if (roadmapProgressBars && roadmapProgressBars.length > 0) {
+      var now = Date.now();
+      for (var j = 0; j < roadmapProgressBars.length; j++) {
+        var roadmapBar = roadmapProgressBars[j];
+        var added = roadmapBar.getAttribute('data-added');
+        var target = roadmapBar.getAttribute('data-target');
+        var parent = roadmapBar.closest('.roadmap-progress-wrap');
+        var progressText = parent ? parent.querySelector('.roadmap-progress-text') : null;
+        var addedDate = added ? Date.parse(added + 'T00:00:00') : NaN;
+        var targetDate = target ? Date.parse(target + 'T00:00:00') : NaN;
+
+        if (isNaN(addedDate) || isNaN(targetDate) || targetDate <= addedDate) {
+          roadmapBar.style.width = '0%';
+          if (progressText) {
+            progressText.textContent = '0% planned';
+            progressText.setAttribute('aria-label', '0% planned');
+          }
+          continue;
+        }
+
+        var progress = ((now - addedDate) / (targetDate - addedDate)) * 100;
+        if (progress < 0) {
+          progress = 0;
+        } else if (progress > 100) {
+          progress = 100;
+        }
+        var normalizedProgress = Math.round(progress);
+        roadmapBar.style.width = normalizedProgress + '%';
+        if (progressText) {
+          progressText.textContent = normalizedProgress + '% planned';
+          progressText.setAttribute('aria-label', normalizedProgress + '% planned');
         }
       }
     }
