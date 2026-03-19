@@ -25,15 +25,18 @@
       </details>
       <details>
         <summary>How do I use managed preferences?</summary>
-        <p>Use managed preferences to configure app behavior on each Mac (including shared enterprise defaults). Start with Apple Business policies, then review the detailed workflow in the guide: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Managed-Preferences" target="_blank" rel="noopener noreferrer">Managed Preferences</a>.</p>
+        <p>Use managed preferences when you want predictable app behavior across teams and machine fleets. They let you predefine application settings so each managed Mac launches with the same baseline configuration, which helps reduce setup drift and support overhead.</p>
+        <p>In practice, this is useful for enforcing shared defaults when multiple people use the same ABM accounts or reporting patterns. For the exact policy and workflow details, use: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Managed-Preferences" target="_blank" rel="noopener noreferrer">Managed Preferences</a>.</p>
       </details>
       <details>
         <summary>How do I use managed credentials?</summary>
-        <p>Use multiple credential sets in ABM Warranty to switch safely between tenants. For steps and naming conventions, see the guide here: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Multiple-Credentials" target="_blank" rel="noopener noreferrer">Multiple Credentials</a>.</p>
+        <p>Managed credentials lets you store and switch between multiple ABM credential sets in-app, so one environment can support more than one tenant without re-entering sensitive keys every time. This is especially helpful for consultants and MSP-style workflows.</p>
+        <p>When adding or switching credentials, verify the tenant ID, key identifier, and team association before sync to avoid pulling incorrect device data. See setup guidance and naming conventions in: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Multiple-Credentials" target="_blank" rel="noopener noreferrer">Multiple Credentials</a>.</p>
       </details>
       <details>
         <summary>How do I use the ABM Credential Packager?</summary>
-        <p>The ABM Credential Packager helps prepare and import ABM credentials in the format ABM Warranty expects. For the exact flow and verification checks, follow: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/How-to-Use-the-ABM-Credential-Packager" target="_blank" rel="noopener noreferrer">How to Use the ABM Credential Packager</a>.</p>
+        <p>The ABM Credential Packager prepares your credential artifacts into the format ABM Warranty expects, which reduces manual setup risk and helps keep environment-specific variables organized. It is designed to make onboarding faster for repeat imports and multi-tenant configurations.</p>
+        <p>Use the packager before the first sync to generate standardized payloads, then import them directly into the app. For validation checks and expected errors, check: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/How-to-Use-the-ABM-Credential-Packager" target="_blank" rel="noopener noreferrer">How to Use the ABM Credential Packager</a>.</p>
       </details>
     </div>
   </div>
