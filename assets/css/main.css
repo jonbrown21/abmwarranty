@@ -1996,39 +1996,32 @@ p { color: var(--text-muted); line-height: 1.6; }
   margin: 2rem 0;
 }
 
-/* Section header label */
-.series-header {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-/* Group container */
 .series-group {
-  background: var(--surface);
   border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: none;
 }
 
-/* Individual rows */
+.series-item {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 92%, transparent);
+  padding: 1rem 1.1rem;
+  margin: 0;
+  background: transparent;
+}
+
+.series-item:last-child {
+  border-bottom: 0;
+}
+
 .series-row {
   position: relative;
   display: block;
-  padding: 1rem 1.1rem;
+  padding: 0;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 92%, transparent);
   text-decoration: none !important;
   overflow: hidden;
 }
 
-/* Scrollable text only */
 .series-text {
   display: block;
   white-space: nowrap;
@@ -2036,30 +2029,28 @@ p { color: var(--text-muted); line-height: 1.6; }
   overflow-y: hidden;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  padding-right: 1.25rem;
 }
 
 .series-text::-webkit-scrollbar {
   display: none;
 }
 
-/* Right fade — only when overflow exists */
 .series-row.has-overflow::before {
   content: "";
   position: absolute;
   top: 0;
-  right: 1.25rem;
+  right: 0.9rem;
   width: 50px;
   height: 100%;
   pointer-events: none;
-
   background: linear-gradient(
     to right,
-    color-mix(in srgb, var(--surface) 0%, transparent),
+    transparent,
     var(--surface)
   );
 }
 
-/* Chevron (fixed) */
 .series-row::after {
   content: "";
   position: absolute;
@@ -2071,10 +2062,6 @@ p { color: var(--text-muted); line-height: 1.6; }
   border-bottom: 2px solid var(--text-muted);
   transform: translateY(-50%) rotate(-45deg);
   transition: transform 0.2s ease;
-}
-
-.series-row:last-child {
-  border-bottom: none;
 }
 
 .post-content a.series-row,
