@@ -542,6 +542,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 
 .changelog-release-btn {
   margin-top: 0.35rem;
+  margin-bottom: 30px;
 }
 
 .hero-copy {
