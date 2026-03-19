@@ -856,6 +856,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   min-width: 0;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  text-align: left;
 }
 
 .roadmap-date {
@@ -864,9 +866,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   gap: 0.34rem;
   justify-content: flex-start;
   margin: 0;
-  justify-self: end;
   text-align: left;
-  width: 100%;
+  width: auto;
 }
 
 .roadmap-progress {
