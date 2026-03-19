@@ -545,6 +545,39 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   margin-bottom: 0.2rem;
 }
 
+.changelog-list {
+  margin: 0.05rem 0 0.1rem;
+  padding: 0;
+}
+
+.changelog-list li {
+  position: relative;
+  list-style: none;
+  padding: 0 0 0 1.15rem;
+  margin: 0.18rem 0;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.changelog-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.02rem;
+  width: 0.86rem;
+  height: 0.86rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  font-size: 0.64rem;
+  line-height: 0.85rem;
+  text-align: center;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+}
+
 .changelog-link a,
 .changelog-link a:visited {
   display: inline-flex;

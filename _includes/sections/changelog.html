@@ -14,7 +14,9 @@
             </div>
           <article class="changelog-card">
             <h3>{{ post.title }}</h3>
-            {{ post.excerpt | markdownify }}
+            <ul class="changelog-list">
+              {{ post.excerpt | markdownify | replace: '<p>', '<li>' | replace: '</p>', '</li>' }}
+            </ul>
             <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
           </article>
         </div>
@@ -28,11 +30,13 @@
           </div>
           <article class="changelog-card">
             <h3>Version 0.3.1</h3>
-            <p>Improves reliability and data accuracy across the app</p>
-            <p>Reliable support for Apple School Manager</p>
-            <p>Fixes issues where some devices could appear without coverage details</p>
-            <p>Additional stability and persistence improvements make large imports more consistent</p>
-            <p>Additional Release Notes Here</p>
+            <ul class="changelog-list">
+              <li>Improves reliability and data accuracy across the app</li>
+              <li>Reliable support for Apple School Manager</li>
+              <li>Fixes issues where some devices could appear without coverage details</li>
+              <li>Additional stability and persistence improvements make large imports more consistent</li>
+              <li>Additional Release Notes Here</li>
+            </ul>
           </article>
         </div>
 
@@ -42,10 +46,12 @@
           </div>
           <article class="changelog-card">
             <h3>Version 0.2.0</h3>
-            <p>Improved stability for large device imports</p>
-            <p>More accurate AppleCare+ coverage detection</p>
-            <p>Enhanced error handling for intermittent ABM API failures</p>
-            <p>Additional Release Notes Here</p>
+            <ul class="changelog-list">
+              <li>Improved stability for large device imports</li>
+              <li>More accurate AppleCare+ coverage detection</li>
+              <li>Enhanced error handling for intermittent ABM API failures</li>
+              <li>Additional Release Notes Here</li>
+            </ul>
           </article>
         </div>
 
@@ -55,10 +61,12 @@
           </div>
           <article class="changelog-card">
             <h3>Version 0.1.0</h3>
-            <p>Initial public beta release</p>
-            <p>Apple Business Manager inventory import</p>
-            <p>Warranty and AppleCare+ coverage lookup</p>
-            <p>Additional Release Notes Here</p>
+            <ul class="changelog-list">
+              <li>Initial public beta release</li>
+              <li>Apple Business Manager inventory import</li>
+              <li>Warranty and AppleCare+ coverage lookup</li>
+              <li>Additional Release Notes Here</li>
+            </ul>
           </article>
         </div>
       {% endif %}
