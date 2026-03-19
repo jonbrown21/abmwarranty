@@ -521,6 +521,22 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   will-change: transform;
 }
 
+.feature-card-badge {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 1;
+  padding: 0.2rem 0.52rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.7rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .feature-card #feature-card-1-image {
   object-fit: cover;
   object-position: left top;
