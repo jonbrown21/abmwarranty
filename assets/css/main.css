@@ -564,6 +564,47 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   padding-top: 0;
 }
 
+/* Temporary debug overlays for roadmap hero/form alignment diagnostics */
+.hero-band--roadmap {
+  outline: 2px solid #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.hero-band--roadmap .abm-container {
+  outline: 2px dashed #f97316;
+  background: rgba(249, 115, 22, 0.05);
+}
+
+.hero-band--roadmap .hero-shell {
+  outline: 2px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.hero-band--roadmap .hero-layout {
+  outline: 2px dashed #22c55e;
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.hero-band--roadmap .hero-copy-col {
+  outline: 2px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.hero-band--roadmap .roadmap-hero-form-wrap {
+  outline: 2px dashed #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.hero-band--roadmap .roadmap-hero-form {
+  outline: 2px solid #ec4899;
+  background: rgba(236, 72, 153, 0.08);
+}
+
+.hero-band--roadmap .hero-shot {
+  outline: 2px solid #14b8a6;
+  background: rgba(20, 184, 166, 0.06);
+}
+
 .hero-band + #features::before {
   content: "";
   display: block;
