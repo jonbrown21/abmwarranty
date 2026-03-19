@@ -68,7 +68,7 @@
       piece.style.borderRadius = random(0, 1) > 0.45 ? '999px' : '2px';
       piece.style.background = 'hsl(' + Math.round(random(5, 355)) + ', ' + Math.round(random(65, 95)) + '%, ' + Math.round(random(42, 72)) + '%)';
       piece.style.animationDelay = random(0, 0.2) + 's';
-      piece.style.animationDuration = random(3.0, 5.5) + 's';
+      piece.style.animationDuration = random(5.6, 8.8) + 's';
       piece.style.animation = 'confetti-drop ' + piece.style.animationDuration + ' cubic-bezier(0.2, 0.7, 0.2, 1) forwards';
       confettiLayer.appendChild(piece);
     }
@@ -80,10 +80,10 @@
       confettiLayer.innerHTML = '';
       var travel = Math.max(220, Math.round(confettiLayer.clientHeight * 2.2));
       confettiLayer.style.setProperty('--confetti-travel', travel + 'px');
-      var batchMs = 95;
+      var batchMs = 120;
       var batchSize = 7;
       var elapsed = 0;
-      var duration = 5000;
+      var duration = 7600;
 
       var ticker = window.setInterval(function () {
         for (var i = 0; i < batchSize; i++) {
@@ -97,7 +97,7 @@
 
       setTimeout(function () {
         confettiLayer.innerHTML = '';
-      }, duration + 900);
+      }, duration + 1300);
     }
 
     function showSuccess() {

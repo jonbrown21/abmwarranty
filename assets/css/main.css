@@ -172,14 +172,21 @@ img { max-width: 100%; height: auto; display: block; }
 .roadmap-hero-form-wrap {
   margin-top: 0.9rem;
   max-width: 560px;
+  position: relative;
 }
 
 .roadmap-hero-form-wrap > .roadmap-hero-form-success {
-  margin: 0.55rem 0 0;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color: var(--text);
   font-weight: 700;
-  position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .roadmap-hero-form-wrap .roadmap-hero-form-success[hidden] {
@@ -195,7 +202,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .roadmap-hero-form.is-submitted {
-  display: none;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .roadmap-hero-form-field {
