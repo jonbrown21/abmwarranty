@@ -606,7 +606,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card #feature-card-12-image {
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.08);
+  transform: scale(1.2);
   transform-origin: center center;
 }
 
@@ -637,7 +637,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .feature-card:hover #feature-card-12-image {
-  transform: scale(1.15);
+  transform: scale(1.25);
 }
 
 @media (prefers-reduced-motion: reduce) {
