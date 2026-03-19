@@ -1607,7 +1607,7 @@ p { color: var(--text-muted); line-height: 1.6; }
 .abm-copy { text-align: center; color: var(--text-muted); margin-top: 1.3rem; border-top: 1px solid var(--border); padding-top: 1rem; }
 
 @media (max-width: 900px) {
-  .roadmap-footer-progress {
+  .roadmap-footer {
     display: none;
   }
 
