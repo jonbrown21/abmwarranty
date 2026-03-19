@@ -20,3 +20,9 @@ permalink: /changelog/
 </section>
 
 {% include sections/changelog.html %}
+
+{% include sections/pricing.html %}
+
+{% include sections/newsletter.html %}
+
+{% include sections/faq.html %}
