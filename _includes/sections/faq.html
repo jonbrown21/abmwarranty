@@ -4,16 +4,36 @@
     <h2>Common questions</h2>
     <div class="faq-list">
       <details>
-        <summary>What data does ABM Warranty use?</summary>
-        <p>It reads device and warranty data through authorized Apple management workflows.</p>
+        <summary>How does the app authenticate with Apple Business Manager?</summary>
+        <p>ABM Warranty uses Apple’s official OAuth 2.0 client flow. You create an EC P-256 private key in Apple Business Manager, then enter the required identifiers in the app. Credentials are stored locally on your Mac and are not sent to third-party services.</p>
       </details>
       <details>
-        <summary>Does support only apply to paid app access?</summary>
-        <p>Support add-on is available for both free and paid plans.</p>
+        <summary>Is this safe to use in large environments?</summary>
+        <p>Yes. The app is designed for large organizations and includes pagination safeguards, serialized coverage requests, retry handling, and protections for malformed or partial ABM API responses.</p>
       </details>
       <details>
-        <summary>Can I use this for beta testing?</summary>
-        <p>Yes. Join the beta program and receive roadmap previews plus update communication.</p>
+        <summary>Does the app modify any data in Apple Business Manager?</summary>
+        <p>No. ABM Warranty is focused on reading and reporting warranty data; it does not modify device records or coverage settings in ABM.</p>
+      </details>
+      <details>
+        <summary>What happens if some devices fail to load or return errors?</summary>
+        <p>Individual device failures do not stop the overall import. Errors are captured so the app can continue processing remaining devices and you can review failed items later.</p>
+      </details>
+      <details>
+        <summary>Can I export warranty and coverage data?</summary>
+        <p>Yes. You can export warranty and AppleCare+ coverage data to CSV for audits, lifecycle planning, budgeting, and internal tooling.</p>
+      </details>
+      <details>
+        <summary>How do I use managed preferences?</summary>
+        <p>Use managed preferences to configure app behavior on each Mac (including shared enterprise defaults). Start with Apple Business policies, then review the detailed workflow in the guide: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Managed-Preferences" target="_blank" rel="noopener noreferrer">Managed Preferences</a>.</p>
+      </details>
+      <details>
+        <summary>How do I use managed credentials?</summary>
+        <p>Use multiple credential sets in ABM Warranty to switch safely between tenants. For steps and naming conventions, see the guide here: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Multiple-Credentials" target="_blank" rel="noopener noreferrer">Multiple Credentials</a>.</p>
+      </details>
+      <details>
+        <summary>How do I use the ABM Credential Packager?</summary>
+        <p>The ABM Credential Packager helps prepare and import ABM credentials in the format ABM Warranty expects. For the exact flow and verification checks, follow: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/How-to-Use-the-ABM-Credential-Packager" target="_blank" rel="noopener noreferrer">How to Use the ABM Credential Packager</a>.</p>
       </details>
     </div>
   </div>
