@@ -7,13 +7,7 @@
     <div class="changelog-timeline">
       {% assign changelog_posts = site.categories.changelog | sort: "date" | reverse %}
       {% if changelog_posts.size > 0 %}
-        {% assign last_date = "" %}
         {% for post in changelog_posts %}
-          {% assign current_date = post.date | date: "%B %d, %Y" %}
-          {% if current_date != last_date %}
-            <p class="changelog-date-heading">{{ current_date }}</p>
-          {% endif %}
-          {% assign last_date = current_date %}
           <div class="changelog-entry">
             <div class="changelog-dot-col">
               <span class="changelog-dot" aria-hidden="true"></span>
@@ -28,7 +22,6 @@
       {% endif %}
 
       {% if changelog_posts.size < 3 %}
-        <p class="changelog-date-heading">Version 0.3.1 — Jan 16, 2026</p>
         <div class="changelog-entry">
           <div class="changelog-dot-col">
             <span class="changelog-dot" aria-hidden="true"></span>
@@ -43,7 +36,6 @@
           </article>
         </div>
 
-        <p class="changelog-date-heading">Version 0.2.0 — Dec 18, 2025</p>
         <div class="changelog-entry">
           <div class="changelog-dot-col">
             <span class="changelog-dot" aria-hidden="true"></span>
@@ -57,7 +49,6 @@
           </article>
         </div>
 
-        <p class="changelog-date-heading">Version 0.1.0 — Nov 20, 2025</p>
         <div class="changelog-entry">
           <div class="changelog-dot-col">
             <span class="changelog-dot" aria-hidden="true"></span>
