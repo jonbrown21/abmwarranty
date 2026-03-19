@@ -2077,6 +2077,17 @@ p { color: var(--text-muted); line-height: 1.6; }
   border-bottom: none;
 }
 
+.post-content a.series-row,
+.post-content a.series-row:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-content a.series-row:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
 /* GPT Transcript Container */
 .gpt-transcript {
   margin: 2rem 0;
