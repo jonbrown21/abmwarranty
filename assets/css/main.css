@@ -2311,19 +2311,32 @@ p { color: var(--text-muted); line-height: 1.6; }
 }
 
 .share-box a.bmc {
-  background: #f6c23e;
-  padding: 0.45rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 41px;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  overflow: hidden;
+  border-color: rgba(15, 23, 42, 0.08);
+  background: #ff8140;
 }
 
 .share-box a.bmc img {
-  height: 1.2rem;
-  width: auto;
   display: block;
+  height: 24px;
+  width: auto;
+  max-width: none;
 }
 
 @media (max-width: 640px) {
   .share-box a.bmc {
-    min-height: 40px;
+    height: 41px;
+    min-width: 160px;
+  }
+
+  .share-box a.bmc img {
+    height: 24px;
   }
 }
 
