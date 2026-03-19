@@ -5,11 +5,13 @@
     {% include nav.html %}
     <main class="abm-main">
       {{ content }}
-      {% include sections/features.html %}
-      {% include sections/pricing.html %}
-      {% include sections/blog-highlights.html %}
-      {% include sections/newsletter.html %}
-      {% include sections/faq.html %}
+      {% unless page.show_home_sections == false %}
+        {% include sections/features.html %}
+        {% include sections/pricing.html %}
+        {% include sections/blog-highlights.html %}
+        {% include sections/newsletter.html %}
+        {% include sections/faq.html %}
+      {% endunless %}
     </main>
     {% include footer.html %}
   </body>

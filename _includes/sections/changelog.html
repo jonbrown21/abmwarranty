@@ -1,0 +1,36 @@
+<section id="features" class="abm-section">
+  <div class="abm-container">
+    <p class="eyebrow">Changelog</p>
+    <h2>Recent updates</h2>
+    <p class="abm-note">Release notes and improvements for the ABM Warranty macOS app.</p>
+
+    <div class="changelog-timeline">
+      {% assign changelog_posts = site.categories.changelog | sort: "date" | reverse %}
+      {% assign timeline_posts = changelog_posts | slice: 1, changelog_posts.size %}
+      {% if timeline_posts.size > 0 %}
+        {% for post in timeline_posts %}
+          <div class="changelog-entry">
+            <div class="changelog-dot-col">
+              <span class="changelog-dot" aria-hidden="true"></span>
+            </div>
+          <article class="changelog-card">
+            <h3>{{ post.title }}</h3>
+            <ul class="changelog-list">
+              {% if post.release_notes and post.release_notes.size > 0 %}
+                {% for note in post.release_notes %}
+                  <li>{{ note }}</li>
+                {% endfor %}
+              {% elsif post.excerpt %}
+                <li>{{ post.excerpt | strip_html | strip }}</li>
+              {% else %}
+                <li>Release notes for {{ post.title }}.</li>
+              {% endif %}
+            </ul>
+            <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read more</a></p>
+          </article>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>

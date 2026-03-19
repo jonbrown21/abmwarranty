@@ -1,0 +1,151 @@
+<div class="roadmap-hero-form-wrap">
+  <form
+    id="roadmap-hero-form"
+    class="roadmap-hero-form"
+    method="POST"
+    action="https://formspree.io/f/mlgpayqq"
+    novalidate
+  >
+    <div class="roadmap-hero-form-field">
+      <label for="roadmap-email">Email</label>
+      <input
+        id="roadmap-email"
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="you@company.com"
+        required
+      />
+    </div>
+
+    <div class="roadmap-hero-form-field">
+      <label for="roadmap-message">Roadmap or feature request</label>
+      <textarea
+        id="roadmap-message"
+        name="message"
+        rows="8"
+        placeholder="Tell us what you’d like to see next"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Submit Feature Request</button>
+  </form>
+
+  <p id="roadmap-hero-form-status" class="roadmap-hero-form-success" hidden>
+    Thanks for your submission. We’ll review your roadmap request.
+  </p>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById('roadmap-hero-form');
+    if (!form) {
+      return;
+    }
+
+    var status = document.getElementById('roadmap-hero-form-status');
+    var confettiLayer = document.getElementById('roadmap-hero-confetti');
+    var email = document.getElementById('roadmap-email');
+    var submitted = false;
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function spawnConfettiPiece() {
+      if (!confettiLayer) {
+        return;
+      }
+      var piece = document.createElement('span');
+      piece.className = 'confetti-piece';
+      piece.style.left = random(0, 100) + '%';
+      piece.style.top = '-' + Math.round(random(16, 64)) + 'px';
+      piece.style.width = Math.round(random(4, 12)) + 'px';
+      piece.style.height = Math.round(random(6, 16)) + 'px';
+      piece.style.borderRadius = random(0, 1) > 0.45 ? '999px' : '2px';
+      piece.style.background = 'hsl(' + Math.round(random(5, 355)) + ', ' + Math.round(random(65, 95)) + '%, ' + Math.round(random(42, 72)) + '%)';
+      piece.style.animationDelay = random(0, 0.2) + 's';
+      piece.style.animationDuration = random(5.6, 8.8) + 's';
+      piece.style.animation = 'confetti-drop ' + piece.style.animationDuration + ' cubic-bezier(0.2, 0.7, 0.2, 1) forwards';
+      confettiLayer.appendChild(piece);
+    }
+
+    function spawnConfettiStream() {
+      if (!confettiLayer) {
+        return;
+      }
+      confettiLayer.innerHTML = '';
+      var travel = Math.max(220, Math.round(confettiLayer.clientHeight * 2.2));
+      confettiLayer.style.setProperty('--confetti-travel', travel + 'px');
+      var batchMs = 120;
+      var batchSize = 7;
+      var elapsed = 0;
+      var duration = 7600;
+
+      var ticker = window.setInterval(function () {
+        for (var i = 0; i < batchSize; i++) {
+          spawnConfettiPiece();
+        }
+        elapsed += batchMs;
+        if (elapsed >= duration) {
+          window.clearInterval(ticker);
+        }
+      }, batchMs);
+
+      setTimeout(function () {
+        confettiLayer.innerHTML = '';
+      }, duration + 1300);
+    }
+
+    function showSuccess() {
+      if (submitted) {
+        return;
+      }
+      submitted = true;
+      form.classList.add('is-submitted');
+      status.hidden = false;
+      spawnConfettiStream();
+      form.reset();
+      if (email) {
+        email.blur();
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!form.reportValidity() || !form.action) {
+        return;
+      }
+
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            showSuccess();
+            return;
+          }
+          return response.json().then(function (data) {
+            if (data && data.errors && data.errors.length) {
+              status.textContent = data.errors.map(function (error) {
+                return error.message;
+              }).join(', ');
+            } else {
+              status.textContent = 'Oops! There was a problem submitting the form.';
+            }
+            status.hidden = false;
+          });
+        })
+        .catch(function () {
+          status.textContent = 'Oops! There was a problem submitting the form.';
+          status.hidden = false;
+        });
+    });
+  })();
+</script>

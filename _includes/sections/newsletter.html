@@ -3,14 +3,23 @@
     <div class="newsletter-band__content">
       <div class="newsletter-band__copy">
         <p class="eyebrow">Newsletter</p>
-        <h2>Get ABM Warranty updates and release notes</h2>
+        <h2>Get ABM Warranty App release updates, beta news and release notes</h2>
         <p>Drop your email to receive concise releases, roadmap notes, and support insights for your team.</p>
       </div>
 
-      <form id="newsletter-form" class="newsletter-form" novalidate>
+      <form
+        id="newsletter-form"
+        class="newsletter-form"
+        novalidate
+        action="{{ site.mailerlite_list }}"
+        data-mailerlite-endpoint="{{ site.mailerlite_list | escape }}"
+        method="GET"
+      >
         <label for="newsletter-email" class="sr-only">Email address</label>
-        <input id="newsletter-email" name="email" type="email" placeholder="you@company.com" inputmode="email" autocomplete="email" required aria-label="Email address">
-        <button type="submit" class="abm-btn" data-default-label="Get updates">Get updates</button>
+        <input id="newsletter-email" name="fields[email]" type="email" placeholder="you@company.com" inputmode="email" autocomplete="email" required aria-label="Email address">
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
+        <button type="submit" class="abm-btn" data-default-label="Subscribe to Updates">Subscribe to Updates</button>
       </form>
 
       <p id="newsletter-success" class="newsletter-success" hidden>
