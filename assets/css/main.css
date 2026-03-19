@@ -442,6 +442,12 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   padding-bottom: 0;
 }
 
+.hero-band + #roadmap {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .hero-band + #roadmap::before {
   content: "";
   display: block;
@@ -459,7 +465,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .hero-band + #roadmap .abm-container {
-  padding-top: 0.2rem;
+  padding-top: 1rem;
   padding-bottom: 1.8rem;
 }
 
