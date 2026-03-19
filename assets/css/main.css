@@ -169,6 +169,92 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 0;
 }
 
+.roadmap-hero-form-wrap {
+  margin-top: 0.9rem;
+  max-width: 560px;
+  position: relative;
+  overflow: clip;
+}
+
+.roadmap-hero-form-wrap > .roadmap-hero-form-success {
+  margin: 0.55rem 0 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.roadmap-hero-form-wrap .roadmap-hero-form-success[hidden] {
+  display: none;
+}
+
+.roadmap-hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-hero-form.is-submitted {
+  display: none;
+}
+
+.roadmap-hero-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.roadmap-hero-form-field label {
+  font-size: 0.8rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.roadmap-hero-form input,
+.roadmap-hero-form textarea {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 12px;
+  padding: 0.72rem 0.8rem;
+  background: var(--surface);
+  color: var(--text);
+  line-height: 1.35;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.roadmap-hero-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.roadmap-hero-form button {
+  align-self: flex-start;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+
+.roadmap-hero-form button:hover {
+  border-color: color-mix(in srgb, var(--text-muted) 35%, transparent);
+}
+
+.roadmap-hero-form-confetti {
+  position: relative;
+  min-height: 170px;
+  margin-top: 0.4rem;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .confetti-piece {
   position: absolute;
   top: -8px;
