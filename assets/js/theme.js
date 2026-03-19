@@ -7,6 +7,8 @@
   var logo = document.getElementById('site-logo');
   var heroImage = document.getElementById('hero-shot-image');
   var featureCardImages = document.querySelectorAll('.feature-screenshot img[data-light][data-dark]');
+  var featureGrid = document.getElementById('feature-grid');
+  var featurePagination = document.getElementById('feature-pagination');
   var roadmapProgressBars = document.querySelectorAll('.roadmap-progress-bar[data-added][data-target]');
   var toggleLabel = null;
   if (toggle && toggle.nextElementSibling) {
@@ -35,6 +37,66 @@
     var endMonth = endMonthByQuarter[quarter];
     var endDay = new Date(year, endMonth + 1, 0).getDate();
     return Date.parse(year + '-' + String(endMonth + 1).padStart(2, '0') + '-' + String(endDay).padStart(2, '0') + 'T23:59:59');
+  }
+
+  function initFeaturePager() {
+    if (!featureGrid || !featurePagination) {
+      return;
+    }
+
+    var cards = Array.prototype.slice.call(featureGrid.querySelectorAll('.feature-card'));
+    if (!cards.length) {
+      return;
+    }
+
+    cards.reverse();
+    for (var i = 0; i < cards.length; i++) {
+      featureGrid.appendChild(cards[i]);
+    }
+
+    var pageSize = parseInt(featureGrid.getAttribute('data-page-size') || '6', 10);
+    if (isNaN(pageSize) || pageSize < 1) {
+      pageSize = 6;
+    }
+
+    var pageCount = Math.ceil(cards.length / pageSize);
+
+    function renderPage(pageIndex) {
+      for (var j = 0; j < cards.length; j++) {
+        var start = pageIndex * pageSize;
+        var end = start + pageSize;
+        var isVisible = j >= start && j < end;
+        cards[j].classList.toggle('is-hidden', !isVisible);
+      }
+
+      var dots = featurePagination.querySelectorAll('.feature-page-dot');
+      for (var k = 0; k < dots.length; k++) {
+        var isActive = k === pageIndex;
+        dots[k].classList.toggle('is-active', isActive);
+        dots[k].setAttribute('aria-current', isActive ? 'true' : 'false');
+      }
+    }
+
+    featurePagination.innerHTML = '';
+    if (pageCount <= 1) {
+      renderPage(0);
+      return;
+    }
+
+    for (var d = 0; d < pageCount; d++) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'feature-page-dot';
+      dot.setAttribute('aria-label', 'Show feature page ' + (d + 1));
+      (function (pageNumber) {
+        dot.addEventListener('click', function () {
+          renderPage(pageNumber);
+        });
+      })(d);
+      featurePagination.appendChild(dot);
+    }
+
+    renderPage(0);
   }
 
   function setTheme(theme) {
@@ -128,6 +190,8 @@
     }
     return LIGHT;
   }
+
+  initFeaturePager();
 
   var initialTheme = resolveInitialTheme();
   setTheme(initialTheme);
