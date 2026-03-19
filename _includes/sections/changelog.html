@@ -15,60 +15,20 @@
           <article class="changelog-card">
             <h3>{{ post.title }}</h3>
             <ul class="changelog-list">
-              {{ post.excerpt | markdownify | replace: '<p>', '<li>' | replace: '</p>', '</li>' }}
+              {% if post.release_notes and post.release_notes.size > 0 %}
+                {% for note in post.release_notes %}
+                  <li>{{ note }}</li>
+                {% endfor %}
+              {% elsif post.excerpt %}
+                <li>{{ post.excerpt | strip_html | strip }}</li>
+              {% else %}
+                <li>Release notes for {{ post.title }}.</li>
+              {% endif %}
             </ul>
-            <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
+            <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read more</a></p>
           </article>
         </div>
         {% endfor %}
-      {% endif %}
-
-      {% if changelog_posts.size < 3 %}
-        <div class="changelog-entry">
-          <div class="changelog-dot-col">
-            <span class="changelog-dot" aria-hidden="true"></span>
-          </div>
-          <article class="changelog-card">
-            <h3>Version 0.3.1</h3>
-            <ul class="changelog-list">
-              <li>Improves reliability and data accuracy across the app</li>
-              <li>Reliable support for Apple School Manager</li>
-              <li>Fixes issues where some devices could appear without coverage details</li>
-              <li>Additional stability and persistence improvements make large imports more consistent</li>
-              <li>Additional Release Notes Here</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="changelog-entry">
-          <div class="changelog-dot-col">
-            <span class="changelog-dot" aria-hidden="true"></span>
-          </div>
-          <article class="changelog-card">
-            <h3>Version 0.2.0</h3>
-            <ul class="changelog-list">
-              <li>Improved stability for large device imports</li>
-              <li>More accurate AppleCare+ coverage detection</li>
-              <li>Enhanced error handling for intermittent ABM API failures</li>
-              <li>Additional Release Notes Here</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="changelog-entry">
-          <div class="changelog-dot-col">
-            <span class="changelog-dot" aria-hidden="true"></span>
-          </div>
-          <article class="changelog-card">
-            <h3>Version 0.1.0</h3>
-            <ul class="changelog-list">
-              <li>Initial public beta release</li>
-              <li>Apple Business Manager inventory import</li>
-              <li>Warranty and AppleCare+ coverage lookup</li>
-              <li>Additional Release Notes Here</li>
-            </ul>
-          </article>
-        </div>
       {% endif %}
     </div>
   </div>

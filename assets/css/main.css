@@ -585,13 +585,30 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .changelog-link a:visited {
   display: inline-flex;
   align-items: center;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 2px;
   font-weight: 600;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  padding: 0.35rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
 }
 
 .changelog-link {
-  margin-top: 0.35rem;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.changelog-release-actions {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.changelog-readmore-btn {
+  background: transparent;
+  color: var(--text);
 }
 
 .changelog-latest-release-title {
