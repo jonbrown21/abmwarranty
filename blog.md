@@ -14,7 +14,7 @@ permalink: /blog/
           <p class="eyebrow">Latest updates and release notes</p>
           <h1>ABM Warranty Blog</h1>
           <p class="hero-copy">
-            Product updates, changelog highlights, roadmap context, and operational guidance for ABM Warranty deployments.
+            Product updates, changelog highlights, roadmap context, and operational guidance for ABM Warranty deployments, including practical rollout notes, field-tested support workflows, and release planning details that help Apple IT teams make faster, lower-risk decisions at scale.
           </p>
           <p class="abm-cta-row">
             <a class="abm-btn" href="{{ '/changelog/' | relative_url }}">View Changelog</a>
