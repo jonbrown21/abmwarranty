@@ -15,6 +15,19 @@ permalink: /changelog/
           <h1>Changelog</h1>
           <p class="hero-copy">Track what has shipped for ABM Warranty and understand what is new, changed, and fixed in each release.</p>
         </div>
+        <div class="hero-shot" role="img" aria-label="ABM Warranty changelog screenshot">
+          <img
+            id="hero-shot-image"
+            src="{{ '/assets/images/changelog/screens/change.png' | relative_url }}"
+            data-light="{{ '/assets/images/changelog/screens/change.png' | relative_url }}"
+            data-dark="{{ '/assets/images/changelog/screens/change_dk.png' | relative_url }}"
+            alt="ABM Warranty changelog and release notes interface"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1160"
+            height="780">
+        </div>
       </div>
     </div>
   </div>
