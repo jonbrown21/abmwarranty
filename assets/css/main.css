@@ -481,7 +481,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   display: flex;
   gap: 0.55rem;
   align-items: stretch;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .changelog-dot-col {
