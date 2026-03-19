@@ -13,6 +13,30 @@
     toggleLabel = toggle.nextElementSibling;
   }
 
+  function parseQuarterEnd(value) {
+    if (!value) {
+      return NaN;
+    }
+    var match = String(value).trim().match(/^Q([1-4])\s+(\d{4})$/i);
+    if (!match) {
+      return NaN;
+    }
+    var quarter = parseInt(match[1], 10);
+    var year = parseInt(match[2], 10);
+    if (isNaN(quarter) || isNaN(year)) {
+      return NaN;
+    }
+    var endMonthByQuarter = {
+      1: 2,
+      2: 5,
+      3: 8,
+      4: 11
+    };
+    var endMonth = endMonthByQuarter[quarter];
+    var endDay = new Date(year, endMonth + 1, 0).getDate();
+    return Date.parse(year + '-' + String(endMonth + 1).padStart(2, '0') + '-' + String(endDay).padStart(2, '0') + 'T23:59:59');
+  }
+
   function setTheme(theme) {
     if (theme !== LIGHT && theme !== DARK) {
       return;
@@ -72,6 +96,13 @@
         var addedDate = added ? Date.parse(added + 'T00:00:00') : NaN;
         var targetDate = target ? Date.parse(target + 'T00:00:00') : NaN;
 
+        if (isNaN(targetDate)) {
+          var roadmapCard = roadmapBar.closest('.roadmap-card');
+          var quarterTextNode = roadmapCard ? roadmapCard.querySelector('.roadmap-date span') : null;
+          var quarterText = quarterTextNode ? quarterTextNode.textContent : '';
+          targetDate = parseQuarterEnd(quarterText);
+        }
+
         if (isNaN(addedDate) || isNaN(targetDate) || targetDate <= addedDate) {
           roadmapBar.style.width = '0%';
           continue;
@@ -83,8 +114,7 @@
         } else if (progress > 100) {
           progress = 100;
         }
-        var normalizedProgress = Math.round(progress);
-        roadmapBar.style.width = normalizedProgress + '%';
+        roadmapBar.style.width = progress.toFixed(2) + '%';
       }
     }
   }
