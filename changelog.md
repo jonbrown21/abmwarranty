@@ -14,6 +14,21 @@ permalink: /changelog/
           <p class="eyebrow">Release notes</p>
           <h1>Changelog</h1>
           <p class="hero-copy">Track what has shipped for ABM Warranty and understand what is new, changed, and fixed in each release.</p>
+          <p class="hero-copy" aria-label="Latest release notes">
+            Latest Release
+            <br />
+            Version 0.4.1 — Feb 27, 2026
+            <br /><br />
+            Multi-tenancy support for Managed Service Providers
+            <br />
+            MDM support for managing managed preferences
+            <br />
+            Multi-credential handling
+            <br />
+            Single device refresh
+            <br />
+            Log debugging for greater troubleshooting
+          </p>
         </div>
         <div class="hero-shot" role="img" aria-label="ABM Warranty changelog screenshot">
           <img
