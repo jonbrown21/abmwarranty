@@ -2556,6 +2556,18 @@ html[data-theme="dark"] .app-support-cta {
   box-shadow: none;
 }
 
+html[data-theme="dark"] .app-support-cta__button {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #fff;
+}
+
+html[data-theme="dark"] .app-support-cta__button:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
 html[data-theme="dark"] .app-support-cta__lead,
 html[data-theme="dark"] .app-support-cta__copy {
   color: #c4cad8;
