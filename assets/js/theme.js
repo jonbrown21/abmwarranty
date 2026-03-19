@@ -13,7 +13,7 @@
     toggleLabel = toggle.nextElementSibling;
   }
 
-  function parseQuarterEnd(value) {
+  function parseQuarterCompletion(value) {
     if (!value) {
       return NaN;
     }
@@ -27,10 +27,10 @@
       return NaN;
     }
     var endMonthByQuarter = {
-      1: 2,
-      2: 5,
-      3: 8,
-      4: 11
+      1: 0,
+      2: 3,
+      3: 7,
+      4: 10
     };
     var endMonth = endMonthByQuarter[quarter];
     var endDay = new Date(year, endMonth + 1, 0).getDate();
@@ -92,15 +92,17 @@
       for (var j = 0; j < roadmapProgressBars.length; j++) {
         var roadmapBar = roadmapProgressBars[j];
         var added = roadmapBar.getAttribute('data-added');
-        var target = roadmapBar.getAttribute('data-target');
         var addedDate = added ? Date.parse(added + 'T00:00:00') : NaN;
-        var targetDate = target ? Date.parse(target + 'T00:00:00') : NaN;
+        var targetDate = NaN;
+
+        var roadmapCard = roadmapBar.closest('.roadmap-card');
+        var quarterTextNode = roadmapCard ? roadmapCard.querySelector('.roadmap-date span') : null;
+        var quarterText = quarterTextNode ? quarterTextNode.textContent : '';
+        targetDate = parseQuarterCompletion(quarterText);
 
         if (isNaN(targetDate)) {
-          var roadmapCard = roadmapBar.closest('.roadmap-card');
-          var quarterTextNode = roadmapCard ? roadmapCard.querySelector('.roadmap-date span') : null;
-          var quarterText = quarterTextNode ? quarterTextNode.textContent : '';
-          targetDate = parseQuarterEnd(quarterText);
+          var target = roadmapBar.getAttribute('data-target');
+          targetDate = target ? Date.parse(target + 'T00:00:00') : NaN;
         }
 
         if (isNaN(addedDate) || isNaN(targetDate) || targetDate <= addedDate) {
