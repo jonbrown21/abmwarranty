@@ -4,16 +4,26 @@
     <h2>Recent updates</h2>
     <p class="abm-note">Release notes and improvements for the ABM Warranty macOS app.</p>
 
-    <div class="changelog-list">
+    <div class="changelog-timeline">
       {% assign changelog_posts = site.categories.changelog | sort: "date" | reverse %}
       {% if changelog_posts.size > 0 %}
+        {% assign last_date = "" %}
         {% for post in changelog_posts %}
-          <article class="changelog-card">
-            <p class="changelog-date">{{ post.date | date: "%B %d, %Y" }}</p>
-            <h3>{{ post.title }}</h3>
-            {{ post.excerpt | markdownify }}
-            <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
-          </article>
+          {% assign current_date = post.date | date: "%B %d, %Y" %}
+          {% if current_date != last_date %}
+            <p class="changelog-date-heading">{{ current_date }}</p>
+          {% endif %}
+          {% assign last_date = current_date %}
+          <div class="changelog-timeline-item">
+            <div class="changelog-timeline-track">
+              <div class="changelog-timeline-dot" aria-hidden="true"></div>
+            </div>
+            <article class="changelog-card">
+              <h3>{{ post.title }}</h3>
+              {{ post.excerpt | markdownify }}
+              <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
+            </article>
+          </div>
         {% endfor %}
       {% else %}
         <article class="changelog-card changelog-card--empty">
