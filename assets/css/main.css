@@ -1621,6 +1621,21 @@ p { color: var(--text-muted); line-height: 1.6; }
   display: block;
 }
 
+.blog-cover--post {
+  margin: 1rem 0 1.15rem;
+  min-height: 0;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.blog-cover--post img {
+  object-fit: contain;
+  object-position: center;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+
  .abm-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; border-radius: 10px; padding: 0.7rem 1.05rem; font-weight: 600; margin-right: 0.6rem; }
  .abm-btn.full-width { width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; }
 .abm-btn:hover { background: var(--primary-hover); }
