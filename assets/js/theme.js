@@ -9,6 +9,8 @@
   var featureCardImages = document.querySelectorAll('.feature-screenshot img[data-light][data-dark]');
   var featureGrid = document.getElementById('feature-grid');
   var featurePagination = document.getElementById('feature-pagination');
+  var blogPageGrid = document.getElementById('blog-page-grid');
+  var blogPagePagination = document.getElementById('blog-page-pagination');
   var roadmapProgressBars = document.querySelectorAll('.roadmap-progress-bar[data-added][data-target]');
   var toggleLabel = null;
   if (toggle && toggle.nextElementSibling) {
@@ -95,6 +97,99 @@
       })(d);
       featurePagination.appendChild(dot);
     }
+
+    renderPage(0);
+  }
+
+  function initBlogPager() {
+    if (!blogPageGrid || !blogPagePagination) {
+      return;
+    }
+
+    var cards = Array.prototype.slice.call(blogPageGrid.querySelectorAll('.blog-card'));
+    if (!cards.length) {
+      return;
+    }
+
+    var pageSize = parseInt(blogPageGrid.getAttribute('data-page-size') || '6', 10);
+    if (isNaN(pageSize) || pageSize < 1) {
+      pageSize = 6;
+    }
+
+    var pageCount = Math.ceil(cards.length / pageSize);
+    var currentPage = 0;
+
+    function renderPage(pageIndex) {
+      currentPage = pageIndex;
+
+      for (var i = 0; i < cards.length; i++) {
+        var start = pageIndex * pageSize;
+        var end = start + pageSize;
+        var isVisible = i >= start && i < end;
+        cards[i].classList.toggle('is-hidden', !isVisible);
+      }
+
+      var buttons = blogPagePagination.querySelectorAll('.blog-page-btn--num');
+      for (var b = 0; b < buttons.length; b++) {
+        var active = b === pageIndex;
+        buttons[b].classList.toggle('is-active', active);
+        buttons[b].setAttribute('aria-current', active ? 'page' : 'false');
+      }
+
+      var prevBtn = blogPagePagination.querySelector('.blog-page-btn--prev');
+      var nextBtn = blogPagePagination.querySelector('.blog-page-btn--next');
+      if (prevBtn) {
+        prevBtn.disabled = pageIndex === 0;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = pageIndex === pageCount - 1;
+      }
+    }
+
+    function goTo(pageIndex) {
+      if (pageIndex < 0 || pageIndex > pageCount - 1) {
+        return;
+      }
+      renderPage(pageIndex);
+    }
+
+    blogPagePagination.innerHTML = '';
+    if (pageCount <= 1) {
+      renderPage(0);
+      return;
+    }
+
+    var prev = document.createElement('button');
+    prev.type = 'button';
+    prev.className = 'blog-page-btn blog-page-btn--nav blog-page-btn--prev';
+    prev.textContent = 'Previous';
+    prev.addEventListener('click', function () {
+      goTo(currentPage - 1);
+    });
+    blogPagePagination.appendChild(prev);
+
+    for (var p = 0; p < pageCount; p++) {
+      var num = document.createElement('button');
+      num.type = 'button';
+      num.className = 'blog-page-btn blog-page-btn--num';
+      num.textContent = String(p + 1);
+      num.setAttribute('aria-label', 'Go to blog page ' + (p + 1));
+      (function (pageNumber) {
+        num.addEventListener('click', function () {
+          goTo(pageNumber);
+        });
+      })(p);
+      blogPagePagination.appendChild(num);
+    }
+
+    var next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'blog-page-btn blog-page-btn--nav blog-page-btn--next';
+    next.textContent = 'Next';
+    next.addEventListener('click', function () {
+      goTo(currentPage + 1);
+    });
+    blogPagePagination.appendChild(next);
 
     renderPage(0);
   }
@@ -192,6 +287,7 @@
   }
 
   initFeaturePager();
+  initBlogPager();
 
   var initialTheme = resolveInitialTheme();
   setTheme(initialTheme);

@@ -1455,6 +1455,57 @@ p { color: var(--text-muted); line-height: 1.6; }
   padding: 0.82rem 1.5rem;
 }
 
+.blog-page-band + #newsletter {
+  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+.blog-page-pagination {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.blog-page-btn {
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1;
+  padding: 0.52rem 0.68rem;
+  min-width: 2.1rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.blog-page-btn:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--primary) 56%, transparent);
+}
+
+.blog-page-btn.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.blog-page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.blog-page-btn--nav {
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
+}
+
+.blog-card.is-hidden {
+  display: none;
+}
+
 .abm-card {
   background: var(--surface);
   border: 1px solid var(--border);
