@@ -528,7 +528,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   bottom: 0.55rem;
   padding: 0.2rem 0.52rem;
   border-radius: 999px;
-  background: var(--primary);
+  background: #000000;
   color: #ffffff;
   font-size: 0.7rem;
   line-height: 1.1;
