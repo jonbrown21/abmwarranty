@@ -341,7 +341,7 @@ html[data-theme='dark'] .newsletter-form .abm-btn:hover {
 
 .nav-toggle { display: none; }
 .nav-toggle-btn { border: 1px solid var(--border); border-radius: 999px; padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; }
-.top-nav { display: flex; gap: 1rem; }
+.top-nav { display: flex; gap: 1.2rem; }
 .top-nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; padding: 0.6rem 0; }
 .top-nav a:hover { color: var(--text); }
 .theme-switch-wrap { position: relative; }
