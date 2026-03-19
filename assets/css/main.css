@@ -560,8 +560,16 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .hero-band--roadmap .hero-copy-col {
-  margin-top: clamp(2.2rem, 4vw, 3.1rem);
+  margin-top: 0;
   padding-top: 0;
+}
+
+.hero-band--roadmap .hero-layout {
+  align-items: start;
+}
+
+.hero-band--roadmap .hero-shot {
+  align-self: start;
 }
 
 /* Temporary debug overlays for roadmap hero/form alignment diagnostics */
