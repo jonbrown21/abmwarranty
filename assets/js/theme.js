@@ -69,17 +69,11 @@
         var roadmapBar = roadmapProgressBars[j];
         var added = roadmapBar.getAttribute('data-added');
         var target = roadmapBar.getAttribute('data-target');
-        var parent = roadmapBar.closest('.roadmap-progress-wrap');
-        var progressText = parent ? parent.querySelector('.roadmap-progress-text') : null;
         var addedDate = added ? Date.parse(added + 'T00:00:00') : NaN;
         var targetDate = target ? Date.parse(target + 'T00:00:00') : NaN;
 
         if (isNaN(addedDate) || isNaN(targetDate) || targetDate <= addedDate) {
           roadmapBar.style.width = '0%';
-          if (progressText) {
-            progressText.textContent = '0% planned';
-            progressText.setAttribute('aria-label', '0% planned');
-          }
           continue;
         }
 
@@ -91,10 +85,6 @@
         }
         var normalizedProgress = Math.round(progress);
         roadmapBar.style.width = normalizedProgress + '%';
-        if (progressText) {
-          progressText.textContent = normalizedProgress + '% planned';
-          progressText.setAttribute('aria-label', normalizedProgress + '% planned');
-        }
       }
     }
   }
