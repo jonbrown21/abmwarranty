@@ -504,6 +504,46 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   margin-top: 0.35rem;
 }
 
+.changelog-latest-release-title {
+  margin-top: 1.05rem;
+  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.changelog-release-list {
+  list-style: none;
+  margin: 0.6rem 0 1rem;
+  padding: 0;
+}
+
+.changelog-release-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.48rem;
+  padding: 0.2rem 0;
+  color: var(--text-muted);
+}
+
+.changelog-release-check {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 60%, transparent);
+  color: var(--primary);
+  font-size: 0.68rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-top: 0.12rem;
+  flex: 0 0 auto;
+}
+
+.changelog-release-btn {
+  margin-top: 0.35rem;
+}
+
 .hero-copy {
   max-width: 62ch;
   font-size: clamp(1.02rem, 1.7vw, 1.12rem);
