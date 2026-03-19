@@ -599,7 +599,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .feature-card #feature-card-11-image {
   object-fit: cover;
   object-position: top left;
-  transform: scale(1.08);
+  transform: scale(1.0);
   transform-origin: top left;
 }
 
@@ -626,7 +626,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .feature-card:hover #feature-card-11-image {
-  transform: scale(1.15);
+  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
