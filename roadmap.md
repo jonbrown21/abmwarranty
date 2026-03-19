@@ -43,3 +43,5 @@ permalink: /roadmap/
 {% include sections/pricing.html %}
 
 {% include sections/newsletter.html %}
+
+{% include sections/faq.html %}

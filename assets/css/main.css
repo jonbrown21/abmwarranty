@@ -442,6 +442,27 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   padding-bottom: 0;
 }
 
+.hero-band + #roadmap::before {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 1px;
+  background: color-mix(in srgb, var(--border) 72%, transparent);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+}
+
+.hero-band + #roadmap .eyebrow {
+  margin-top: 1.9rem;
+}
+
+.hero-band + #roadmap .abm-container {
+  padding-top: 0.2rem;
+  padding-bottom: 1.8rem;
+}
+
 .hero-band + #features::before {
   content: "";
   display: block;
@@ -461,6 +482,19 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 .hero-band + #features .abm-container {
   padding-top: 1rem;
   padding-bottom: 1.8rem;
+}
+
+#roadmap .abm-container,
+#faq .abm-container {
+  width: min(1220px, 100% - 1.5rem);
+}
+
+#roadmap + #pricing {
+  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+#roadmap + #pricing .abm-container {
+  padding-top: 2.6rem;
 }
 
 .changelog-timeline {
