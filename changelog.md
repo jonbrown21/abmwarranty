@@ -1,24 +1,22 @@
 ---
 layout: page
-title: ABM Warranty Changelog
-description: Release notes and updates for the ABM Warranty macOS app.
+title: Changelog
+description: ABM Warranty app release notes for warranty monitoring, API sync, and dashboard updates.
 permalink: /changelog/
 ---
 
 <section class="abm-section hero-band">
-  <div class="hero-shell abm-container">
-    <div class="hero-layout">
-      <div class="hero-copy-col">
-        <p class="eyebrow">Changelog</p>
-        <h1>ABM Warranty updates</h1>
-        <p class="hero-copy">Track every meaningful release, from warranty monitoring improvements to support workflow and deployment refinements.</p>
+  <div class="abm-container">
+    <div class="hero-shell">
+      <div class="hero-layout">
+        <div class="hero-copy-col">
+          <p class="eyebrow">Release notes</p>
+          <h1>Changelog</h1>
+          <p class="hero-copy">Track what has shipped for ABM Warranty and understand what is new, changed, and fixed in each release.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 {% include sections/changelog.html %}
-
-{%- comment -%}
-Planned next: pricing, newsletter, and FAQ can be added underneath this changelog area in the same homepage section framework.
-{%- endcomment -%}
