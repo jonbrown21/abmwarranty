@@ -2002,17 +2002,17 @@ p { color: var(--text-muted); line-height: 1.6; }
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 
 /* Group container */
 .series-group {
-  background: #fff;
+  background: var(--surface);
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+  box-shadow: none;
 }
 
 /* Individual rows */
@@ -2021,8 +2021,8 @@ p { color: var(--text-muted); line-height: 1.6; }
   display: block;
   padding: 0.85rem 2.2rem 0.85rem 1rem;
   font-size: 0.95rem;
-  color: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  color: var(--text);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 92%, transparent);
   text-decoration: none !important;
   overflow: hidden; /* important */
 }
@@ -2053,8 +2053,8 @@ p { color: var(--text-muted); line-height: 1.6; }
 
   background: linear-gradient(
     to right,
-    rgba(249,250,251,0),
-    rgba(249,250,251,1)
+    color-mix(in srgb, var(--surface) 0%, transparent),
+    var(--surface)
   );
 }
 
@@ -2070,11 +2070,15 @@ p { color: var(--text-muted); line-height: 1.6; }
   opacity: 0.5;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='7 4 13 10 7 16'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23606f8d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='7 4 13 10 7 16'/%3E%3C/svg%3E");
 }
 
 .series-row:last-child {
   border-bottom: none;
+}
+
+html[data-theme='dark'] .series-row::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23b9cae8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='7 4 13 10 7 16'/%3E%3C/svg%3E");
 }
 
 /* GPT Transcript Container */
