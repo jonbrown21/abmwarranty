@@ -2054,7 +2054,7 @@ p { color: var(--text-muted); line-height: 1.6; }
 .series-row::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: 0.2rem;
   top: 50%;
   width: 9px;
   height: 9px;
