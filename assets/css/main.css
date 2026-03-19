@@ -635,8 +635,10 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   gap: 0.38rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 0.72rem 0.72rem 0.9rem;
+  --roadmap-card-pad-x: 0.72rem;
+  padding: 0.72rem var(--roadmap-card-pad-x) 0.9rem;
   background: var(--surface);
+  position: relative;
 }
 
 .roadmap-card h3 {
@@ -704,16 +706,27 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .roadmap-footer {
+  position: relative;
   margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
-  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  border-top: 0;
   padding-top: 0.68rem;
   width: 100%;
   padding-bottom: 0.18rem;
   margin-bottom: -0.15rem;
+}
+
+.roadmap-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--roadmap-card-pad-x));
+  right: calc(-1 * var(--roadmap-card-pad-x));
+  height: 1px;
+  background: color-mix(in srgb, var(--border) 72%, transparent);
 }
 
 .roadmap-version,
