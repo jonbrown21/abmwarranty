@@ -6,8 +6,9 @@
 
     <div class="changelog-timeline">
       {% assign changelog_posts = site.categories.changelog | sort: "date" | reverse %}
-      {% if changelog_posts.size > 0 %}
-        {% for post in changelog_posts %}
+      {% assign timeline_posts = changelog_posts | slice: 1, changelog_posts.size %}
+      {% if timeline_posts.size > 0 %}
+        {% for post in timeline_posts %}
           <div class="changelog-entry">
             <div class="changelog-dot-col">
               <span class="changelog-dot" aria-hidden="true"></span>
