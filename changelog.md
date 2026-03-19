@@ -7,6 +7,8 @@ permalink: /changelog/
 ---
 
 {% assign latest_changelog = site.categories.changelog | sort: "date" | reverse | first %}
+{% assign latest_changelog_version = latest_changelog.release_version | default: latest_changelog.title %}
+{% assign app_store_url = site.app_store_url %}
 
 <section class="abm-section hero-band">
   <div class="abm-container">
@@ -35,7 +37,7 @@ permalink: /changelog/
               {% endif %}
             </ul>
             <div class="changelog-release-actions">
-              <a class="abm-btn changelog-release-btn" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download Version {{ latest_changelog.release_version | default: latest_changelog.title }}</a>
+              <a class="abm-btn changelog-release-btn" href="{{ app_store_url }}" target="_blank" rel="noopener noreferrer">Download Version {{ latest_changelog_version }}</a>
               <a class="abm-btn changelog-release-btn" href="{{ latest_changelog.url | relative_url }}">Read More</a>
             </div>
           {% endif %}
