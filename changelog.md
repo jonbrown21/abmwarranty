@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: home
+show_home_sections: false
 title: Changelog
 description: ABM Warranty app release notes for warranty monitoring, API sync, and dashboard updates.
 permalink: /changelog/
