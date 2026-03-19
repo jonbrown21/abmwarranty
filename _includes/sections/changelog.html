@@ -14,22 +14,62 @@
             <p class="changelog-date-heading">{{ current_date }}</p>
           {% endif %}
           {% assign last_date = current_date %}
-          <div class="changelog-timeline-item">
-            <div class="changelog-timeline-track">
-              <div class="changelog-timeline-dot" aria-hidden="true"></div>
+          <div class="changelog-entry">
+            <div class="changelog-dot-col">
+              <span class="changelog-dot" aria-hidden="true"></span>
             </div>
-            <article class="changelog-card">
-              <h3>{{ post.title }}</h3>
-              {{ post.excerpt | markdownify }}
-              <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
-            </article>
-          </div>
+          <article class="changelog-card">
+            <h3>{{ post.title }}</h3>
+            {{ post.excerpt | markdownify }}
+            <p class="changelog-link"><a href="{{ post.url | relative_url }}">Read post</a></p>
+          </article>
+        </div>
         {% endfor %}
-      {% else %}
-        <article class="changelog-card changelog-card--empty">
-          <h3>Update stream is being prepared</h3>
-          <p>Releases are being published with verified deployment notes.</p>
-        </article>
+      {% endif %}
+
+      {% if changelog_posts.size < 3 %}
+        <p class="changelog-date-heading">Version 0.3.1 — Jan 16, 2026</p>
+        <div class="changelog-entry">
+          <div class="changelog-dot-col">
+            <span class="changelog-dot" aria-hidden="true"></span>
+          </div>
+          <article class="changelog-card">
+            <h3>Version 0.3.1</h3>
+            <p>Improves reliability and data accuracy across the app</p>
+            <p>Reliable support for Apple School Manager</p>
+            <p>Fixes issues where some devices could appear without coverage details</p>
+            <p>Additional stability and persistence improvements make large imports more consistent</p>
+            <p>Additional Release Notes Here</p>
+          </article>
+        </div>
+
+        <p class="changelog-date-heading">Version 0.2.0 — Dec 18, 2025</p>
+        <div class="changelog-entry">
+          <div class="changelog-dot-col">
+            <span class="changelog-dot" aria-hidden="true"></span>
+          </div>
+          <article class="changelog-card">
+            <h3>Version 0.2.0</h3>
+            <p>Improved stability for large device imports</p>
+            <p>More accurate AppleCare+ coverage detection</p>
+            <p>Enhanced error handling for intermittent ABM API failures</p>
+            <p>Additional Release Notes Here</p>
+          </article>
+        </div>
+
+        <p class="changelog-date-heading">Version 0.1.0 — Nov 20, 2025</p>
+        <div class="changelog-entry">
+          <div class="changelog-dot-col">
+            <span class="changelog-dot" aria-hidden="true"></span>
+          </div>
+          <article class="changelog-card">
+            <h3>Version 0.1.0</h3>
+            <p>Initial public beta release</p>
+            <p>Apple Business Manager inventory import</p>
+            <p>Warranty and AppleCare+ coverage lookup</p>
+            <p>Additional Release Notes Here</p>
+          </article>
+        </div>
       {% endif %}
     </div>
   </div>

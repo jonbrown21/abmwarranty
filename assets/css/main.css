@@ -476,14 +476,25 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   font-weight: 600;
 }
 
-.changelog-timeline-item {
+.changelog-entry {
+  position: relative;
   display: flex;
-  gap: 0.8rem;
+  gap: 0.65rem;
   align-items: flex-start;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.55rem;
 }
 
-.changelog-timeline-track {
+.changelog-entry::before {
+  content: "";
+  position: absolute;
+  left: 1.7rem;
+  top: 0.58rem;
+  width: 0.7rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+.changelog-dot-col {
   position: relative;
   width: 1.65rem;
   display: flex;
@@ -491,34 +502,39 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   padding-top: 0.25rem;
 }
 
-.changelog-timeline-track::after {
+.changelog-dot-col::after {
   content: "";
   position: absolute;
-  top: 0.95rem;
+  top: 0.55rem;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: calc(100% + 0.85rem);
+  bottom: -0.55rem;
+  height: auto;
   background: color-mix(in srgb, var(--border) 72%, transparent);
 }
 
-.changelog-timeline-item:last-child .changelog-timeline-track::after {
+.changelog-entry:last-child .changelog-dot-col::after {
   display: none;
 }
 
-.changelog-timeline-dot {
+.changelog-dot {
   position: relative;
-  width: 12px;
-  height: 12px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
   background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--surface) 70%, transparent);
 }
 
-.changelog-timeline-dot::after {
+.changelog-dot::after {
   content: "";
   position: absolute;
-  inset: 3px;
+  inset: 1px;
   border-radius: 999px;
   background: var(--text-muted);
 }
@@ -530,7 +546,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   gap: 0.45rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.82rem 0.85rem;
   background: var(--surface);
 }
 
