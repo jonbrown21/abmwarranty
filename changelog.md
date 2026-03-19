@@ -36,7 +36,7 @@ permalink: /changelog/
             </ul>
             <div class="changelog-release-actions">
               <a class="abm-btn changelog-release-btn" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download Version {{ latest_changelog.release_version | default: latest_changelog.title }}</a>
-              <a class="abm-btn changelog-release-btn changelog-readmore-btn" href="{{ latest_changelog.url | relative_url }}">Read More</a>
+              <a class="abm-btn changelog-release-btn" href="{{ latest_changelog.url | relative_url }}">Read More</a>
             </div>
           {% endif %}
         </div>

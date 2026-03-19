@@ -606,11 +606,6 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   gap: 0.6rem;
 }
 
-.changelog-readmore-btn {
-  background: transparent;
-  color: var(--text);
-}
-
 .changelog-latest-release-title {
   margin-top: 1.05rem;
   margin-bottom: 0.35rem;
