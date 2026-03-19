@@ -1,19 +1,58 @@
 ---
-layout: page
+layout: home
+show_home_sections: false
 ---
 
 {% assign category_slug = page.category | slugify %}
 {% assign category_title = page.category_title | default: page.title %}
 
-<section class="abm-section">
+<section class="abm-section hero-band hero-band--blog">
   <div class="abm-container">
-    <p class="eyebrow">Category</p>
-    <h1>{{ category_title }}</h1>
-    <p class="abm-note">Posts tagged with “{{ category_title | downcase }}”.</p>
+    <div class="hero-shell">
+      <div class="hero-layout">
+        <div class="hero-copy-col">
+          <p class="eyebrow">Blog category</p>
+          <h1>{{ category_title }}</h1>
+          <p class="hero-copy">
+            Posts tagged with “{{ category_title | downcase }}”, including release notes, implementation details, and operational guidance for ABM Warranty environments.
+          </p>
+          <p class="abm-cta-row">
+            <a class="abm-btn" href="{{ '/blog/' | relative_url }}">View all blog posts</a>
+            <a class="abm-btn abm-btn--ghost" href="{{ '/changelog/' | relative_url }}">View Changelog</a>
+          </p>
+        </div>
+        <div class="hero-shot" role="img" aria-label="ABM Warranty app screenshot">
+          <img
+            id="hero-shot-image"
+            src="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/hero_dk.png' | relative_url }}"
+            alt="ABM Warranty dashboard showing warranty status and risk alerts"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1160"
+            height="780">
+        </div>
+      </div>
+      <div class="beta-cta-bar">
+        <p class="beta-cta-bar__text">Join the Beta - Version 0.4.2</p>
+        <a class="abm-btn abm-btn--pill" href="https://testflight.apple.com/join/tGnesmG1" target="_blank" rel="noopener noreferrer" aria-label="Join the ABM Warranty Beta on TestFlight">
+          Download Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="abm-blog-grid">
-      {% assign has_posts = false %}
+<section id="blog" class="abm-section blog-page-band">
+  <div class="abm-container">
+    <p class="eyebrow">Filtered posts</p>
+    <h2>{{ category_title }}</h2>
+    <p class="abm-note">Browse posts filed under this category.</p>
 
+    {% assign has_posts = false %}
+    <div class="abm-blog-grid" id="blog-page-grid" data-page-size="6">
       {% for post in site.posts %}
         {% assign post_has_category = false %}
 
@@ -53,33 +92,45 @@ layout: page
 
         {% if post_has_category %}
           {% assign has_posts = true %}
+          {% assign cover = post.image | default: post.cover %}
           <article class="abm-card blog-card">
             <div class="blog-cover" role="img" aria-label="Blog cover image">
-              {% assign cover = post.image | default: post.cover %}
               {% if cover %}
-                <img src="{{ cover | relative_url }}" alt="{{ post.title | escape }} cover image">
+                <img
+                  src="{{ cover | relative_url }}"
+                  alt="{{ post.title | escape }} cover image"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="450">
               {% else %}
                 <span>Blog cover image</span>
               {% endif %}
             </div>
             <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
             <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
           </article>
         {% endif %}
       {% endfor %}
+    </div>
 
-      {% unless has_posts %}
+    {% unless has_posts %}
       <article class="abm-card blog-card">
         <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
           <span>Blog cover image</span>
         </div>
-        <h2>No posts yet</h2>
+        <h3>No posts yet</h3>
         <p>There are no posts for this category yet.</p>
-        <a href="/blog" class="abm-btn full-width blog-read-btn">Visit the blog</a>
+        <a href="{{ '/blog/' | relative_url }}" class="abm-btn full-width blog-read-btn">Visit the blog</a>
       </article>
-      {% endunless %}
-    </div>
+    {% else %}
+      <nav id="blog-page-pagination" class="blog-page-pagination" aria-label="Blog pagination"></nav>
+    {% endunless %}
   </div>
 </section>
+
+{% include sections/newsletter.html %}
+
+{% include sections/faq.html %}
