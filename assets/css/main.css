@@ -560,7 +560,8 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
 }
 
 .hero-band--roadmap .hero-copy-col {
-  padding-top: 1.05rem;
+  margin-top: clamp(2.2rem, 4vw, 3.1rem);
+  padding-top: 0;
 }
 
 .hero-band + #features::before {
