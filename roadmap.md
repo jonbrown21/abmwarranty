@@ -9,6 +9,7 @@ permalink: /roadmap/
 <section class="abm-section hero-band hero-band--roadmap">
   <div class="abm-container">
     <div class="hero-shell">
+      <div id="roadmap-hero-confetti" class="roadmap-hero-confetti" aria-hidden="true"></div>
       <div class="hero-layout">
         <div class="hero-copy-col">
           <p class="eyebrow">Product direction</p>

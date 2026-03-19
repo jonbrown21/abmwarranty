@@ -258,7 +258,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--primary-hover);
 }
 
-.roadmap-hero-form-confetti {
+.roadmap-hero-confetti {
   position: absolute;
   top: 0;
   left: 0;
