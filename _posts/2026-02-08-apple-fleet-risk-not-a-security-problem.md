@@ -7,14 +7,15 @@ published: true
 title: "Why Apple Fleet Risk Isn’t a Security Problem—Until It Is"
 description: "Apple fleet risk is often framed as a security problem, but most real exposure lives at the operational level. This article examines how risk management frameworks apply to Apple environments, what MDMs mitigate well, and which risks remain outside technical controls."
 blogimgpath: 202408034Up
-tags:
-categories:
-  - macadmins
-  - articles
-  - apps
-  - abm-warranty
-image: /assets/images/covers/2026/operational_risk.png
-thumbnail: /assets/images/covers/2026/operational_risk.png
+tags: [risk, operations, mdm, apple-fleet]
+categories: [operations]
+meta_categories:
+  - label: operations
+  - label: guide
+  - label: support
+  - label: updates
+image: /assets/images/home/screens/status.png
+thumbnail: /assets/images/home/screens/status.png
 cta: 2
 comments: true
 ---

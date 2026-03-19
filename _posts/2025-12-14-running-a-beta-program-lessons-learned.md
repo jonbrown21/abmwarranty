@@ -7,13 +7,15 @@ published: true
 title: "Running a Beta Program: Lessons Learned"
 description: "What running a TestFlight beta for ABM Warranty taught me about feedback, velocity, and the realities of Apple’s beta tooling."
 blogimgpath: 202408034Up
-tags:
-categories:
-  - app-development
-  - articles
-  - indie-dev
-image: /assets/images/covers/2025/beta_lessons.png
-thumbnail: /assets/images/covers/2025/beta_lessons.png
+tags: [beta, testflight, feedback, support]
+categories: [beta]
+meta_categories:
+  - label: beta
+  - label: operations
+  - label: support
+  - label: updates
+image: /assets/images/blog/2025/warranty/2.png
+thumbnail: /assets/images/blog/2025/warranty/2.png
 cta: 2
 comments: true
 ---

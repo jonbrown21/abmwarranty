@@ -7,14 +7,15 @@ published: true
 title: "ABM Warranty 0.4.1 Walkthrough: Managed Preferences"
 description: "A walkthrough of managed preferences in ABM Warranty 0.4.1 covering how I package managed credentials, deploy them through MDM, import them into the app, and keep the credential workflow secure."
 blogimgpath: 202408034Up
-tags:
-categories:
-  - macadmins
-  - apps
-  - video
-  - abm-warranty
-image: /assets/images/covers/2026/ABM_prefs.png
-thumbnail: /assets/images/covers/2026/ABM_prefs.png
+tags: [managed-preferences, mdm, walkthrough, video]
+categories: [guide]
+meta_categories:
+  - label: guide
+  - label: support
+  - label: operations
+  - label: apple-business-manager
+image: /assets/images/blog/2026/warranty/4/4.png
+thumbnail: /assets/images/blog/2026/warranty/4/4.png
 cta: 2
 comments: true
 series: abmwarranty041walkthrough

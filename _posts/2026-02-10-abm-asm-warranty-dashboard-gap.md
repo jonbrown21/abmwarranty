@@ -7,14 +7,15 @@ published: true
 title: "The warranty dashboard Apple doesn’t provide… yet"
 description: "Apple Business Manager and Apple School Manager show you what devices you own — but not which ones are becoming liabilities."
 blogimgpath: 202408034Up
-tags:
-categories:
-  - macadmins
-  - articles
-  - apps
-  - abm-warranty
-image: /assets/images/covers/2026/abm_dashboard.png
-thumbnail: /assets/images/covers/2026/abm_dashboard.png
+tags: [dashboard, apple-business-manager, warranty, lifecycle]
+categories: [guide]
+meta_categories:
+  - label: guide
+  - label: apple-business-manager
+  - label: operations
+  - label: support
+image: /assets/images/home/screens/dashboard.png
+thumbnail: /assets/images/home/screens/dashboard.png
 cta: 2
 comments: true
 ---

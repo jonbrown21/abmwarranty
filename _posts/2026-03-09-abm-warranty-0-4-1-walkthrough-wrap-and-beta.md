@@ -7,14 +7,15 @@ published: true
 title: "ABM Warranty 0.4.1 Walkthrough: Wrap-Up and Beta"
 description: "A wrap-up walkthrough for ABM Warranty 0.4.1 covering the last remaining features, support resources, the Mac Admins Slack community, how to join the public beta, and how to export logs for support."
 blogimgpath: 202408034Up
-tags:
-categories:
-  - macadmins
-  - apps
-  - video
-  - abm-warranty
-image: /assets/images/covers/2026/ABM_wrap.png
-thumbnail: /assets/images/covers/2026/ABM_wrap.png
+tags: [walkthrough, beta, support, video]
+categories: [guide]
+meta_categories:
+  - label: guide
+  - label: beta
+  - label: support
+  - label: updates
+image: /assets/images/blog/2026/warranty/4/0.png
+thumbnail: /assets/images/blog/2026/warranty/4/0.png
 cta: 2
 comments: true
 series: abmwarranty041walkthrough
