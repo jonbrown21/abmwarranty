@@ -8,6 +8,7 @@
   var success = document.getElementById('newsletter-success');
   var confettiLayer = document.getElementById('newsletter-confetti');
   var submitted = false;
+  var endpoint = form.getAttribute('data-mailerlite-endpoint');
 
   function random(min, max) {
     return Math.random() * (max - min) + min;
@@ -80,12 +81,53 @@
     }
   }
 
-    form.addEventListener('submit', function (event) {
+  function submitToMailerlite(event) {
     event.preventDefault();
     if (!form.reportValidity()) {
       return;
     }
 
-    showSuccess();
+    if (!endpoint) {
+      return;
+    }
+
+    var callbackId = 'mailerlite_cb_' + Date.now() + '_' + Math.round(Math.random() * 100000);
+    var encodedEmail = encodeURIComponent(input.value.trim());
+    var script = document.createElement('script');
+    var src = endpoint
+      + '?callback=' + callbackId
+      + '&ml-submit=1'
+      + '&anticsrf=true'
+      + '&fields[email]=' + encodedEmail;
+
+    window[callbackId] = function () {
+      showSuccess();
+      cleanupScript(script);
+      if (window[callbackId]) {
+        delete window[callbackId];
+      }
+    };
+
+    script.src = src;
+    script.async = true;
+    script.onerror = function () {
+      cleanupScript(script);
+      if (window[callbackId]) {
+        delete window[callbackId];
+      }
+      showSuccess();
+    };
+    document.body.appendChild(script);
+  }
+
+  function cleanupScript(scriptNode) {
+    if (!scriptNode || !scriptNode.parentNode) {
+      return;
+    }
+    scriptNode.parentNode.removeChild(scriptNode);
+  }
+
+  form.addEventListener('submit', function (event) {
+    submitToMailerlite(event);
   });
 })();

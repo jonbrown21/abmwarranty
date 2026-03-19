@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://abmwarranty.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jonbrown21
 app_store_url: https://apps.apple.com/app/abm-warranty/id6755319278
+mailerlite_list: https://assets.mailerlite.com/jsonp/1303120/forms/182328044005885562/subscribe
 icon_light: /assets/images/abm-warranty-light.png
 icon_dark: /assets/images/abm-warranty-dark.png
 theme: null

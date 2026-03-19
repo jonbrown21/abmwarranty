@@ -7,9 +7,18 @@
         <p>Drop your email to receive concise releases, roadmap notes, and support insights for your team.</p>
       </div>
 
-      <form id="newsletter-form" class="newsletter-form" novalidate>
+      <form
+        id="newsletter-form"
+        class="newsletter-form"
+        novalidate
+        action="{{ site.mailerlite_list }}"
+        data-mailerlite-endpoint="{{ site.mailerlite_list | escape }}"
+        method="GET"
+      >
         <label for="newsletter-email" class="sr-only">Email address</label>
-        <input id="newsletter-email" name="email" type="email" placeholder="you@company.com" inputmode="email" autocomplete="email" required aria-label="Email address">
+        <input id="newsletter-email" name="fields[email]" type="email" placeholder="you@company.com" inputmode="email" autocomplete="email" required aria-label="Email address">
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
         <button type="submit" class="abm-btn" data-default-label="Get updates">Get updates</button>
       </form>
 
