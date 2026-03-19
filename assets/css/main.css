@@ -226,7 +226,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .roadmap-hero-form textarea {
   resize: vertical;
-  min-height: 360px;
+  min-height: 200px;
 }
 
 .roadmap-hero-form button {
@@ -264,7 +264,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-band--roadmap .hero-shell {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .confetti-piece {
