@@ -6,8 +6,6 @@ description: Forward roadmap for ABM Warranty features, versions, and planned im
 permalink: /roadmap/
 ---
 
-{% assign app_store_url = site.app_store_url %}
-
 <section class="abm-section hero-band">
   <div class="abm-container">
     <div class="hero-shell">
@@ -16,9 +14,6 @@ permalink: /roadmap/
           <p class="eyebrow">Product direction</p>
           <h1>Roadmap</h1>
           <p class="hero-copy">Planned features, milestones, and versioned priorities for ABM Warranty, shared as a transparent public roadmap to help teams plan adoption and feedback.</p>
-          <div class="changelog-release-actions">
-            <a class="abm-btn changelog-release-btn" href="{{ app_store_url }}" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
-          </div>
           {% include sections/roadmap-hero-form.html %}
         </div>
         <div class="hero-shot" role="img" aria-label="ABM Warranty roadmap preview">

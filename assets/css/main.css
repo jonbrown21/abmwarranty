@@ -230,12 +230,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .roadmap-hero-form button {
-  align-self: flex-start;
-  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  background: var(--surface);
-  color: var(--text);
+  width: 100%;
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #ffffff;
   border-radius: 12px;
-  padding: 0.5rem 1rem;
+  padding: 0.78rem 1rem;
   line-height: 1;
   cursor: pointer;
   font: inherit;
@@ -243,7 +247,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .roadmap-hero-form button:hover {
-  border-color: color-mix(in srgb, var(--text-muted) 35%, transparent);
+  background: var(--primary-hover);
 }
 
 .roadmap-hero-form-confetti {
