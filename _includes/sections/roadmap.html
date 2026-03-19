@@ -2,7 +2,7 @@
   <div class="abm-container">
     <p class="eyebrow">Planned roadmap</p>
     <h2>What is coming next</h2>
-    <p class="abm-note">Feature ideas are grouped into upcoming releases with planned dates and milestone progress.</p>
+    <p class="abm-note">Roadmap items below reflect current planned work, schedule targets, and release alignment.</p>
 
     <div class="roadmap-timeline" aria-label="Roadmap timeline">
       <div class="roadmap-entry">
@@ -11,20 +11,20 @@
         </div>
         <article class="roadmap-card">
           <div class="roadmap-head-row">
-            <h3>Managed Preference Profiles</h3>
-            <p class="roadmap-version">Version 0.5.0</p>
+            <h3>Credential Replacement + Tenant DB Migration (No Expiration Tracking)</h3>
+            <p class="roadmap-version">Version 0.4.5</p>
           </div>
-          <p class="roadmap-added">Added Jan 12, 2026</p>
-          <p>Introduce curated managed preference templates for larger MSP deployments with simpler baseline rollout and safer policy enforcement.</p>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Preserve tenant historical data when credentials are intentionally revoked or replaced, while removing expiration-tracking work that is no longer applicable.</p>
           <ul class="roadmap-list">
-            <li>Template-based credential setup</li>
-            <li>Tenant scoped profile selection</li>
-            <li>Rollback-friendly policy changes</li>
+            <li>API keys are treated as non-expiring and expiration logic is removed</li>
+            <li>No expiration date field, notifications, or countdown dashboard card</li>
+            <li>Credential replacement flow includes safe tenant DB migration and historical retention</li>
           </ul>
           <div class="roadmap-footer">
             <div class="roadmap-footer-progress">
               <div class="roadmap-progress">
-                <span class="roadmap-progress-bar" data-added="2026-01-12" data-target="2026-05-02"></span>
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-06-30"></span>
               </div>
             </div>
             <div class="roadmap-footer-meta">
@@ -40,20 +40,49 @@
         </div>
         <article class="roadmap-card">
           <div class="roadmap-head-row">
-            <h3>Enterprise Tenant Role Controls</h3>
-            <p class="roadmap-version">Version 0.5.1</p>
+            <h3>ABM API Performance Optimization (Audit First)</h3>
+            <p class="roadmap-version">Version 0.4.5</p>
           </div>
-          <p class="roadmap-added">Added Jan 28, 2026</p>
-          <p>Support role-based access for technicians and managers by introducing scoped editing rights, secure assignment, and safer approval flows.</p>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Reduce ABM API calls and improve dashboard responsiveness through staged, non-destructive enhancements to the existing sync pipeline.</p>
           <ul class="roadmap-list">
-            <li>Role presets for support, manager, and admin roles</li>
-            <li>Scoped access to sync controls</li>
-            <li>Audit-safe action tracking</li>
+            <li>Keep the current sync path intact as default legacy behavior</li>
+            <li>Ship optimization behind opt-in toggle: <code>Enhanced data processing mode</code></li>
+            <li>Use staged rollout for benchmarking, validation, and feedback before wider enablement</li>
           </ul>
           <div class="roadmap-footer">
             <div class="roadmap-footer-progress">
               <div class="roadmap-progress">
-                <span class="roadmap-progress-bar" data-added="2026-01-28" data-target="2026-07-09"></span>
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-06-30"></span>
+              </div>
+            </div>
+            <div class="roadmap-footer-meta">
+              <p class="roadmap-date"><i class="bi bi-calendar3" aria-hidden="true"></i><span>Q2 2026</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="roadmap-entry">
+        <div class="roadmap-dot-col">
+          <span class="roadmap-dot" aria-hidden="true"></span>
+        </div>
+        <article class="roadmap-card">
+          <div class="roadmap-head-row">
+            <h3>Manual Seeding of ABM Data (Upload File)</h3>
+            <p class="roadmap-version">Version 0.4.6</p>
+          </div>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Allow manual data import for environments that need an initial baseline before API sync or that must recover quickly from incomplete API windows.</p>
+          <ul class="roadmap-list">
+            <li>Upload and validate structured ABM export files before commit</li>
+            <li>Map seeded records to existing tenants with duplicate-safe matching</li>
+            <li>Provide import summary with created, updated, and rejected row counts</li>
+          </ul>
+          <div class="roadmap-footer">
+            <div class="roadmap-footer-progress">
+              <div class="roadmap-progress">
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-09-30"></span>
               </div>
             </div>
             <div class="roadmap-footer-meta">
@@ -69,20 +98,20 @@
         </div>
         <article class="roadmap-card">
           <div class="roadmap-head-row">
-            <h3>Advanced Filtering and Reporting</h3>
-            <p class="roadmap-version">Version 0.6.0</p>
+            <h3>Report Builder (Updated, Skipped, Not Found, Failed)</h3>
+            <p class="roadmap-version">Version 0.4.6</p>
           </div>
-          <p class="roadmap-added">Added Feb 03, 2026</p>
-          <p>Build high-signal reporting for warranty windows, support risk, and tenant growth trends to speed lifecycle planning for larger environments.</p>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Generate actionable sync outcome reports so teams can quickly identify device states, prioritize fixes, and verify completion quality.</p>
           <ul class="roadmap-list">
-            <li>Tenant scorecards and health snapshots</li>
-            <li>Actionable warranty-expiration cohorts</li>
-            <li>CSV export extensions and reusable filters</li>
+            <li>Break down results into updated, skipped, not found, and failed categories</li>
+            <li>Include tenant-level and run-level totals with timestamped report snapshots</li>
+            <li>Allow export/share of outcome reports for operational handoff</li>
           </ul>
           <div class="roadmap-footer">
             <div class="roadmap-footer-progress">
               <div class="roadmap-progress">
-                <span class="roadmap-progress-bar" data-added="2026-02-03" data-target="2026-08-15"></span>
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-09-30"></span>
               </div>
             </div>
             <div class="roadmap-footer-meta">
@@ -98,20 +127,78 @@
         </div>
         <article class="roadmap-card">
           <div class="roadmap-head-row">
-            <h3>Automated Escalation Notifications</h3>
-            <p class="roadmap-version">Version 0.6.1</p>
+            <h3>Filtered Search and Action</h3>
+            <p class="roadmap-version">Version 0.4.7</p>
           </div>
-          <p class="roadmap-added">Added Feb 16, 2026</p>
-          <p>Ship configurable warnings when critical coverage windows are approaching, and surface actionable recommendations inside support workflows.</p>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Introduce high-speed filtered search across tenants and device states with direct operational actions from filtered result sets.</p>
           <ul class="roadmap-list">
-            <li>Custom alert windows by tenant or team</li>
-            <li>Webhook-based escalation options</li>
-            <li>In-app recommendations from coverage analysis</li>
+            <li>Filter by tenant, warranty state, AppleCare+ state, and sync status</li>
+            <li>Save and reuse common filter views for daily operations</li>
+            <li>Run batch actions from current filtered result selections</li>
           </ul>
           <div class="roadmap-footer">
             <div class="roadmap-footer-progress">
               <div class="roadmap-progress">
-                <span class="roadmap-progress-bar" data-added="2026-02-16" data-target="2026-08-23"></span>
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-12-31"></span>
+              </div>
+            </div>
+            <div class="roadmap-footer-meta">
+              <p class="roadmap-date"><i class="bi bi-calendar3" aria-hidden="true"></i><span>Q4 2026</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="roadmap-entry">
+        <div class="roadmap-dot-col">
+          <span class="roadmap-dot" aria-hidden="true"></span>
+        </div>
+        <article class="roadmap-card">
+          <div class="roadmap-head-row">
+            <h3>In App Purchases</h3>
+            <p class="roadmap-version">Version 0.4.8</p>
+          </div>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Expand in-app purchasing to simplify plan upgrades, support add-on checkout, and license-state visibility directly inside the app.</p>
+          <ul class="roadmap-list">
+            <li>Support plan purchase and upgrade flows with clear entitlement states</li>
+            <li>Surface billing and subscription status in-app for administrators</li>
+            <li>Ensure purchase validation and graceful fallback for interrupted transactions</li>
+          </ul>
+          <div class="roadmap-footer">
+            <div class="roadmap-footer-progress">
+              <div class="roadmap-progress">
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-09-30"></span>
+              </div>
+            </div>
+            <div class="roadmap-footer-meta">
+              <p class="roadmap-date"><i class="bi bi-calendar3" aria-hidden="true"></i><span>Q3 2026</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="roadmap-entry">
+        <div class="roadmap-dot-col">
+          <span class="roadmap-dot" aria-hidden="true"></span>
+        </div>
+        <article class="roadmap-card">
+          <div class="roadmap-head-row">
+            <h3>MDM Sync with JAMF Pro</h3>
+            <p class="roadmap-version">Version 0.5.0</p>
+          </div>
+          <p class="roadmap-added">Added Mar 19, 2026</p>
+          <p>Introduce JAMF Pro integration to align ABM Warranty data with device-management workflows and reduce manual reconciliation effort.</p>
+          <ul class="roadmap-list">
+            <li>Map JAMF inventory identifiers to ABM warranty records with conflict handling</li>
+            <li>Sync selected device attributes on configurable intervals</li>
+            <li>Provide integration health diagnostics and sync error reporting</li>
+          </ul>
+          <div class="roadmap-footer">
+            <div class="roadmap-footer-progress">
+              <div class="roadmap-progress">
+                <span class="roadmap-progress-bar" data-added="2026-03-19" data-target="2026-12-31"></span>
               </div>
             </div>
             <div class="roadmap-footer-meta">
