@@ -2986,6 +2986,14 @@ html[data-theme="dark"] .app-support-cta__copy {
   border-radius: 12px;
   overflow: hidden;
   background: color-mix(in srgb, var(--surface) 94%, transparent);
+  background-image: url('/assets/images/home/screens/wallpaper_light.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+html[data-theme='dark'] .guide-shot-card {
+  background-image: url('/assets/images/home/screens/wallpaper_dk.png');
 }
 
 .guide-shot-card img {
