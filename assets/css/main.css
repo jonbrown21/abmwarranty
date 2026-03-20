@@ -476,6 +476,38 @@ html[data-theme='dark'] .hero-band--privacy {
   background-image: url('/assets/images/home/screens/wallpaper_dk.png');
 }
 
+.hero-band--privacy .hero-copy-col {
+  padding-bottom: 28px;
+}
+
+.privacy-hero-glass {
+  background: color-mix(in srgb, var(--surface) 50%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 66%, transparent);
+  border-radius: 16px;
+  padding: clamp(1rem, 2.3vw, 1.35rem);
+  box-shadow: 0 12px 30px color-mix(in srgb, #000000 10%, transparent);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  transform: translateY(-5px);
+}
+
+html[data-theme='dark'] .privacy-hero-glass {
+  background: color-mix(in srgb, var(--surface) 36%, transparent);
+  border-color: color-mix(in srgb, #c6d2ff 18%, var(--border));
+  box-shadow: 0 12px 34px color-mix(in srgb, #000000 38%, transparent);
+}
+
+@media (min-width: 901px) {
+  .hero-band--privacy .privacy-hero-glass {
+    height: 355px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
 .hero-shell {
   position: relative;
   padding: clamp(1.8rem, 3.2vw, 2.4rem) 0;
@@ -2769,4 +2801,303 @@ html[data-theme="dark"] .app-support-cta__copy {
 .privacy-content ul {
   margin: 0.25rem 0 0.75rem 1.1rem;
   padding: 0;
+}
+
+.guide-shell {
+  min-height: 100vh;
+}
+
+.guide-menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.guide-mobile-topbar {
+  display: none;
+}
+
+.guide-sidebar-overlay {
+  display: none;
+}
+
+.guide-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(320px, 100vw);
+  height: 100vh;
+  border-right: 1px solid var(--border);
+  background: color-mix(in srgb, var(--muted-surface) 88%, transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.guide-sidebar-top {
+  padding: 1.15rem 1rem 0.8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 68%, transparent);
+}
+
+.guide-nav {
+  padding: 0.8rem 0.8rem 1rem;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.guide-topic {
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+
+.guide-topic summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.82rem 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  position: relative;
+  padding-right: 2rem;
+}
+
+.guide-topic summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-topic summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 0.52rem;
+  height: 0.52rem;
+  border-right: 2px solid color-mix(in srgb, var(--text-muted) 88%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--text-muted) 88%, transparent);
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.guide-topic[open] summary::after {
+  transform: translateY(-56%) rotate(45deg);
+  border-color: color-mix(in srgb, var(--text) 88%, transparent);
+}
+
+.guide-topic a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.guide-topic a:last-child {
+  border-bottom: 0;
+}
+
+.guide-topic a:hover,
+.guide-topic a[aria-current='page'] {
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface-muted) 75%, transparent);
+}
+
+.guide-sidebar-footer {
+  padding: 0.85rem 1rem 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 68%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.guide-back-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  border-radius: 999px;
+  min-height: 34px;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+  line-height: 1;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+}
+
+.guide-back-link:hover {
+  background: color-mix(in srgb, var(--surface-muted) 76%, transparent);
+}
+
+.guide-main {
+  margin-left: min(320px, 100vw);
+  min-height: 100vh;
+  padding: 1.8rem clamp(1rem, 3vw, 2.5rem) 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 15%) minmax(0, 70%) minmax(0, 15%);
+}
+
+.guide-article {
+  grid-column: 2;
+  max-width: none;
+}
+
+.guide-article-head {
+  margin-bottom: 1rem;
+}
+
+.guide-article-head h1 {
+  margin: 0.15rem 0 0.45rem;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.guide-lead {
+  color: var(--text-muted);
+  max-width: 74ch;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.guide-shots {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.guide-shots--split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-shot-card {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+.guide-shot-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.guide-content h2,
+.guide-content h3 {
+  margin-top: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.guide-content h1 {
+  display: none;
+}
+
+.guide-content p,
+.guide-content li {
+  color: var(--text-muted);
+  line-height: 1.72;
+}
+
+.guide-content ul,
+.guide-content ol {
+  margin: 0.35rem 0 0.9rem 1.05rem;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .guide-mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    position: sticky;
+    top: 0;
+    z-index: 24;
+    height: 56px;
+    padding: 0 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .guide-mobile-hamburger {
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 999px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .guide-mobile-hamburger::before,
+  .guide-mobile-hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 999px;
+  }
+
+  .guide-mobile-hamburger::before {
+    top: -6px;
+  }
+
+  .guide-mobile-hamburger::after {
+    top: 6px;
+  }
+
+  .guide-mobile-topbar-label {
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--text);
+  }
+
+  .guide-sidebar {
+    width: min(320px, 90vw);
+    transform: translateX(-106%);
+    transition: transform 0.24s ease;
+    z-index: 30;
+  }
+
+  .guide-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, #000000 42%, transparent);
+    z-index: 25;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .guide-menu-toggle:checked ~ .guide-sidebar {
+    transform: translateX(0);
+  }
+
+  .guide-menu-toggle:checked ~ .guide-sidebar-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .guide-main {
+    margin-left: 0;
+    padding-top: 1rem;
+    display: block;
+  }
+
+  .guide-shots--split {
+    grid-template-columns: 1fr;
+  }
 }
