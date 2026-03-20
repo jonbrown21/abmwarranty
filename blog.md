@@ -65,12 +65,41 @@ permalink: /blog/
     {% else %}
       <div class="abm-blog-grid" id="blog-page-grid" data-page-size="6">
         {% for post in recent_posts %}
-          {% assign cover = post.image | default: post.cover %}
+          {% if post.external_url %}
+            {% assign cover = post.image %}
+          {% else %}
+            {% assign cover = post.image | default: post.cover %}
+          {% endif %}
+          {% assign has_github_placeholder = false %}
+          {% if post.external_url and post.github_owner and post.github_project and post.image == nil %}
+            {% assign has_github_placeholder = true %}
+          {% endif %}
+          {% assign post_href = post.external_url | default: post.url %}
+          {% assign is_external_post = false %}
+          {% if post.external_url %}
+            {% assign is_external_post = true %}
+          {% endif %}
           <article class="abm-card blog-card">
             <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
-              {% if cover %}
+              {% if has_github_placeholder %}
+                {% assign github_accent_seed = post.github_owner | append: post.github_project | size %}
+                {% assign github_accent_index = github_accent_seed | modulo: 6 %}
+                <div class="github-og-placeholder github-og-placeholder--accent-{{ github_accent_index }}">
+                  <i class="fa-brands fa-github github-og-placeholder__corner-icon" aria-hidden="true"></i>
+                  <p class="github-og-placeholder__repo"><span class="github-og-placeholder__owner">{{ post.github_owner }}</span><span class="github-og-placeholder__slash"> / </span><span class="github-og-placeholder__project">{{ post.github_project }}</span></p>
+                  <p class="github-og-placeholder__title">{{ post.github_project }}</p>
+                  <div class="github-og-placeholder__footer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <span>{{ post.github_owner }}/{{ post.github_project }}</span>
+                  </div>
+                </div>
+              {% elsif cover %}
+                {% assign is_external_cover = false %}
+                {% if cover contains '://' %}
+                  {% assign is_external_cover = true %}
+                {% endif %}
                 <img
-                  src="{{ cover | relative_url }}"
+                  src="{% if is_external_cover %}{{ cover }}{% else %}{{ cover | relative_url }}{% endif %}"
                   alt="{{ post.title | escape }} cover image"
                   loading="lazy"
                   decoding="async"
@@ -81,7 +110,7 @@ permalink: /blog/
               {% endif %}
             </div>
             <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <h3><a href="{% if is_external_post %}{{ post_href }}{% else %}{{ post_href | relative_url }}{% endif %}"{% if is_external_post %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.title }}</a></h3>
             <p>{{ post.Description | default: post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
             <div class="blog-meta-row">
               {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
@@ -123,7 +152,7 @@ permalink: /blog/
                 </a>
               {% endfor %}
             </div>
-            <a href="{{ post.url | relative_url }}" class="abm-btn full-width blog-read-btn">Read post</a>
+            <a href="{% if is_external_post %}{{ post_href }}{% else %}{{ post_href | relative_url }}{% endif %}" class="abm-btn full-width blog-read-btn"{% if is_external_post %} target="_blank" rel="noopener noreferrer"{% endif %}>Read post</a>
           </article>
         {% endfor %}
       </div>

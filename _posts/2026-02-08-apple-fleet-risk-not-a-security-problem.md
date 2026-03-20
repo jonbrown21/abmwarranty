@@ -5,6 +5,7 @@ author: Jon Brown
 permalink: /blog/apple-fleet-risk-not-a-security-problem/
 published: true
 title: "Why Apple Fleet Risk Isn’t a Security Problem—Until It Is"
+featured: true
 description: "Apple fleet risk is often framed as a security problem, but most real exposure lives at the operational level. This article examines how risk management frameworks apply to Apple environments, what MDMs mitigate well, and which risks remain outside technical controls."
 Description: "Security and risk are often treated as interchangeable concepts in modern IT environments, but they are not the same discipline. Security focuses on controls, enforcement, and prevention. Risk management, by contrast, is concerned with likelihood, impact, and consequence across operational, financial, and organizational domains. Frameworks such as those published by NIST make this distinction explicit: risk assessment is not a technical exercise, but a business one. Technology informs risk decisions, but it does not define them."
 blogimgpath: 202408034Up

@@ -5,7 +5,7 @@
     {% include nav.html %}
     <main class="abm-main">
       {{ content }}
-      {% unless page.show_home_sections == false %}
+      {% unless page.show_home_sections == false or page.layout == 'category' %}
         {% include sections/features.html %}
         {% include sections/pricing.html %}
         {% include sections/blog-highlights.html %}
@@ -13,6 +13,7 @@
         {% include sections/faq.html %}
       {% endunless %}
     </main>
+    {% include cookie-consent.html %}
     {% include footer.html %}
   </body>
 </html>
