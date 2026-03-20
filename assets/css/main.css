@@ -460,6 +460,7 @@ html[data-theme='dark'] .theme-icon-light { color: #9ca9c0; opacity: 0.35; }
   position: relative;
   padding-top: 3.8rem;
   padding-bottom: 0;
+  overflow-x: clip;
 }
 
 .hero-band--privacy {
@@ -513,7 +514,6 @@ html[data-theme='dark'] .privacy-hero-glass {
   padding: clamp(1.8rem, 3.2vw, 2.4rem) 0;
   padding-bottom: 0;
   margin-bottom: 0;
-  overflow-x: clip;
 }
 
 .beta-cta-bar {
@@ -590,8 +590,6 @@ html[data-theme='dark'] .privacy-hero-glass {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 1.1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
   align-items: end;
-  overflow-x: clip;
-  overflow-y: visible;
 }
 
 .hero-copy-col {
