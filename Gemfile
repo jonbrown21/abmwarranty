@@ -30,3 +30,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "webrick", "~> 1.9"
 gem "csv", "~> 3.3"
+gem "base64"
