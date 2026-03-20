@@ -86,7 +86,7 @@
         <header class="guide-article-head">
           <p class="eyebrow">Guide</p>
           <h1>{{ page.title }}</h1>
-          {% if page.description %}
+          {% if page.description and page.description != page.title %}
             <p class="guide-lead">{{ page.description }}</p>
           {% endif %}
           {% if page.guide_shots and page.guide_shots.size > 0 %}
