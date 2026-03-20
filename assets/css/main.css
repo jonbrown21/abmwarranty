@@ -69,7 +69,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100%;
   margin: 0;
   position: relative;
-  overflow: visible;
+  overflow: clip;
   border-radius: 0;
   padding: 0;
   background: linear-gradient(120deg, color-mix(in srgb, var(--primary) 22%, var(--surface)), color-mix(in srgb, var(--accent) 26%, var(--surface)));
@@ -613,7 +613,7 @@ html[data-theme='dark'] .privacy-hero-glass {
   align-self: end;
   margin-bottom: calc(-1 * clamp(1.1rem, 2.4vw, 1.6rem));
   margin-right: -8vw;
-  overflow: clip;
+  overflow: visible;
   margin-top: 0;
   padding-bottom: clamp(0.8rem, 2vw, 1.2rem);
 }
