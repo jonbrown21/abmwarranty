@@ -1,0 +1,43 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".series-row").forEach(row => {
+    const text = row.querySelector(".series-text");
+    if (!text) return;
+
+    function updateFade() {
+      if (text.scrollWidth > text.clientWidth &&
+          text.scrollLeft + text.clientWidth < text.scrollWidth - 1) {
+        row.classList.add("has-overflow");
+      } else {
+        row.classList.remove("has-overflow");
+      }
+    }
+
+    updateFade();
+    window.addEventListener("resize", updateFade);
+    text.addEventListener("scroll", updateFade);
+  });
+});
+</script>
+
+<div class="series-card">
+  <p class="eyebrow">Blog Series</p>
+
+  <div class="faq-list series-group">
+    {% assign sorted_series = site.posts | group_by: 'series' %}
+    {% for sorted in sorted_series %}
+      {% assign pages_list = sorted.items %}
+      {% for post in pages_list reversed %}
+        {% if post.series == include.id %}
+          <div class="series-item">
+            <a href="{{ post.url }}" class="series-row">
+              <span class="series-text">
+                {{ post.title }}
+              </span>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>

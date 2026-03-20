@@ -25,18 +25,33 @@
       </details>
       <details>
         <summary>How do I use managed preferences?</summary>
-        <p>Use managed preferences when you want predictable app behavior across teams and machine fleets. They let you predefine application settings so each managed Mac launches with the same baseline configuration, which helps reduce setup drift and support overhead.</p>
-        <p>In practice, this is useful for enforcing shared defaults when multiple people use the same ABM accounts or reporting patterns. For the exact policy and workflow details, use: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Managed-Preferences" target="_blank" rel="noopener noreferrer">Managed Preferences</a>.</p>
+        <p>Managed preferences allow you to deploy and enforce configuration for ABM Warranty using your MDM, removing the need for manual setup on each device. This is especially useful in enterprise and MSP environments where consistency and control matter.</p>
+        <p>To use managed preferences, you define the required keys (such as API credentials, certificates, or feature flags) in a configuration profile and deploy it via your MDM solution (e.g., Jamf, Kandji, Mosyle). Once applied, ABM Warranty will automatically detect these managed settings at launch and treat them as authoritative.</p>
+        <p>If managed preferences are present, the app respects them as read-only. Users cannot override or modify these values locally, ensuring that credentials and configuration remain consistent across all deployed machines.</p>
+        <p>This approach is ideal for standardized environments where administrators want to centrally control how ABM Warranty is configured and used.</p>
+        <p>Source: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Managed-Preferences" target="_blank" rel="noopener noreferrer">Managed Preferences</a>.</p>
       </details>
       <details>
         <summary>How do I use managed credentials?</summary>
-        <p>Managed credentials lets you store and switch between multiple ABM credential sets in-app, so one environment can support more than one tenant without re-entering sensitive keys every time. This is especially helpful for consultants and MSP-style workflows.</p>
-        <p>When adding or switching credentials, verify the tenant ID, key identifier, and team association before sync to avoid pulling incorrect device data. See setup guidance and naming conventions in: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Multiple-Credentials" target="_blank" rel="noopener noreferrer">Multiple Credentials</a>.</p>
+        <p>Managed credentials are designed for environments where API access should be centrally controlled and not manually entered by end users.</p>
+        <p>Instead of adding credentials directly within the app, administrators can deploy them via managed preferences (MDM). Once deployed, ABM Warranty will automatically load and validate these credentials on startup.</p>
+        <p>Managed credentials are clearly distinguished from manually added credentials within the app. They cannot be edited or deleted by the user, which prevents accidental changes or credential drift.</p>
+        <p>This is particularly useful for MSPs managing multiple tenants, organizations with strict access controls, and environments where credential rotation and auditing are required.</p>
+        <p>The app will use these managed credentials just like local ones, but with added safety and enforcement from the management layer.</p>
+        <p>Source: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/Multiple-Credentials" target="_blank" rel="noopener noreferrer">Multiple Credentials</a>.</p>
       </details>
       <details>
         <summary>How do I use the ABM Credential Packager?</summary>
-        <p>The ABM Credential Packager prepares your credential artifacts into the format ABM Warranty expects, which reduces manual setup risk and helps keep environment-specific variables organized. It is designed to make onboarding faster for repeat imports and multi-tenant configurations.</p>
-        <p>Use the packager before the first sync to generate standardized payloads, then import them directly into the app. For validation checks and expected errors, check: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/How-to-Use-the-ABM-Credential-Packager" target="_blank" rel="noopener noreferrer">How to Use the ABM Credential Packager</a>.</p>
+        <p>The ABM Credential Packager is used to prepare your Apple Business Manager API credentials for deployment via MDM.</p>
+        <p>Instead of manually distributing raw API keys and certificates, the packager bundles them into a format that can be securely embedded into a configuration profile.</p>
+        <p>The general workflow is:</p>
+        <p>1. Export your ABM API key and certificate from Apple Business Manager<br>
+        2. Use the Credential Packager tool to convert certificates into the required format and bundle credentials into a structured payload<br>
+        3. Insert the packaged output into your MDM configuration profile<br>
+        4. Deploy the profile to target devices</p>
+        <p>Once deployed, ABM Warranty will automatically detect and use these credentials as managed credentials, requiring no user interaction.</p>
+        <p>This process ensures secure handling of sensitive credentials, consistent deployment across devices, and compatibility with managed preferences. It is the recommended approach for organizations deploying ABM Warranty at scale.</p>
+        <p>Source: <a href="https://github.com/jonbrown21/ABM-Warranty-Utilities/wiki/How-to-Use-the-ABM-Credential-Packager" target="_blank" rel="noopener noreferrer">How to Use the ABM Credential Packager</a>.</p>
       </details>
     </div>
   </div>

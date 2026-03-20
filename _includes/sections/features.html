@@ -3,7 +3,7 @@
     <p class="eyebrow">How it works</p>
     <h2>Features</h2>
     <p class="abm-note">ABM Warranty is a macOS app for Apple IT teams that instantly shows warranty and AppleCare+ status across ABM and ASM devices in one fast, private dashboard.</p>
-    <div class="abm-grid abm-grid--2-cols">
+    <div class="abm-grid abm-grid--2-cols" id="feature-grid" data-page-size="6">
       <article class="abm-card feature-card">
         <div class="feature-screenshot" role="img" aria-label="Device inventory screenshot">
           <img
@@ -91,22 +91,6 @@
       <article class="abm-card feature-card">
         <div class="feature-screenshot" role="img" aria-label="Screenshot placeholder">
           <img
-            id="feature-card-6-image"
-            src="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
-            data-light="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
-            data-dark="{{ '/assets/images/home/screens/tennant_dk.png' | relative_url }}"
-            alt="ABM Warranty multi-tenant credential management and switching"
-            loading="lazy"
-            decoding="async"
-            width="1180"
-            height="700">
-        </div>
-        <h3>Multi-tennancy</h3>
-        <p>ABM Warranty now supports multiple credential sets so you can easily swap between tennants within the application.</p>
-      </article>
-      <article class="abm-card feature-card">
-        <div class="feature-screenshot" role="img" aria-label="API sync progress screenshot">
-          <img
             id="feature-card-7-image"
             src="{{ '/assets/images/home/screens/progress.png' | relative_url }}"
             data-light="{{ '/assets/images/home/screens/progress.png' | relative_url }}"
@@ -119,6 +103,22 @@
         </div>
         <h3>API Sync</h3>
         <p>Verify the syncronization of the API information to your tennant database with real time statistics and diagnostics.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="API sync progress screenshot">
+          <img
+            id="feature-card-6-image"
+            src="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/tennant_dk.png' | relative_url }}"
+            alt="ABM Warranty multi-tenant credential management and switching"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Multi-tennancy</h3>
+        <p>ABM Warranty now supports multiple credential sets so you can easily swap between tennants within the application.</p>
       </article>
       <article class="abm-card feature-card">
         <div class="feature-screenshot" role="img" aria-label="Managed preferences screenshot">
@@ -203,5 +203,6 @@
         <p>App is now localized in English, French, German, Spanish, Japanese, Korean, Chinese Simplified, Chinese Traditional, Russian and Italian.</p>
       </article>
     </div>
+    <div id="feature-pagination" class="feature-pagination" aria-label="Feature pagination"></div>
   </div>
 </section>

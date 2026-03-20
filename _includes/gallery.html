@@ -1,0 +1,17 @@
+<div class="gallery">
+
+{% if include.title %}
+  <h3 class="gallery-title">{{ include.title }}</h3>
+  {% endif %}
+
+  <div class="gallery-viewport">
+    <div class="gallery-track">
+      {% for image in include.images %}
+      <div class="gallery-slide">
+        <img src="{{ image }}" loading="lazy" alt="{{ image | split:'/' | last | replace:'.png','' }}">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
