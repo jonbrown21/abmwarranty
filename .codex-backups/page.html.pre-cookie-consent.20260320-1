@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="antialiased">
+{% include head.html %}
+  <body class="abm-site">
+    {% include nav.html %}
+    <main class="abm-main">
+      <div class="abm-container">
+        {{ content }}
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

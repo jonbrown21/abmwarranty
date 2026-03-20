@@ -11,7 +11,6 @@ categories:
   - open-source
 meta_categories:
   - open-source
-  - news
   - updates
 external_url: https://github.com/CampusTech/axm2snipe
 github_owner: CampusTech

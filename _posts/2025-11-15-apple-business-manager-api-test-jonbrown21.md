@@ -11,7 +11,6 @@ categories:
   - open-source
 meta_categories:
   - open-source
-  - news
   - updates
 external_url: https://github.com/jonbrown21/Apple-Business-Manager-API-Test
 github_owner: jonbrown21

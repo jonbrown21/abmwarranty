@@ -1,0 +1,44 @@
+<footer class="abm-footer">
+  <div class="abm-container footer-grid">
+    <section>
+      <h3>ABM Warranty</h3>
+      <p>Mac warranty monitoring for teams using Apple Business and School Manager.</p>
+      <a class="footer-pill-link" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download on App Store</a>
+    </section>
+    <section>
+      <h3>Product</h3>
+      <ul class="footer-list">
+        <li><a href="{{ '/changelog/' | relative_url }}">Changelog</a></li>
+        <li><a href="{{ '/roadmap/' | relative_url }}">Roadmap</a></li>
+        <li><a href="{{ '/guide/' | relative_url }}">Guide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Community</h3>
+      <ul class="footer-list">
+        <li><a href="https://testflight.apple.com/join/tGnesmG1" target="_blank" rel="noopener noreferrer">Beta</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/blog/category/news/' | relative_url }}">Newsroom</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>App</h3>
+      <ul class="footer-list">
+        <li><a href="{{ '/#pricing' | relative_url }}">Pricing</a></li>
+        <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+        <li><a href="{{ '/terms/' | relative_url }}">Terms</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Support</h3>
+      <ul class="footer-list">
+        <li><a href="https://github.com/jonbrown21/ABM-Warranty-Utilities?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">ABM Warranty Github</a></li>
+        <li><a href="https://chatgpt.com/g/g-69236ad9b7cc81919570245ae18bd0ec-abm-warranty-support" target="_blank" rel="noopener noreferrer">ABM Warranty GPT</a></li>
+        <li><a href="https://app.slack.com/client/T04QVKUQG/C0A1MT463D0" target="_blank" rel="noopener noreferrer">Mac Admins Slack</a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="abm-container abm-copy">
+    &copy; {{ 'now' | date: "%Y" }} ABM Warranty | A <a href="https://jonbrown.org/" target="_blank" rel="noopener noreferrer">Jon Brown</a> project
+  </div>
+</footer>

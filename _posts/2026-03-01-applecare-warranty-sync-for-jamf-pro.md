@@ -11,7 +11,6 @@ categories:
   - closed-source
 meta_categories:
   - closed-source
-  - news
   - updates
 external_url: https://www.hcsonline.com/support/jamf/applecare-warranty-sync-for-jamf-pro
 image: https://www.hcsonline.com/images/pages/default_blog_full.jpg

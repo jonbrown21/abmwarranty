@@ -1,0 +1,76 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: ABM Warranty
+email: hello@abmwarranty.com
+description: >- # this means to ignore newlines until "baseurl:"
+  ABM Warranty is a macOS app for teams using Apple Business Manager and Apple School Manager to track warranty data and alert before coverage expires.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://abmwarranty.com" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  jonbrown21
+app_store_url: https://apps.apple.com/app/abm-warranty/id6755319278
+mailerlite_list: https://assets.mailerlite.com/jsonp/1303120/forms/182328044005885562/subscribe
+icon_light: /assets/images/abm-warranty-light.png
+icon_dark: /assets/images/abm-warranty-dark.png
+theme: null
+production: true
+
+# Build settings
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: "/blog/:title/"
+
+google_analytics: null
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - AGENTS.md
+  - Rakefile
+  - docker-compose.yml
+  - .codex-backups
+  - .DS_Store
+  - .htaccess
+  - sites_dupes/
+  - AGENTS.md
+  - businessmodel.md
+  - goals.md
+  - site-scope.md
+  - site-theme.md
+  - not_pages/

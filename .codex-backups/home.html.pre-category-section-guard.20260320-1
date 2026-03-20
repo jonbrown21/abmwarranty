@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="antialiased">
+{% include head.html %}
+  <body class="abm-site">
+    {% include nav.html %}
+    <main class="abm-main">
+      {{ content }}
+      {% unless page.show_home_sections == false %}
+        {% include sections/features.html %}
+        {% include sections/pricing.html %}
+        {% include sections/blog-highlights.html %}
+        {% include sections/newsletter.html %}
+        {% include sections/faq.html %}
+      {% endunless %}
+    </main>
+    {% include cookie-consent.html %}
+    {% include footer.html %}
+  </body>
+</html>

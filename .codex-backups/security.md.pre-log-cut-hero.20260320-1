@@ -1,0 +1,92 @@
+---
+layout: home
+show_home_sections: false
+title: ABM Warranty Security
+description: ABM Warranty security overview and practices for Apple Business and School Manager operations.
+permalink: /security/
+---
+
+<section class="abm-section hero-band hero-band--privacy">
+  <div class="abm-container">
+    <div class="hero-shell">
+      <div class="hero-layout">
+        <div class="hero-copy-col">
+          <div class="privacy-hero-glass">
+            <p class="eyebrow">Security</p>
+            <h1>Security</h1>
+            <p class="hero-copy">
+              ABM Warranty is designed for operational trust in Apple IT environments. We focus on secure-by-default workflows, controlled data handling, and practical safeguards that support enterprise and education fleet management.
+            </p>
+          </div>
+        </div>
+        <div class="hero-shot" role="img" aria-label="ABM Warranty security page hero image">
+          <img
+            id="hero-shot-image"
+            src="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/hero.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/hero_dk.png' | relative_url }}"
+            alt="ABM Warranty app interface preview"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1160"
+            height="780">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abm-section privacy-content">
+  <div class="abm-container">
+    <p class="eyebrow">Security overview</p>
+    <h2>ABM Warranty Security Practices</h2>
+
+    <p>
+      This page outlines placeholder security content for ABM Warranty. Final security documentation will include implementation details, operational controls, and compliance references as they are finalized.
+    </p>
+    <p>
+      ABM Warranty is built for environments where reliability, confidentiality, and traceability are essential to daily Apple fleet operations.
+    </p>
+
+    <h3>Data handling</h3>
+    <p>
+      Placeholder text: ABM Warranty processes fleet and warranty metadata in support of operational reporting and lifecycle workflows. Data retention and storage boundaries are defined to minimize unnecessary persistence.
+    </p>
+
+    <h3>Authentication and access</h3>
+    <p>
+      Placeholder text: Access to account and API-linked functions is constrained through scoped credentials, controlled access paths, and least-privilege design principles.
+    </p>
+
+    <h3>Transport and encryption</h3>
+    <p>
+      Placeholder text: Data in transit is protected through modern TLS transport, and sensitive values are handled with secure storage patterns appropriate to platform capabilities.
+    </p>
+
+    <h3>Operational monitoring</h3>
+    <p>
+      Placeholder text: Logging and operational diagnostics are structured to support troubleshooting while reducing exposure of sensitive values in runtime and support contexts.
+    </p>
+
+    <h3>Vulnerability response</h3>
+    <p>
+      Placeholder text: Security issues are prioritized based on impact and exploitability, with remediation tracked through versioned release processes and documented change controls.
+    </p>
+
+    <h3>Third-party dependencies</h3>
+    <p>
+      Placeholder text: Dependencies are reviewed and updated through a repeatable maintenance cycle to reduce known vulnerabilities and maintain platform compatibility.
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+      For security-related questions, contact:
+      <a href="mailto:hello@abmwarranty.com">hello@abmwarranty.com</a>
+    </p>
+  </div>
+</section>
+
+{% include sections/newsletter.html %}
+
+{% include sections/faq.html %}

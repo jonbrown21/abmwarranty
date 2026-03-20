@@ -11,7 +11,6 @@ categories:
   - open-source
 meta_categories:
   - open-source
-  - news
   - updates
 external_url: https://github.com/david-crosby/ABM-API-Tool
 github_owner: david-crosby

@@ -11,7 +11,6 @@ categories:
   - open-source
 meta_categories:
   - open-source
-  - news
   - updates
 external_url: https://github.com/neilmartin83/terraform-provider-axm
 github_owner: neilmartin83

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="antialiased">
+{% include head.html %}
+  <body class="abm-site">
+    {% include nav.html %}
+
+    <main class="abm-main">
+      <article class="abm-section post-article">
+        <div class="abm-container">
+          <header class="post-header">
+            <p class="eyebrow">Blog</p>
+            <h1>{{ page.title }}</h1>
+            <p class="meta">{{ page.date | date: "%b %d, %Y" }}</p>
+          </header>
+
+          {% assign cover = page.image | default: page.thumbnail %}
+          {% if cover %}
+            <figure class="blog-cover blog-cover--post" role="img" aria-label="{{ page.title | escape }} cover image">
+              <img
+                src="{{ cover | relative_url }}"
+                alt="{{ page.title | escape }} cover image"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1200"
+                height="675">
+            </figure>
+          {% endif %}
+
+          {% include share.html %}
+
+          <div class="post-content">
+            {{ content }}
+          </div>
+        </div>
+      </article>
+
+      {% include sections/newsletter.html %}
+      {% include sections/faq.html %}
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

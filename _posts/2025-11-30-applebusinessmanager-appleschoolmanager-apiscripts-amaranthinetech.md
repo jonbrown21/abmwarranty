@@ -11,7 +11,6 @@ categories:
   - open-source
 meta_categories:
   - open-source
-  - news
   - updates
 external_url: https://github.com/AmaranthineTech/AppleBusinessManager-AppleSchoolManager-APIScripts
 github_owner: AmaranthineTech

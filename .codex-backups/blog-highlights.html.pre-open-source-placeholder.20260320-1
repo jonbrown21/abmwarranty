@@ -1,0 +1,107 @@
+<section id="blog" class="abm-section">
+  <div class="abm-container">
+    <p class="eyebrow">Latest updates</p>
+    <h2>Blog</h2>
+    <p class="abm-note">Shareable guidance, release notes, and operational tips.</p>
+    <div class="abm-blog-grid">
+      {% assign recent_posts = site.posts | sort: "date" | reverse %}
+      {% for post in recent_posts limit: 3 %}
+      <article class="abm-card blog-card">
+        <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
+          {% if post.external_url %}
+            {% assign cover = post.image %}
+          {% else %}
+            {% assign cover = post.image | default: post.cover %}
+          {% endif %}
+          {% if cover %}
+            {% assign is_external_cover = false %}
+            {% if cover contains '://' %}
+              {% assign is_external_cover = true %}
+            {% endif %}
+            <img
+              src="{% if is_external_cover %}{{ cover }}{% else %}{{ cover | relative_url }}{% endif %}"
+              alt="{{ post.title | escape }} cover image"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450">
+          {% else %}
+            <span>Blog cover image</span>
+          {% endif %}
+        </div>
+        <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
+        {% assign post_href = post.external_url | default: post.url %}
+        {% assign is_external_post = false %}
+        {% if post.external_url %}
+          {% assign is_external_post = true %}
+        {% endif %}
+        <h3><a href="{% if is_external_post %}{{ post_href }}{% else %}{{ post_href | relative_url }}{% endif %}"{% if is_external_post %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.title }}</a></h3>
+        <p>{{ post.Description | default: post.description | default: post.excerpt | strip_html | truncate: 130 }}</p>
+        <div class="blog-meta-row">
+          {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
+          {% if post.meta_categories and post.meta_categories != empty %}
+            {% assign base_categories = post.meta_categories %}
+          {% elsif post.categories and post.categories != empty %}
+            {% assign base_categories = post.categories %}
+          {% elsif post.tags and post.tags != empty %}
+            {% assign base_categories = post.tags %}
+          {% else %}
+            {% assign base_categories = fallback_categories %}
+          {% endif %}
+          {% assign merged_categories = base_categories | concat: fallback_categories %}
+          {% assign shown_categories = merged_categories | uniq | slice: 0, 4 %}
+          {% for category in shown_categories %}
+            {% assign chip_color = forloop.index0 | modulo: 8 %}
+            {% if category.label %}
+              {% assign category_label = category.label %}
+            {% else %}
+              {% assign category_label = category %}
+            {% endif %}
+            {% assign category_key = category_label | slugify %}
+            {% assign chip_class = "blog-meta-chip--" | append: chip_color %}
+            {% if category_key == "operations" %}
+              {% assign chip_class = "blog-meta-chip--operations" %}
+            {% elsif category_key == "beta" %}
+              {% assign chip_class = "blog-meta-chip--beta" %}
+            {% elsif category_key == "changelog" %}
+              {% assign chip_class = "blog-meta-chip--changelog" %}
+            {% elsif category_key == "roadmap" %}
+              {% assign chip_class = "blog-meta-chip--roadmap" %}
+            {% endif %}
+            <a
+              href="{{ '/blog/category/' | append: category_key | append: '/' | relative_url }}"
+              class="blog-meta-chip {{ chip_class }}"
+              aria-label="View {{ category_label | escape }} posts"
+            >
+              {{ category_label }}
+            </a>
+          {% endfor %}
+        </div>
+      <a href="{% if is_external_post %}{{ post_href }}{% else %}{{ post_href | relative_url }}{% endif %}" class="abm-btn full-width blog-read-btn"{% if is_external_post %} target="_blank" rel="noopener noreferrer"{% endif %}>Read post</a>
+      </article>
+      {% endfor %}
+      {% if recent_posts == empty %}
+      <article class="abm-card blog-card">
+        <div class="blog-cover" role="img" aria-label="Blog cover image placeholder">
+          <span>Blog cover image</span>
+        </div>
+        <h3>Blog is ready to publish</h3>
+        <p>Publish your first update and this section will feature it automatically.</p>
+        <div class="blog-meta-row">
+          <a
+            href="/blog"
+            class="blog-meta-chip blog-meta-chip--0"
+            aria-label="View blog posts"
+          >
+            Ready to launch
+          </a>
+        </div>
+        <a href="/blog" class="abm-btn full-width blog-read-btn">Read post</a>
+      </article>
+      {% endif %}
+    </div>
+    <div class="abm-blog-cta">
+      <a href="/blog" class="abm-btn abm-btn--ghost abm-blog-cta-btn">Visit the blog</a>
+    </div>
+  </div>
+</section>
