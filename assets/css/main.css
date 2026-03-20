@@ -513,6 +513,7 @@ html[data-theme='dark'] .privacy-hero-glass {
   padding: clamp(1.8rem, 3.2vw, 2.4rem) 0;
   padding-bottom: 0;
   margin-bottom: 0;
+  overflow-x: clip;
 }
 
 .beta-cta-bar {
@@ -589,7 +590,8 @@ html[data-theme='dark'] .privacy-hero-glass {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 1.1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
   align-items: end;
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .hero-copy-col {
@@ -613,7 +615,7 @@ html[data-theme='dark'] .privacy-hero-glass {
   align-self: end;
   margin-bottom: calc(-1 * clamp(1.1rem, 2.4vw, 1.6rem));
   margin-right: -8vw;
-  overflow: visible;
+  overflow: clip;
   margin-top: 0;
   padding-bottom: clamp(0.8rem, 2vw, 1.2rem);
 }
