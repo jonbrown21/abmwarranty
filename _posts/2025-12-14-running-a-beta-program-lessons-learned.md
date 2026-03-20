@@ -42,7 +42,3 @@ Running a beta didn’t just improve the app, it changed how I thought about dev
 - [Apple Developer Documentation: “TestFlight Overview”](https://developer.apple.com/testflight/)
 - [Apple Developer Documentation: “Beta Testing Made Simple with TestFlight”](https://developer.apple.com/testflight/overview/)
 - [Apple App Store Connect Help: “Manage TestFlight Beta Testing”](https://developer.apple.com/help/app-store-connect/test-a-beta-version/)
-
-## Ready to take your Apple IT skills and consulting career to the next level?
-I’m opening up free mentorship slots to help you navigate certifications, real-world challenges, and starting your own independent consulting business.  
-**Let’s connect and grow together — [Sign up here](https://jonbrown.org/contact/)**

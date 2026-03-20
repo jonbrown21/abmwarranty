@@ -1,25 +1,64 @@
 ---
-layout: page
+layout: guide
 title: ABM Warranty Guide | Setup and Workflow
 description: How to set up ABM Warranty and use it to monitor macOS warranty coverage.
 permalink: /guide/
 ---
 
-## Guide
+<script>window.location.replace("{{ '/guide/intro/' | relative_url }}");</script>
 
-### Step 1: Connect a management source
-- Add Apple Business Manager or School Manager credentials in the app.
-- Validate tenant context and permission visibility.
+<p>
+ABM Warranty retrieves device inventory and warranty coverage information
+from Apple Business Manager using secure, read-only API access.
+The application presents Apple-provided Standard Warranty and AppleCare+
+data in a clear, structured interface designed for operational visibility
+and auditing.
+</p>
 
-### Step 2: Import and inspect devices
-- Review tenant groups and warranty rows.
-- Confirm renewal or expiry windows.
+<p>
+All data retrieval is performed using non-blocking background operations.
+Device inventory is streamed page-by-page, and warranty coverage is fetched
+in parallel batches. This allows the application to remain fully responsive
+while data is imported, retried, and updated continuously.
+</p>
 
-### Step 3: Set alerts
-- Configure expiration thresholds.
-- Route to team workflow for action.
+<p>
+ABM Warranty supports both single-tenant and multi-tenant operation.
+Each Apple Business Manager credential maps to a dedicated tenant with its
+own database, diagnostics, and logs. Switching credentials switches the
+active tenant context without mixing data between organizations.
+</p>
 
-### Step 4: Maintain the program
-- Review monthly updates and adjust alert thresholds.
-- Use Beta and roadmap notes for upcoming feature changes.
+<p>
+The Dashboard provides a high-level overview of device counts, warranty
+states, and devices requiring attention for the active tenant.
+Each dashboard tile acts as a shortcut filter, allowing you to quickly
+focus on specific subsets of devices.
+</p>
 
+<p>
+Individual device records display detailed coverage windows, computed
+coverage status, last imported timestamps, and historical context.
+Devices no longer returned by Apple Business Manager are retained locally
+and marked as inactive to preserve historical accuracy.
+</p>
+
+<p>
+ABM Warranty includes built-in diagnostics, rate-limit awareness, and
+automatic retry handling to safely operate within Apple’s API limits.
+Import activity, retries, throttling events, and errors are surfaced
+through the Status Dashboard and detailed application logs.
+</p>
+
+<p>
+When valid credentials are not present, the app may operate in a
+diagnostic or sample-data mode. This allows the interface and workflows
+to be explored without performing live API requests.
+</p>
+
+<p>
+This guide explains how to configure credentials, populate and refresh
+data, interpret warranty and coverage states, use filters and exports,
+and troubleshoot common issues when working with Apple Business Manager
+data.
+</p>

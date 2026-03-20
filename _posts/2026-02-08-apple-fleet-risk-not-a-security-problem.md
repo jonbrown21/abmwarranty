@@ -115,7 +115,3 @@ This perspective is not about blame or tool selection. It is about aligning mode
 - [ISO/IEC 27005 — *Information Security Risk Management*](https://www.iso.org/standard/80585.html)
 - [Apple Platform Security (Apple User Guide)](https://support.apple.com/guide/security/welcome/web)
 - [Jamf Learning Hub (Official Technical Documentation)](https://learn.jamf.com/)
-
-## Ready to take your Apple IT skills and consulting career to the next level?
-I’m opening up free mentorship slots to help you navigate certifications, real-world challenges, and starting your own independent consulting business.  
-**Let’s connect and grow together — [Sign up here](https://jonbrown.org/contact/)**

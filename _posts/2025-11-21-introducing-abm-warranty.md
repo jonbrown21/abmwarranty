@@ -4,13 +4,14 @@ date: '2025-11-14'
 author: Jon Brown
 permalink: /blog/introducing-abm-warranty/
 published: true
-title: "Introducing ABM Warranty for macOS"
+title: "Version 0.1.0"
 description: "A new macOS utility that brings powerful, enterprise-grade warranty management and AppleCare+ oversight to Apple Business Manager administrators."
 Description: "If you manage Apple devices at scale, you already know that **Apple Business Manager (ABM)** provides warranty data — but in practice, it’s extremely limited. It doesn’t provide workflow-friendly insights, it doesn’t surface actionable coverage states, and it doesn’t help you wrangle the ever-growing complexity of **AppleCare+ renewals** across hundreds or thousands of devices."
 blogimgpath: 202408034Up
 tags:
 categories:
   - updates
+  - changelog
 meta_categories:
   - updates
   - apple-business-manager
@@ -22,6 +23,13 @@ body_image: /assets/images/blog/2025/warranty/1.png
 cta: 2
 comments: true
 series: abmwarranty
+release_version: "0.1.0"
+release_date: "Nov 20, 2025"
+release_notes:
+  - Initial public beta release
+  - Apple Business Manager inventory import
+  - Warranty and AppleCare+ coverage lookup
+  - Additional release notes here
 ---
 
 {% include series.html id="abmwarranty" %}
@@ -192,7 +200,7 @@ Everything is one click away, filtered instantly.
 >
     <img 
       src="/assets/images/blog/2025/warranty/4.png" 
-
+      alt="ABM Warranty filtering and sorting view"
       class="mx-auto"
     />
 </div>
@@ -241,8 +249,3 @@ What challenges do you have managing warranties across your Apple fleet?
 - [Apple Platform Deployment](https://support.apple.com/guide/deployment/welcome/web)  
 - [➡️ **Download on the Mac App Store** ](https://apps.apple.com/us/app/abm-warranty/id6755319278?mt=12) 
 - [Apple Business Manager API Test](https://github.com/jonbrown21/Apple-Business-Manager-API-Test)
-
-
-## Ready to take your Apple IT skills and consulting career to the next level?
-I’m opening up free mentorship slots to help you navigate certifications, real-world challenges, and starting your own independent consulting business.  
-**Let’s connect and grow together — [Sign up here](https://jonbrown.org/contact/)**

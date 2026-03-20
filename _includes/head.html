@@ -6,7 +6,7 @@
   <meta name="robots" content="index, follow">
   <title>{{ page.title | default: site.title }}</title>
   {% seo %}
-  {% if page.url == "/" %}
+  {% if page.layout != "post" %}
     {% include seo-home-jsonld.html %}
   {% endif %}
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">

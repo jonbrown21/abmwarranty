@@ -2,3 +2,5 @@
 permalink: /404.html
 layout: home
 ---
+
+{% include sections/hero.html %}

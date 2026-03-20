@@ -30,6 +30,7 @@ mailerlite_list: https://assets.mailerlite.com/jsonp/1303120/forms/1823280440058
 icon_light: /assets/images/abm-warranty-light.png
 icon_dark: /assets/images/abm-warranty-dark.png
 theme: null
+production: true
 
 # Build settings
 plugins:
@@ -72,3 +73,4 @@ exclude:
   - goals.md
   - site-scope.md
   - site-theme.md
+  - not_pages/

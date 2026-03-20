@@ -63,7 +63,3 @@ This isn’t about replacing Apple’s platforms. It’s about completing them. 
 If you manage more than a few dozen Apple devices, this is worth paying attention to. Warranty coverage isn’t just a line item — it’s part of a sustainable device program. Until Apple provides a native way to surface and act on this information, administrators still need answers. ABM Warranty is how I solved that problem for our own fleet, and it’s built to solve it for others facing the same reality.
 
 If this problem sounds familiar, I’d encourage you to try [ABM Warranty](https://jonbrown.org/apps/#warranty) in your own environment and see how it fits into your workflow. The app is available now, and the [beta program](https://testflight.apple.com/join/tGnesmG1) is open specifically so Apple IT administrators, MSPs, and school IT teams can put it through real-world use. Your feedback directly influences how the product evolves, from how warranty risk is surfaced to how data is exported and acted on across multiple accounts. If you manage Apple devices at scale, downloading the app, testing it with your fleet, and sharing what works — and what doesn’t — is the fastest way to help shape a tool designed for the realities of modern Apple management.
-
-## Ready to take your Apple IT skills and consulting career to the next level?
-I’m opening up free mentorship slots to help you navigate certifications, real-world challenges, and starting your own independent consulting business.  
-**Let’s connect and grow together — [Sign up here](https://jonbrown.org/contact/)**
