@@ -49,6 +49,10 @@ temp/
 
 # Docs and process files (site planning / agent guidance)
 AGENTS.md
+AGENTS.md.orig
+_config.local.yml
+docker-compose.yml
+.branch-worktrees/
 goals.md
 businessmodel.md
 site-scope.md
