@@ -42,6 +42,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      image: /assets/images/og_image.png
   - scope:
       path: ""
       type: posts
