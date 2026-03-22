@@ -1,0 +1,46 @@
+<div class="flex items-center text-sm text-slate-500 w-full">
+
+  <!-- LEFT -->
+<div style="flex: 1;">
+  <span class="meta" style="display: inline-flex; align-items: center; line-height: 1;">
+    {{ post.date | date: "%b %d, %Y" }}
+  </span>
+</div>
+
+  {% if post.ai_analysis %}
+  {% assign score = post.ai_analysis.ai_style_score | default: 0 %}
+
+  {% if score <= 0.2 %}
+    {% assign ai_color = "ai-dot-green" %}
+  {% elsif score <= 0.5 %}
+    {% assign ai_color = "ai-dot-yellow" %}
+  {% else %}
+    {% assign ai_color = "ai-dot-red" %}
+  {% endif %}
+
+  {% assign percent = score | times: 100 | round %}
+  {% assign era = post.ai_analysis.era | default: "" %}
+
+  <!-- RIGHT -->
+  <div>
+    <a href="{{ post.url | prepend: site.baseurl | append: '#ai-report' }}"
+   class="flex items-center hover:opacity-80 transition no-underline meta"
+   style="line-height: 1;">
+
+  <!-- DOT -->
+  <span class="ai-dot {{ ai_color }}" style="margin-right: 6px;"></span>
+
+  <!-- % -->
+  <span style="margin-right: 4px;">{{ percent }}%</span>
+
+  <!-- LABEL -->
+  <span style="color: #94a3b8;">
+    AI Use{% if era != "" %} · {{ era | replace: "pre-ai", "Pre-AI" | replace: "ai-era", "AI Era" }}{% endif %}
+  </span>
+
+</a>
+  </div>
+
+  {% endif %}
+
+</div><br>

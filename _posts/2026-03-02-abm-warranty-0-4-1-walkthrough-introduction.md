@@ -1,26 +1,39 @@
 ---
-layout: post
-date: '2026-03-02'
+ai_analysis:
+  ai_style_score: 0.26
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.21666666666666667
+    list_density: 0.0
+    repetition: 0.65
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: ABM Warranty walkthrough introduction
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- guide
+comments: true
+cta: 2
+date: '2026-03-02'
+description: An introduction to ABM Warranty 0.4.1 covering the dashboard, warranty
+  lifecycle views, release-device logic, credential setup, local storage, and what
+  the app solves for Apple admins.
+image: /assets/images/covers/2026/ABM_Introduction.png
+layout: post
+meta_categories:
+- guide
+- support
+- operations
+- updates
 permalink: /blog/abm-warranty-0-4-1-walkthrough-introduction/
 published: true
-title: "ABM Warranty 0.4.1 Walkthrough: Introduction"
-description: "An introduction to ABM Warranty 0.4.1 covering the dashboard, warranty lifecycle views, release-device logic, credential setup, local storage, and what the app solves for Apple admins."
-Description: "In this first ABM Warranty 0.4.1 walkthrough, I want to show you what the app actually does before I get into the more specific feature videos. This is the broad introduction. I’m walking through the dashboard, how I think about the warranty cards, how released devices are handled, how the filters work, how to add credentials, where the data is stored locally, and what the logging and security model looks like."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - guide
-meta_categories:
-  - guide
-  - support
-  - operations
-  - updates
-image: /assets/images/covers/2026/ABM_Introduction.png
-thumbnail: /assets/images/covers/2026/ABM_Introduction.png
-cta: 2
-comments: true
 series: abmwarranty041walkthrough
+tags: null
+thumbnail: /assets/images/covers/2026/ABM_Introduction.png
+title: 'ABM Warranty 0.4.1 Walkthrough: Introduction'
 ---
 
 {% include series.html id="abmwarranty041walkthrough" %}

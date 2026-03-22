@@ -109,9 +109,9 @@ permalink: /blog/
                 <span>Blog cover image</span>
               {% endif %}
             </div>
-            <p class="meta">{{ post.date | date: "%b %d, %Y" }}</p>
+            {% include ai_signal_badge.html %}
             <h3><a href="{% if is_external_post %}{{ post_href }}{% else %}{{ post_href | relative_url }}{% endif %}"{% if is_external_post %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.title }}</a></h3>
-            <p>{{ post.Description | default: post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+            <p>{{ post.description | default: post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
             <div class="blog-meta-row">
               {% assign fallback_categories = "guide|release|roadmap|updates|support|tips" | split: "|" %}
               {% if post.meta_categories and post.meta_categories != empty %}

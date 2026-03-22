@@ -1,26 +1,41 @@
 ---
-layout: post
-date: '2026-02-10'
+ai_analysis:
+  ai_style_score: 0.1
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.05
+    list_density: 0.0
+    repetition: 0.0
+    structure_regularity: 0.52
+    tone_uniformity: 0.33
+  summary: The content is a blog post about the importance of tracking warranty and
+    AppleCare+ status for devices managed by Apple Business Manager or Apple School
+    Manager.
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- guide
+comments: true
+cta: 2
+date: '2026-02-10'
+description: Apple Business Manager and Apple School Manager show you what devices
+  you own — but not which ones are becoming liabilities.
+image: /assets/images/covers/2026/abm_dashboard.png
+layout: post
+meta_categories:
+- guide
+- apple-business-manager
+- operations
+- support
 permalink: /blog/abm-asm-warranty-dashboard-gap/
 published: true
-title: "The warranty dashboard Apple doesn’t provide… yet"
-description: "Apple Business Manager and Apple School Manager show you what devices you own — but not which ones are becoming liabilities."
-Description: "Apple Business Manager and Apple School Manager are excellent systems of record. They tell you exactly what devices you own, who they’re assigned to, and how they’re enrolled. For inventory, they are authoritative. For risk, they are silent."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - guide
-meta_categories:
-  - guide
-  - apple-business-manager
-  - operations
-  - support
-image: /assets/images/covers/2026/abm_dashboard.png
+tags: null
 thumbnail: /assets/images/covers/2026/abm_dashboard.png
-cta: 2
-comments: true
+title: The warranty dashboard Apple doesn’t provide… yet
 ---
+
 <div class="my-12 flex justify-center">
   <a
     href="https://jonbrown.org/apps/#warranty"

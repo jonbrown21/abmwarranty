@@ -1,0 +1,166 @@
+{% if page.ai_analysis %}
+<div class="ai-report" id="ai-report">
+
+  <!-- Header -->
+  <div class="ai-report-header">
+    <h3>AI Usage Transparency Report</h3>
+    {% if page.ai_analysis.era == "pre-ai" %}
+      <p class="ai-era">Pre-AI Era · Written before widespread use of generative AI tools</p>
+    {% elsif page.ai_analysis.era == "ai-era" %}
+      <p class="ai-era">AI Era · Written during widespread use of AI tools</p>
+    {% endif %}
+  </div>
+
+  <!-- Composition -->
+  <div class="ai-section">
+    <p class="ai-section-title">AI Signal Composition</p>
+
+    {% assign s = page.ai_analysis.signals %}
+
+    <!-- total for normalization -->
+    {% assign total = s.repetition
+      | plus: s.tone_uniformity
+      | plus: s.structure_regularity
+      | plus: s.list_density
+      | plus: s.instructional_density
+      | plus: s.emoji_usage %}
+
+    {% if total == 0 %}
+      {% assign total = 1 %}
+    {% endif %}
+    
+    {% assign total = 0 %}
+
+	{% if s.repetition > 0 %}
+	  {% assign total = total | plus: s.repetition %}
+	{% endif %}
+	{% if s.tone_uniformity > 0 %}
+	  {% assign total = total | plus: s.tone_uniformity %}
+	{% endif %}
+	{% if s.structure_regularity > 0 %}
+	  {% assign total = total | plus: s.structure_regularity %}
+	{% endif %}
+	{% if s.list_density > 0 %}
+	  {% assign total = total | plus: s.list_density %}
+	{% endif %}
+	{% if s.instructional_density > 0 %}
+	  {% assign total = total | plus: s.instructional_density %}
+	{% endif %}
+	{% if s.emoji_usage > 0 %}
+	  {% assign total = total | plus: s.emoji_usage %}
+	{% endif %}
+	
+	{% if total == 0 %}
+	  {% assign total = 1 %}
+	{% endif %}
+
+    <!-- Stacked bar -->
+	<div class="ai-bar">
+	
+	  {% if s.repetition > 0 %}
+	  <div class="seg rep"
+		   style="width: {{ s.repetition | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	  {% if s.tone_uniformity > 0 %}
+	  <div class="seg tone"
+		   style="width: {{ s.tone_uniformity | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	  {% if s.structure_regularity > 0 %}
+	  <div class="seg struct"
+		   style="width: {{ s.structure_regularity | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	  {% if s.list_density > 0 %}
+	  <div class="seg list"
+		   style="width: {{ s.list_density | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	  {% if s.instructional_density > 0 %}
+	  <div class="seg instr"
+		   style="width: {{ s.instructional_density | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	  {% if s.emoji_usage > 0 %}
+	  <div class="seg emoji"
+		   style="width: {{ s.emoji_usage | times: 100 | divided_by: total }}%">
+	  </div>
+	  {% endif %}
+	
+	</div>
+
+    <!-- Labels -->
+	<div class="ai-labels">
+	
+	  {% if s.repetition > 0 %}
+	  <span style="width: {{ s.repetition | times: 100 | divided_by: total }}%">Rep</span>
+	  {% endif %}
+	
+	  {% if s.tone_uniformity > 0 %}
+	  <span style="width: {{ s.tone_uniformity | times: 100 | divided_by: total }}%">Tone</span>
+	  {% endif %}
+	
+	  {% if s.structure_regularity > 0 %}
+	  <span style="width: {{ s.structure_regularity | times: 100 | divided_by: total }}%">Struct</span>
+	  {% endif %}
+	
+	  {% if s.list_density > 0 %}
+	  <span style="width: {{ s.list_density | times: 100 | divided_by: total }}%">List</span>
+	  {% endif %}
+	
+	  {% if s.instructional_density > 0 %}
+	  <span style="width: {{ s.instructional_density | times: 100 | divided_by: total }}%">Instr</span>
+	  {% endif %}
+	
+	  {% if s.emoji_usage > 0 %}
+	  <span style="width: {{ s.emoji_usage | times: 100 | divided_by: total }}%">Emoji</span>
+	  {% endif %}
+	
+	</div>
+
+    <!-- Percent breakdown -->
+    <div class="ai-stats">
+      <div class="ai-stat rep"><span class="dot"></span><strong>Repetition</strong>: {{ s.repetition | times: 100 | round }}%</div>
+      <div class="ai-stat tone"><span class="dot"></span><strong>Tone</strong>: {{ s.tone_uniformity | times: 100 | round }}%</div>
+      <div class="ai-stat struct"><span class="dot"></span><strong>Structure</strong>: {{ s.structure_regularity | times: 100 | round }}%</div>
+      <div class="ai-stat list"><span class="dot"></span><strong>List</strong>: {{ s.list_density | times: 100 | round }}%</div>
+      <div class="ai-stat instr"><span class="dot"></span><strong>Instructional</strong>: {{ s.instructional_density | times: 100 | round }}%</div>
+      <div class="ai-stat emoji"><span class="dot"></span><strong>Emoji</strong>: {{ s.emoji_usage | times: 100 | round }}%</div>
+    </div>
+
+    <!-- Score -->
+    <p class="ai-score">
+      Score: {{ page.ai_analysis.ai_style_score }} ·
+      {% if page.ai_analysis.ai_style_score < 0.2 %}
+        Low AI Influence
+      {% elsif page.ai_analysis.ai_style_score < 0.5 %}
+        Moderate AI Influence
+      {% else %}
+        High AI Influence
+      {% endif %}
+    </p>
+  </div>
+
+<!-- Summary -->
+{% assign summary_text = page.ai_analysis.summary | default: "" | strip %}
+
+{% if summary_text != "" and summary_text != "This is a summary of the content" %}
+  <div class="ai-section">
+    <p class="ai-section-title">Summary</p>
+    <p class="ai-summary">{{ summary_text }}</p>
+  </div>
+{% elsif page.description %}
+  <div class="ai-section">
+    <p class="ai-section-title">Summary</p>
+    <p class="ai-summary">{{ page.description }}</p>
+  </div>
+{% endif %}
+
+</div>
+{% endif %}

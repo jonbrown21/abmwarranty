@@ -1,26 +1,41 @@
 ---
-layout: post
-date: '2025-12-14'
+ai_analysis:
+  ai_style_score: 0.27
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.03333333333333333
+    list_density: 0.14285714285714285
+    repetition: 0.65
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: Running a public beta for ABM Warranty through Apple’s TestFlight program
+    forced me to confront the tradeoff between comfort and value, ultimately changing
+    how quickly and confidently the app matured.
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- beta
+comments: true
+cta: 2
+date: '2025-12-14'
+description: What running a TestFlight beta for ABM Warranty taught me about feedback,
+  velocity, and the realities of Apple’s beta tooling.
+image: /assets/images/covers/2025/beta_lessons.png
+layout: post
+meta_categories:
+- beta
+- operations
+- support
+- updates
 permalink: /blog/running-a-beta-program-lessons-learned/
 published: true
-title: "Running a Beta Program: Lessons Learned"
-description: "What running a TestFlight beta for ABM Warranty taught me about feedback, velocity, and the realities of Apple’s beta tooling."
-Description: "Shipping software in isolation is comforting. You control the inputs, the environment, and the narrative you tell yourself about how things work. The moment you invite other people in—especially people who don’t share your assumptions—you lose that comfort. You also gain something far more valuable. Running a public beta for ABM Warranty through Apple’s TestFlight program forced me to confront that tradeoff head-on, and it fundamentally changed how quickly and confidently the app matured."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - beta
-meta_categories:
-  - beta
-  - operations
-  - support
-  - updates
-image: /assets/images/covers/2025/beta_lessons.png
+tags: null
 thumbnail: /assets/images/covers/2025/beta_lessons.png
-cta: 2
-comments: true
+title: 'Running a Beta Program: Lessons Learned'
 ---
+
 Shipping software in isolation is comforting. You control the inputs, the environment, and the narrative you tell yourself about how things work. The moment you invite other people in—especially people who don’t share your assumptions—you lose that comfort. You also gain something far more valuable. Running a public beta for ABM Warranty through Apple’s TestFlight program forced me to confront that tradeoff head-on, and it fundamentally changed how quickly and confidently the app matured.
 
 The motivation for opening a beta was simple: ABM Warranty was solving a problem I knew well, but I didn’t want to build it only for *my* environment. Apple Business Manager behaves differently at scale, Jamf and other MDMs surface edge cases in unpredictable ways, and administrators bring wildly different expectations to tooling. TestFlight gave me a structured way to put the app in front of real admins, running real fleets, without pretending that internal testing could substitute for that diversity.

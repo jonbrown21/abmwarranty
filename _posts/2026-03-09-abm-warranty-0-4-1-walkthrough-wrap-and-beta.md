@@ -1,26 +1,39 @@
 ---
-layout: post
-date: '2026-03-09'
+ai_analysis:
+  ai_style_score: 0.3
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.21666666666666667
+    list_density: 0.09782608695652174
+    repetition: 0.65
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: This is a summary of the content
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- guide
+comments: true
+cta: 2
+date: '2026-03-09'
+description: A wrap-up walkthrough for ABM Warranty 0.4.1 covering the last remaining
+  features, support resources, the Mac Admins Slack community, how to join the public
+  beta, and how to export logs for support.
+image: /assets/images/covers/2026/ABM_wrap.png
+layout: post
+meta_categories:
+- guide
+- support
+- operations
+- updates
 permalink: /blog/abm-warranty-0-4-1-walkthrough-wrap-and-beta/
 published: true
-title: "ABM Warranty 0.4.1 Walkthrough: Wrap-Up and Beta"
-description: "A wrap-up walkthrough for ABM Warranty 0.4.1 covering the last remaining features, support resources, the Mac Admins Slack community, how to join the public beta, and how to export logs for support."
-Description: "In this final ABM Warranty 0.4.1 walkthrough, I’m wrapping up the last features I had not covered directly in the earlier videos and then focusing on support, community, and the beta program. I also want to show where the support resources live inside the app so you know where to go if you need help, documentation, or a way to send useful feedback."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - guide
-meta_categories:
-  - guide
-  - support
-  - operations
-  - updates
-image: /assets/images/covers/2026/ABM_wrap.png
-thumbnail: /assets/images/covers/2026/ABM_wrap.png
-cta: 2
-comments: true
 series: abmwarranty041walkthrough
+tags: null
+thumbnail: /assets/images/covers/2026/ABM_wrap.png
+title: 'ABM Warranty 0.4.1 Walkthrough: Wrap-Up and Beta'
 ---
 
 {% include series.html id="abmwarranty041walkthrough" %}

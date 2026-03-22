@@ -1,26 +1,40 @@
 ---
-layout: post
-date: '2026-03-06'
+ai_analysis:
+  ai_style_score: 0.25
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.08333333333333333
+    list_density: 0.06666666666666667
+    repetition: 0.65
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: This walkthrough series focuses on managed preferences and credential packaging
+    workflow in ABM Warranty 0.4.1.
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- guide
+comments: true
+cta: 2
+date: '2026-03-06'
+description: A walkthrough of managed preferences in ABM Warranty 0.4.1 covering how
+  I package managed credentials, deploy them through MDM, import them into the app,
+  and keep the credential workflow secure.
+image: /assets/images/covers/2026/ABM_prefs.png
+layout: post
+meta_categories:
+- guide
+- support
+- operations
+- updates
 permalink: /blog/abm-warranty-0-4-1-walkthrough-managed-preferences/
 published: true
-title: "ABM Warranty 0.4.1 Walkthrough: Managed Preferences"
-description: "A walkthrough of managed preferences in ABM Warranty 0.4.1 covering how I package managed credentials, deploy them through MDM, import them into the app, and keep the credential workflow secure."
-Description: "In this part of the ABM Warranty 0.4.1 walkthrough series, I’m focusing on managed preferences and the credential packaging workflow. In the last video, I covered multiple credentials inside the app itself. In this one, I’m showing how to package those credentials so they can be deployed securely through MDM."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - guide
-meta_categories:
-  - guide
-  - support
-  - operations
-  - updates
-image: /assets/images/covers/2026/ABM_prefs.png
-thumbnail: /assets/images/covers/2026/ABM_prefs.png
-cta: 2
-comments: true
 series: abmwarranty041walkthrough
+tags: null
+thumbnail: /assets/images/covers/2026/ABM_prefs.png
+title: 'ABM Warranty 0.4.1 Walkthrough: Managed Preferences'
 ---
 
 {% include series.html id="abmwarranty041walkthrough" %}

@@ -1,35 +1,48 @@
 ---
-layout: post
-date: '2025-11-14'
+ai_analysis:
+  ai_style_score: 0.32
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.5
+    instructional_density: 0.16666666666666666
+    list_density: 0.25806451612903225
+    repetition: 0.33
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: ABM Warranty is a new macOS app that brings a truly enterprise-grade warranty
+    dashboard to Apple Business Manager, powered entirely by the official ABM API.
 author: Jon Brown
+blogimgpath: 202408034Up
+body_image: /assets/images/blog/2025/warranty/1.png
+categories:
+- updates
+- changelog
+comments: true
+cta: 2
+date: '2025-11-14'
+description: A new macOS utility that brings powerful, enterprise-grade warranty management
+  and AppleCare+ oversight to Apple Business Manager administrators.
+image: /assets/images/covers/2025/warranty_header_010.png
+layout: post
+meta_categories:
+- updates
+- apple-business-manager
+- guide
+- operations
 permalink: /blog/introducing-abm-warranty/
 published: true
-title: "Version 0.1.0"
-description: "A new macOS utility that brings powerful, enterprise-grade warranty management and AppleCare+ oversight to Apple Business Manager administrators."
-Description: "If you manage Apple devices at scale, you already know that **Apple Business Manager (ABM)** provides warranty data — but in practice, it’s extremely limited. It doesn’t provide workflow-friendly insights, it doesn’t surface actionable coverage states, and it doesn’t help you wrangle the ever-growing complexity of **AppleCare+ renewals** across hundreds or thousands of devices."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - updates
-  - changelog
-meta_categories:
-  - updates
-  - apple-business-manager
-  - guide
-  - operations
-image: /assets/images/covers/2025/warranty_header_010.png
-thumbnail: /assets/images/covers/2025/warranty_header_010.png
-body_image: /assets/images/blog/2025/warranty/1.png
-cta: 2
-comments: true
-series: abmwarranty
-release_version: "0.1.0"
-release_date: "Nov 20, 2025"
+release_date: Nov 20, 2025
 release_notes:
-  - Initial public beta release
-  - Apple Business Manager inventory import
-  - Warranty and AppleCare+ coverage lookup
-  - Additional release notes here
+- Initial public beta release
+- Apple Business Manager inventory import
+- Warranty and AppleCare+ coverage lookup
+- Additional release notes here
+release_version: 0.1.0
+series: abmwarranty
+tags: null
+thumbnail: /assets/images/covers/2025/warranty_header_010.png
+title: Version 0.1.0
 ---
 
 {% include series.html id="abmwarranty" %}

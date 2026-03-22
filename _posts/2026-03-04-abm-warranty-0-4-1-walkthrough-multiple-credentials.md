@@ -1,26 +1,39 @@
 ---
-layout: post
-date: '2026-03-04'
+ai_analysis:
+  ai_style_score: 0.24
+  confidence: medium
+  era: ai-era
+  signals:
+    emoji_usage: 0.0
+    instructional_density: 0.13333333333333333
+    list_density: 0.0
+    repetition: 0.65
+    structure_regularity: 0.59
+    tone_uniformity: 0.52
+  summary: ABM Warranty walkthrough series, focusing on multiple credentials
 author: Jon Brown
+blogimgpath: 202408034Up
+categories:
+- guide
+comments: true
+cta: 2
+date: '2026-03-04'
+description: A walkthrough of the ABM Warranty 0.4.1 multiple credentials workflow
+  covering how I remove a credential, add multiple ABM contexts, switch between them,
+  and how the app stores each credential set separately.
+image: /assets/images/covers/2026/ABM_Creds.png
+layout: post
+meta_categories:
+- guide
+- support
+- operations
+- updates
 permalink: /blog/abm-warranty-0-4-1-walkthrough-multiple-credentials/
 published: true
-title: "ABM Warranty 0.4.1 Walkthrough: Multiple Credentials"
-description: "A walkthrough of the ABM Warranty 0.4.1 multiple credentials workflow covering how I remove a credential, add multiple ABM contexts, switch between them, and how the app stores each credential set separately."
-Description: "In this part of the ABM Warranty 0.4.1 walkthrough series, I’m focusing on multiple credentials. In the first video, I showed the basic setup and how to add a single credential. In this one, I want to show what happens when I remove a credential, what changes when I add more than one, and how the app behaves once there are multiple contexts in play."
-blogimgpath: 202408034Up
-tags:
-categories:
-  - guide
-meta_categories:
-  - guide
-  - support
-  - operations
-  - updates
-image: /assets/images/covers/2026/ABM_Creds.png
-thumbnail: /assets/images/covers/2026/ABM_Creds.png
-cta: 2
-comments: true
 series: abmwarranty041walkthrough
+tags: null
+thumbnail: /assets/images/covers/2026/ABM_Creds.png
+title: 'ABM Warranty 0.4.1 Walkthrough: Multiple Credentials'
 ---
 
 {% include series.html id="abmwarranty041walkthrough" %}
