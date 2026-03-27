@@ -838,6 +838,25 @@ html[data-theme='dark'] .privacy-hero-glass {
   position: relative;
 }
 
+.roadmap-card--complete {
+  background: #edf8ef;
+  border-color: #b9dfbf;
+}
+
+.roadmap-complete-status {
+  margin: 0.25rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  font-size: 0.82rem;
+  color: #19773a;
+  font-weight: 600;
+}
+
+.roadmap-complete-status i {
+  color: #19773a;
+}
+
 .roadmap-card h3 {
   margin-bottom: 0.25rem;
 }
