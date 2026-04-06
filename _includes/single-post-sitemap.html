@@ -2,13 +2,19 @@
   <loc>{{ post.url | absolute_url }}</loc>
   <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
   {% if page.priority %}<priority>{{page.priority}}</priority>{%endif%}
-  {% assign sitemap_image = post.thumbnail | default: post.image | default: post.cover %}
-  {% if sitemap_image %}
-    {% if sitemap_image contains '://' %}
+  {% assign sitemap_image = post.thumbnail | default: post.image | default: post.cover | strip %}
+  {% assign sitemap_image_loc = "" %}
+  {% if sitemap_image != "" %}
+    {% assign image_prefix_8 = sitemap_image | slice: 0, 8 %}
+    {% assign image_prefix_7 = sitemap_image | slice: 0, 7 %}
+    {% assign image_prefix_1 = sitemap_image | slice: 0, 1 %}
+    {% if image_prefix_8 == "https://" or image_prefix_7 == "http://" %}
       {% assign sitemap_image_loc = sitemap_image %}
-    {% else %}
+    {% elsif image_prefix_1 == "/" %}
       {% assign sitemap_image_loc = sitemap_image | absolute_url %}
     {% endif %}
+  {% endif %}
+  {% if sitemap_image_loc != "" %}
     <image:image>
       <image:loc>{{ sitemap_image_loc | xml_escape }}</image:loc>
       <image:title><![CDATA[{{ post.title }}]]></image:title>
