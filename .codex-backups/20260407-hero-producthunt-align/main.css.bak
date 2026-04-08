@@ -1133,28 +1133,7 @@ html[data-theme='dark'] .privacy-hero-glass {
 }
 
 .hero-copy-col .abm-cta-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
   margin-bottom: 50px;
-}
-
-.hero-copy-col .abm-cta-row .abm-btn {
-  margin-right: 0;
-}
-
-.hero-producthunt-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.hero-producthunt-badge img {
-  display: block;
-  width: 250px;
-  height: 54px;
 }
 
 .abm-grid,

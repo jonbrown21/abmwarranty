@@ -9,7 +9,7 @@ Sitemap: https://abmwarranty.com/sitemap.xml
 User-agent: *
 # robotstxt.org - if _config production variable is false robots will be disallowed.
 {% if site.production != true %}
-  Disallow: /
+  Disallow:
 {% else %}
   # Error utility endpoints should not be crawled as content pages.
   Disallow: /403

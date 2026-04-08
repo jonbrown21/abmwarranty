@@ -10,7 +10,7 @@
           </p>
           <p class="abm-cta-row">
             <a class="abm-btn" href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download ABM Warranty</a>
-            <a class="hero-producthunt-badge" href="https://www.producthunt.com/products/abm-warranty?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-abm-warranty" target="_blank" rel="noopener noreferrer"><img alt="ABM Warranty - Apple Business &amp; School Manager Coverage, Simplified | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1118165&amp;theme=neutral&amp;t=1775589669980"></a>
+            <a href="https://www.producthunt.com/products/abm-warranty?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-abm-warranty" target="_blank" rel="noopener noreferrer"><img alt="ABM Warranty - Apple Business &amp; School Manager Coverage, Simplified | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1118165&amp;theme=neutral&amp;t=1775589669980"></a>
           </p>
         </div>
         <div class="hero-shot" role="img" aria-label="ABM Warranty app screenshot">
