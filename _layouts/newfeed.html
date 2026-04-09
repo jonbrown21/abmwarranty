@@ -9,19 +9,18 @@
         <lastBuildDate>{{ site.time }}</lastBuildDate>
         <atom:link href="{{ site.site_cdn }}/atom.xml" rel="self" type="application/rss+xml"/>
         {% for post in site.posts limit:900 %}
-         {% if post.incfeed %}
-    
-    	{% else %}
-        <item>
-          <title>{{ post.title | xml_escape }}</title>
-          <description><![CDATA[ {{ post.content | markdownify | strip_html | replace: '\n\n', '\n' | remove: "&gt;" | replace: "&amp;", "'" }} ]]></description>
-          <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-          <link>{{ site.url }}{{ post.permalink }}</link>
-          <enclosure url="{{ site.site_cdn }}{{ post.image }}" length="0" type="image/jpeg"/>
-          <permalink>{{ site.url }}{{ post.permalink }}</permalink>
-          <guid isPermaLink="true">{{ site.url}}{{ post.permalink }}</guid>
-        </item>
-        {% endif %}
+          {% assign feed_body = post.content | markdownify | strip_html | strip %}
+          {% if post.incfeed != true and post.external_url == nil and feed_body != "" %}
+          <item>
+            <title>{{ post.title | xml_escape }}</title>
+            <description><![CDATA[ {{ post.content | markdownify | strip_html | replace: '\n\n', '\n' | remove: "&gt;" | replace: "&amp;", "'" }} ]]></description>
+            <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+            <link>{{ site.url }}{{ post.permalink }}</link>
+            <enclosure url="{{ site.site_cdn }}{{ post.image }}" length="0" type="image/jpeg"/>
+            <permalink>{{ site.url }}{{ post.permalink }}</permalink>
+            <guid isPermaLink="true">{{ site.url}}{{ post.permalink }}</guid>
+          </item>
+          {% endif %}
         {% endfor %}
     </channel>
 </rss>

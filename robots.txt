@@ -7,21 +7,17 @@ permalink: robots.txt
 {% assign noindexDocuments = site.documents | where: 'sitemap', false %}
 Sitemap: https://abmwarranty.com/sitemap.xml
 User-agent: *
-# robotstxt.org - if _config production variable is false robots will be disallowed.
-{% if site.production != true %}
-  Disallow:
-{% else %}
-  # Error utility endpoints should not be crawled as content pages.
-  Disallow: /403
-  Disallow: /500
-  {% if noindexDocuments or noindexPages %}
-    {% for node in noindexPages %}
-      Disallow: {{ node.url }}
-    {% endfor %}
-    {% for node in noindexDocuments %}
-      Disallow: {{ node.url }}
-    {% endfor %}
-  {% else %}
-    Disallow:
-  {% endif %}
-{% endif %}
+# Always allow crawl by default.
+Allow: /
+
+# Error utility endpoints should not be crawled as content pages.
+Disallow: /403
+Disallow: /404
+Disallow: /500
+
+{% for node in noindexPages %}
+Disallow: {{ node.url }}
+{% endfor %}
+{% for node in noindexDocuments %}
+Disallow: {{ node.url }}
+{% endfor %}

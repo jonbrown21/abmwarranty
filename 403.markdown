@@ -1,0 +1,6 @@
+---
+permalink: /403.html
+layout: home
+---
+
+{% include sections/hero.html %}
