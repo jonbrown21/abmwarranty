@@ -3,6 +3,9 @@ layout: guide
 title: "Managed Preferences"
 description: "Managed Preferences"
 permalink: /guide/managed-preferences/
+guide_shots:
+  - src: /assets/images/guide/import_creds/import_creds.png
+    alt: Import managed credentials in ABM Warranty
 ---
 
 
@@ -134,4 +137,3 @@ and auditable through the Status Dashboard and Logs.
 
 <p>
 </p>
-

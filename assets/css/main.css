@@ -3151,6 +3151,24 @@ html[data-theme='dark'] .guide-shot-card {
   height: auto;
 }
 
+@media (min-width: 1100px) {
+  .guide-shot-card {
+    min-height: 0;
+    max-height: 456px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .guide-shot-card img {
+    width: auto;
+    max-width: 100%;
+    max-height: 408px;
+    object-fit: contain;
+  }
+}
+
 .guide-content h2,
 .guide-content h3 {
   margin-top: 1.35rem;
@@ -3171,6 +3189,25 @@ html[data-theme='dark'] .guide-shot-card {
 .guide-content ol {
   margin: 0.35rem 0 0.9rem 1.05rem;
   padding: 0;
+}
+
+.guide-content pre.terminal {
+  margin: 0.7rem 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, #ffffff 10%, transparent);
+  background: #111827;
+  color: #f8fafc;
+  overflow-x: auto;
+}
+
+.guide-content pre.terminal code {
+  display: block;
+  color: #f8fafc;
+  white-space: pre;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
