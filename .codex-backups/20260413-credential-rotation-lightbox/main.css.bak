@@ -1304,27 +1304,6 @@ html[data-theme='dark'] .privacy-hero-glass {
   transform-origin: center center;
 }
 
-.feature-card #feature-card-13-image {
-  object-fit: cover;
-  object-position: top right;
-  transform: scale(1.03);
-  transform-origin: top right;
-}
-
-.feature-card #feature-card-14-image {
-  object-fit: cover;
-  object-position: top center;
-  transform: scale(1.08);
-  transform-origin: top center;
-}
-
-.feature-card #feature-card-15-image {
-  object-fit: cover;
-  object-position: center center;
-  transform: scale(1.2);
-  transform-origin: center center;
-}
-
 .feature-card:hover #feature-card-1-image,
 .feature-card:hover #feature-card-2-image,
 .feature-card:hover #feature-card-3-image,
@@ -1353,18 +1332,6 @@ html[data-theme='dark'] .privacy-hero-glass {
 
 .feature-card:hover #feature-card-12-image {
   transform: scale(1.45);
-}
-
-.feature-card:hover #feature-card-13-image {
-  transform: scale(1.08);
-}
-
-.feature-card:hover #feature-card-14-image {
-  transform: scale(1.15);
-}
-
-.feature-card:hover #feature-card-15-image {
-  transform: scale(1.28);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3051,23 +3018,6 @@ html[data-theme="dark"] .app-support-cta__copy {
   padding-right: 2rem;
 }
 
-.guide-new-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0.42rem;
-  padding: 0.08rem 0.4rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent);
-  background: color-mix(in srgb, var(--primary) 18%, transparent);
-  color: color-mix(in srgb, var(--primary) 86%, var(--text));
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  vertical-align: middle;
-}
-
 .guide-topic summary::-webkit-details-marker {
   display: none;
 }
@@ -3091,9 +3041,7 @@ html[data-theme="dark"] .app-support-cta__copy {
 }
 
 .guide-topic a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;
@@ -3181,12 +3129,6 @@ html[data-theme="dark"] .app-support-cta__copy {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.guide-shots--steps {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-}
-
 .guide-shot-card {
   margin: 0;
   border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
@@ -3207,63 +3149,6 @@ html[data-theme='dark'] .guide-shot-card {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.guide-shot-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.guide-shot-card--step {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  min-height: 220px;
-}
-
-.guide-shot-card--step img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  object-fit: cover;
-}
-
-.guide-shot-card--step-focus img {
-  object-fit: cover;
-  object-position: top right;
-}
-
-.guide-shot-card--step-focus {
-  background-image: none;
-  background: transparent;
-}
-
-.guide-shot-step-pill {
-  position: absolute;
-  top: 0.65rem;
-  left: 0.65rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.24rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #ffffff;
-  background: color-mix(in srgb, var(--primary) 84%, #111827 16%);
-  border: 1px solid color-mix(in srgb, #ffffff 22%, transparent);
-  box-shadow: 0 6px 16px -10px rgba(15, 23, 42, 0.9);
-}
-
-.guide-shot-caption {
-  margin: 0;
-  padding: 0 0.35rem;
-  text-align: left;
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  line-height: 1.5;
 }
 
 .credential-rotation-steps {
@@ -3321,10 +3206,6 @@ html[data-theme='dark'] .guide-shot-card {
   line-height: 1.5;
 }
 
-.credential-rotation-zoomable {
-  cursor: default;
-}
-
 .guide-shot-card--plain {
   background-image: none;
   background: transparent;
@@ -3367,91 +3248,6 @@ html[data-theme='dark'] .guide-shot-card {
     height: 100%;
     max-height: none;
     object-fit: cover;
-  }
-
-  .guide-shot-card--step img {
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: cover;
-  }
-
-  .guide-shot-card--step-focus img {
-    object-fit: cover;
-    object-position: top right;
-  }
-
-  .guide-shot-card--step-focus {
-    padding: 0;
-  }
-}
-
-@media (min-width: 901px) {
-  .credential-rotation-zoomable {
-    cursor: zoom-in;
-  }
-
-  .guide-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 120;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: rgba(10, 15, 27, 0.82);
-    backdrop-filter: blur(3px);
-  }
-
-  .guide-lightbox.is-open {
-    display: flex;
-  }
-
-  .guide-lightbox__panel {
-    position: relative;
-    width: min(1200px, 94vw);
-    max-height: 92vh;
-    border-radius: 12px;
-    overflow: hidden;
-    background: color-mix(in srgb, var(--surface) 94%, transparent);
-    background-image: url('/assets/images/home/screens/wallpaper_light.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 0;
-    box-shadow: 0 28px 60px -30px rgba(0, 0, 0, 0.85);
-  }
-
-  html[data-theme='dark'] .guide-lightbox__panel {
-    background-image: url('/assets/images/home/screens/wallpaper_dk.png');
-  }
-
-  .guide-lightbox__image {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 92vh;
-    object-fit: contain;
-    background: transparent;
-  }
-
-  .guide-lightbox__close {
-    position: absolute;
-    top: 0.6rem;
-    right: 0.6rem;
-    z-index: 1;
-    border: 1px solid color-mix(in srgb, #ffffff 26%, transparent);
-    border-radius: 999px;
-    padding: 0.35rem 0.7rem;
-    font-size: 0.8rem;
-    font-weight: 650;
-    color: #f8fafc;
-    background: rgba(15, 23, 42, 0.9);
-    cursor: pointer;
-  }
-
-  body.guide-lightbox-open {
-    overflow: hidden;
   }
 }
 

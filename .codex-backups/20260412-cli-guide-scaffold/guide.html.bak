@@ -25,8 +25,6 @@
           <a href="{{ '/guide/intro/' | relative_url }}" {% if page.url == '/guide/intro/' %}aria-current="page"{% endif %}>Introduction</a>
           <a href="{{ '/guide/dashboard/' | relative_url }}" {% if page.url == '/guide/dashboard/' %}aria-current="page"{% endif %}>Dashboard Overview</a>
           <a href="{{ '/guide/status-dashboard/' | relative_url }}" {% if page.url == '/guide/status-dashboard/' %}aria-current="page"{% endif %}>Status Dashboard</a>
-          <a href="{{ '/guide/desktop-widgets/' | relative_url }}" {% if page.url == '/guide/desktop-widgets/' %}aria-current="page"{% endif %}>Desktop Widgets <span class="guide-new-pill">NEW</span></a>
-          <a href="{{ '/guide/notifications/' | relative_url }}" {% if page.url == '/guide/notifications/' %}aria-current="page"{% endif %}>Notifications <span class="guide-new-pill">NEW</span></a>
         </details>
 
         <details class="guide-topic" open>
@@ -36,7 +34,6 @@
           <a href="{{ '/guide/assertion/' | relative_url }}" {% if page.url == '/guide/assertion/' %}aria-current="page"{% endif %}>JWT Client Assertion</a>
           <a href="{{ '/guide/token/' | relative_url }}" {% if page.url == '/guide/token/' %}aria-current="page"{% endif %}>Token Exchange</a>
           <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
-          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
         </details>
 
         <details class="guide-topic" open>
@@ -52,13 +49,6 @@
           <summary>Filters and Views</summary>
           <a href="{{ '/guide/filters/' | relative_url }}" {% if page.url == '/guide/filters/' %}aria-current="page"{% endif %}>Filters</a>
           <a href="{{ '/guide/sorting/' | relative_url }}" {% if page.url == '/guide/sorting/' %}aria-current="page"{% endif %}>Sort Options</a>
-        </details>
-
-        <details class="guide-topic" open>
-          <summary>Command Line Interface <span class="guide-new-pill">NEW</span></summary>
-          <a href="{{ '/guide/cli-help/' | relative_url }}" {% if page.url == '/guide/cli-help/' %}aria-current="page"{% endif %}>Help Page</a>
-          <a href="{{ '/guide/cli-managing-notifications/' | relative_url }}" {% if page.url == '/guide/cli-managing-notifications/' %}aria-current="page"{% endif %}>Managing Notifications</a>
-          <a href="{{ '/guide/cli-helper-app/' | relative_url }}" {% if page.url == '/guide/cli-helper-app/' %}aria-current="page"{% endif %}>Helper App</a>
         </details>
 
         <details class="guide-topic" open>
@@ -100,33 +90,15 @@
             <p class="guide-lead">{{ page.description }}</p>
           {% endif %}
           {% if page.guide_shots and page.guide_shots.size > 0 %}
-            <div class="guide-shots {% if page.guide_shots.size > 1 %}guide-shots--split{% endif %} {% if page.guide_shots[0].step or page.guide_shots[0].caption %}guide-shots--steps{% endif %}">
+            <div class="guide-shots {% if page.guide_shots.size > 1 %}guide-shots--split{% endif %}">
               {% for shot in page.guide_shots %}
-                {% if shot.step or shot.caption %}
-                  <div class="guide-shot-item">
-                    <figure class="guide-shot-card guide-shot-card--step">
-                      {% if shot.step %}
-                        <span class="guide-shot-step-pill">{{ shot.step }}</span>
-                      {% endif %}
-                      <img
-                        src="{{ shot.src | relative_url }}"
-                        alt="{{ shot.alt | default: page.title | escape }}"
-                        loading="lazy"
-                        decoding="async">
-                    </figure>
-                    {% if shot.caption %}
-                      <p class="guide-shot-caption">{{ shot.caption }}</p>
-                    {% endif %}
-                  </div>
-                {% else %}
-                  <figure class="guide-shot-card">
-                    <img
-                      src="{{ shot.src | relative_url }}"
-                      alt="{{ shot.alt | default: page.title | escape }}"
-                      loading="lazy"
-                      decoding="async">
-                  </figure>
-                {% endif %}
+                <figure class="guide-shot-card">
+                  <img
+                    src="{{ shot.src | relative_url }}"
+                    alt="{{ shot.alt | default: page.title | escape }}"
+                    loading="lazy"
+                    decoding="async">
+                </figure>
               {% endfor %}
             </div>
           {% endif %}
@@ -137,6 +109,5 @@
       </article>
     </main>
     {% include cookie-consent.html %}
-    <script defer src="{{ '/assets/js/guide-lightbox.js' | relative_url }}"></script>
   </body>
 </html>

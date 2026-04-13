@@ -3051,23 +3051,6 @@ html[data-theme="dark"] .app-support-cta__copy {
   padding-right: 2rem;
 }
 
-.guide-new-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0.42rem;
-  padding: 0.08rem 0.4rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent);
-  background: color-mix(in srgb, var(--primary) 18%, transparent);
-  color: color-mix(in srgb, var(--primary) 86%, var(--text));
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  vertical-align: middle;
-}
-
 .guide-topic summary::-webkit-details-marker {
   display: none;
 }
@@ -3091,9 +3074,7 @@ html[data-theme="dark"] .app-support-cta__copy {
 }
 
 .guide-topic a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;

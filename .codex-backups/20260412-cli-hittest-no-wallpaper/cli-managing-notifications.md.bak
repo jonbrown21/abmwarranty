@@ -134,7 +134,7 @@ for notification candidates, without mutating stored records.
 
 <h3>Post a Test Notification</h3>
 
-<figure class="guide-shot-card guide-shot-card--plain">
+<figure class="guide-shot-card">
     <img
       src="{{ '/assets/images/guide/notifications_hittest.png' | relative_url }}"
       alt="ABM Warranty notification hit test example"

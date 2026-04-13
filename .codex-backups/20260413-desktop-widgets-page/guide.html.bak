@@ -25,8 +25,6 @@
           <a href="{{ '/guide/intro/' | relative_url }}" {% if page.url == '/guide/intro/' %}aria-current="page"{% endif %}>Introduction</a>
           <a href="{{ '/guide/dashboard/' | relative_url }}" {% if page.url == '/guide/dashboard/' %}aria-current="page"{% endif %}>Dashboard Overview</a>
           <a href="{{ '/guide/status-dashboard/' | relative_url }}" {% if page.url == '/guide/status-dashboard/' %}aria-current="page"{% endif %}>Status Dashboard</a>
-          <a href="{{ '/guide/desktop-widgets/' | relative_url }}" {% if page.url == '/guide/desktop-widgets/' %}aria-current="page"{% endif %}>Desktop Widgets <span class="guide-new-pill">NEW</span></a>
-          <a href="{{ '/guide/notifications/' | relative_url }}" {% if page.url == '/guide/notifications/' %}aria-current="page"{% endif %}>Notifications <span class="guide-new-pill">NEW</span></a>
         </details>
 
         <details class="guide-topic" open>
@@ -36,7 +34,7 @@
           <a href="{{ '/guide/assertion/' | relative_url }}" {% if page.url == '/guide/assertion/' %}aria-current="page"{% endif %}>JWT Client Assertion</a>
           <a href="{{ '/guide/token/' | relative_url }}" {% if page.url == '/guide/token/' %}aria-current="page"{% endif %}>Token Exchange</a>
           <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
-          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation</a>
         </details>
 
         <details class="guide-topic" open>
@@ -55,7 +53,7 @@
         </details>
 
         <details class="guide-topic" open>
-          <summary>Command Line Interface <span class="guide-new-pill">NEW</span></summary>
+          <summary>Command Line Interface</summary>
           <a href="{{ '/guide/cli-help/' | relative_url }}" {% if page.url == '/guide/cli-help/' %}aria-current="page"{% endif %}>Help Page</a>
           <a href="{{ '/guide/cli-managing-notifications/' | relative_url }}" {% if page.url == '/guide/cli-managing-notifications/' %}aria-current="page"{% endif %}>Managing Notifications</a>
           <a href="{{ '/guide/cli-helper-app/' | relative_url }}" {% if page.url == '/guide/cli-helper-app/' %}aria-current="page"{% endif %}>Helper App</a>

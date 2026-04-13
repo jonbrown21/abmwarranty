@@ -134,14 +134,6 @@ for notification candidates, without mutating stored records.
 
 <h3>Post a Test Notification</h3>
 
-<figure class="guide-shot-card guide-shot-card--plain">
-    <img
-      src="{{ '/assets/images/guide/notifications_hittest.png' | relative_url }}"
-      alt="ABM Warranty notification hit test example"
-      loading="lazy"
-      decoding="async">
-</figure>
-
 <p>
 Use <code>fire-test</code> to immediately post a local test notification and
 confirm that delivery is functioning end-to-end.
