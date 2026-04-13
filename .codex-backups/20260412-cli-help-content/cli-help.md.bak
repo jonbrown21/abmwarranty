@@ -1,0 +1,15 @@
+---
+layout: guide
+title: "CLI Help Page"
+description: "CLI Help Page"
+permalink: /guide/cli-help/
+---
+
+<p>
+This section will document the ABM Warranty command-line help output, command
+structure, and flag reference.
+</p>
+
+<p>
+Content scaffolded and ready for the full CLI help documentation.
+</p>

@@ -6,12 +6,6 @@ permalink: /guide/managed-preferences/
 guide_shots:
   - src: /assets/images/guide/import_creds/import_creds.png
     alt: Import managed credentials in ABM Warranty
-    step: "Step 1"
-    caption: "Click the import new credential option after pressing the import header to import managed credentials."
-  - src: /assets/images/guide/import_creds/import_creds_step2.png
-    alt: Decrypt managed credential package in ABM Warranty
-    step: "Step 2"
-    caption: "Enter the password to decrypt the credential package to finalize import."
 ---
 
 

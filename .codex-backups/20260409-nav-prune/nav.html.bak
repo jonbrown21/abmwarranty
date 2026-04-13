@@ -1,0 +1,37 @@
+<header class="abm-header">
+  <div class="abm-container nav-shell">
+    <a class="brand-link" href="{{ '/' | relative_url }}">
+      <span class="brand-badge">
+        <img id="site-logo" src="{{ site.icon_light }}" data-light="{{ site.icon_light }}" data-dark="{{ site.icon_dark }}" alt="ABM Warranty logo">
+      </span>
+      <span class="brand-copy">ABM Warranty</span>
+    </a>
+    <input id="nav-menu" type="checkbox" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-menu" class="nav-toggle-btn" aria-hidden="true">Menu</label>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}#features">Features</a>
+      <a href="{{ '/' | relative_url }}#pricing">Pricing</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/guide/' | relative_url }}">Guide</a>
+      <a href="{{ '/roadmap/' | relative_url }}">Roadmap</a>
+      <a href="{{ '/changelog/' | relative_url }}">Changelog</a>
+      <a href="{{ '/' | relative_url }}#faq">FAQ</a>
+      <a href="{{ site.app_store_url }}" target="_blank" rel="noopener noreferrer">Download</a>
+    </nav>
+    <span class="theme-switch-wrap">
+      <input id="theme-toggle" class="theme-toggle-input" type="checkbox" aria-label="Toggle theme">
+      <label for="theme-toggle" class="theme-toggle-switch" role="switch" aria-live="polite">
+        <span class="theme-toggle-track">
+          <span class="theme-icon theme-icon-light" aria-hidden="true">
+            <i class="bi bi-sun-fill" aria-hidden="true"></i>
+          </span>
+          <span class="theme-icon theme-icon-dark" aria-hidden="true">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </span>
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="sr-only">Theme: light</span>
+      </label>
+    </span>
+  </div>
+</header>

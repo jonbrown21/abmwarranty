@@ -186,57 +186,6 @@
         <p>Show your fleet warranty count information from your Desktop using Desktop Widgets to load information from ABM Warranty. Updates on tenant switch.</p>
       </article>
       <article class="abm-card feature-card">
-        <div class="feature-screenshot" role="img" aria-label="Command Line Interface screenshot">
-          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
-          <img
-            id="feature-card-14-image"
-            src="{{ '/assets/images/guide/cli.png' | relative_url }}"
-            data-light="{{ '/assets/images/guide/cli.png' | relative_url }}"
-            data-dark="{{ '/assets/images/guide/cli.png' | relative_url }}"
-            alt="ABM Warranty command line interface output and diagnostics"
-            loading="lazy"
-            decoding="async"
-            width="1180"
-            height="700">
-        </div>
-        <h3>Command Line Interface</h3>
-        <p>Run notification diagnostics, helper-state checks, cadence changes, and local fire-test commands directly from Terminal.</p>
-      </article>
-      <article class="abm-card feature-card">
-        <div class="feature-screenshot" role="img" aria-label="Credential Replacement screenshot">
-          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
-          <img
-            id="feature-card-15-image"
-            src="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
-            data-light="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
-            data-dark="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
-            alt="ABM Warranty credential replacement and migration workflow"
-            loading="lazy"
-            decoding="async"
-            width="1180"
-            height="700">
-        </div>
-        <h3>Credential Replacement</h3>
-        <p>Replace revoked API credentials without losing tenant history using guided migration and managed update flows.</p>
-      </article>
-      <article class="abm-card feature-card">
-        <div class="feature-screenshot" role="img" aria-label="Notifications screenshot">
-          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
-          <img
-            id="feature-card-13-image"
-            src="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
-            data-light="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
-            data-dark="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
-            alt="ABM Warranty notification permission prompts and helper alerts"
-            loading="lazy"
-            decoding="async"
-            width="1180"
-            height="700">
-        </div>
-        <h3>Notifications</h3>
-        <p>Configure local alerts for expiring and attention-needed devices with helper-backed delivery, cadence controls, and per-device mute support.</p>
-      </article>
-      <article class="abm-card feature-card">
         <div class="feature-screenshot" role="img" aria-label="Localization screenshot">
           <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
           <img

@@ -1,0 +1,109 @@
+---
+layout: guide
+title: "CLI Helper App"
+description: "CLI Helper App"
+permalink: /guide/cli-helper-app/
+---
+
+<p>
+ABM Warranty includes a dedicated login-item helper app to keep local warranty
+notifications working even when the main app is closed.
+</p>
+
+<h3>Why the Helper Exists</h3>
+
+<p>
+The core app can only evaluate notification candidates while it is running.
+For managed notification behavior, that is not sufficient. Users expect alerts
+to continue after logout/login cycles, app restarts, and normal desktop
+workflows where the app is closed. The helper provides this continuity by
+running as a login-item runtime and executing the same evaluation engine used
+by the app path.
+</p>
+
+<h3>Architecture Summary</h3>
+
+<ul>
+    <li><strong>Main app</strong> computes and publishes a tenant-scoped snapshot to shared app-group storage.</li>
+    <li><strong>Helper</strong> reads that snapshot and transforms it into notification events.</li>
+    <li><strong>Shared engine</strong> applies suppression, cadence, and dedupe rules.</li>
+    <li><strong>UserNotifications</strong> posts local alerts with deep-link payloads.</li>
+    <li><strong>App open path</strong> resolves payloads to tenant/device detail or filter fallback.</li>
+</ul>
+
+<h3>How It Works with Login-Items</h3>
+
+<ul>
+    <li>Helper registration uses <code>SMAppService.loginItem(identifier:)</code>.</li>
+    <li>When notifications are enabled, ABM Warranty registers <code>breelabs.ABM-Warranty.NotificationHelper</code>.</li>
+    <li>When notifications are disabled, ABM Warranty unregisters the helper.</li>
+    <li>Runtime status is observable as: <code>enabled</code>, <code>requiresApproval</code>, <code>notFound</code>, or <code>notRegistered</code>.</li>
+    <li>The helper is bundled at <code>ABM Warranty.app/Contents/Library/LoginItems/ABM Notification Helper.app</code>.</li>
+</ul>
+
+<h3>Data Flow and Contracts</h3>
+
+<ul>
+    <li>Snapshot source: <code>widget.snapshot.activeTenant</code> in app-group defaults.</li>
+    <li>Snapshot payload includes counts and prequalified device lists for <strong>Needs Attention</strong> and <strong>Expiring Soon</strong>.</li>
+    <li>Notification settings keys: <code>notifications.enabled</code>, <code>notifications.frequency</code>, and <code>notifications.lastSentMap</code>.</li>
+    <li>Suppression storage uses SQLite table <code>notification_suppression</code> in shared app-group storage.</li>
+    <li>Notification payload carries <code>tenantID</code>, <code>deviceID</code>, <code>serialNumber</code>, <code>category</code>, and timestamp.</li>
+</ul>
+
+<h3>Runtime Behavior</h3>
+
+<p>
+Current helper cadence is a 30-minute interval timer plus an immediate launch
+evaluation.
+</p>
+
+<ul>
+    <li>Launch trigger runs one immediate evaluation pass.</li>
+    <li>Timer trigger executes periodic evaluation while helper remains active.</li>
+    <li>Evaluation skips when notifications are disabled, authorization is missing, or no snapshot exists.</li>
+    <li>Deduping is enforced per tenant/device/category using last-sent timestamps.</li>
+    <li>Suppressed devices are excluded globally for that tenant context.</li>
+</ul>
+
+<h3>Security and Sandboxing</h3>
+
+<ul>
+    <li>Helper target is sandboxed and constrained by entitlements.</li>
+    <li>App-group sharing is explicit and limited to notification and state exchange.</li>
+    <li>No private key material is moved into helper scope.</li>
+    <li>Keychain credential authority remains in app credential flows.</li>
+    <li>No APNs or push backend: all notifications are local system notifications.</li>
+</ul>
+
+<h3>Why This Is Critical to Managed Notifications</h3>
+
+<ul>
+    <li>Enables alert continuity when ABM Warranty is closed.</li>
+    <li>Preserves unified policy across app-open and app-closed paths.</li>
+    <li>Keeps suppression and cadence behavior deterministic for managed environments.</li>
+    <li>Avoids silent drift between UI state and background notification decisions.</li>
+</ul>
+
+<h3>Operations and Diagnostics</h3>
+
+<p>
+Use CLI commands to validate helper state and end-to-end notification behavior:
+</p>
+
+<pre class="terminal"><code>abm-warranty notifications status
+abm-warranty notifications run-once
+abm-warranty notifications fire-test
+abm-warranty notifications fire-test -v</code></pre>
+
+<p>
+If alerts do not appear:
+</p>
+
+<ol>
+    <li>Confirm helper status is <code>enabled</code>.</li>
+    <li>Confirm macOS notification authorization is granted.</li>
+    <li>Confirm the target device is not in <strong>Notifications Muted</strong>.</li>
+    <li>Run <code>fire-test -v</code> to verify local delivery path.</li>
+    <li>Validate snapshot presence and tenant context before run-once checks.</li>
+</ol>
