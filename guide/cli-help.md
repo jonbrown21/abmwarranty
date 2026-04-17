@@ -53,16 +53,7 @@ EXAMPLES
   abm-warranty notifications status
   abm-warranty notifications enable
   abm-warranty notifications frequency weekly
-  abm-warranty notifications fire-test
-
-ZSH ALIAS SETUP
-  Add an alias so `abm-warranty` is available in new shells:
-
-    echo 'alias abm-warranty="&lt;FULL_PATH_TO_ABM_WARRANTY_BINARY&gt;"' >> ~/.zshrc
-    source ~/.zshrc
-
-  Example binary path:
-    /Applications/ABM Warranty.app/Contents/MacOS/ABM Warranty</code></pre>
+  abm-warranty notifications fire-test</code></pre>
 
 <h2>Security and Sandboxing</h2>
 

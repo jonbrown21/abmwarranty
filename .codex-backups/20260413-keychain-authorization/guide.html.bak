@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="antialiased">
+{% include head.html %}
+  <body class="abm-site guide-shell">
+    <input id="guide-menu" type="checkbox" class="guide-menu-toggle" aria-label="Toggle guide navigation">
+    <label for="guide-menu" class="guide-mobile-topbar">
+      <span class="guide-mobile-hamburger" aria-hidden="true"></span>
+      <span class="guide-mobile-topbar-label">Guide topics</span>
+    </label>
+    <label for="guide-menu" class="guide-sidebar-overlay" aria-hidden="true"></label>
+
+    <aside class="guide-sidebar" aria-label="Guide navigation">
+      <div class="guide-sidebar-top">
+        <a class="brand-link" href="{{ '/' | relative_url }}">
+          <span class="brand-badge">
+            <img id="site-logo" src="{{ site.icon_light }}" data-light="{{ site.icon_light }}" data-dark="{{ site.icon_dark }}" alt="ABM Warranty logo">
+          </span>
+          <span class="brand-copy">ABM Warranty</span>
+        </a>
+      </div>
+
+      <nav class="guide-nav" aria-label="Guide topics">
+        <details class="guide-topic" open>
+          <summary>Overview</summary>
+          <a href="{{ '/guide/intro/' | relative_url }}" {% if page.url == '/guide/intro/' %}aria-current="page"{% endif %}>Introduction</a>
+          <a href="{{ '/guide/dashboard/' | relative_url }}" {% if page.url == '/guide/dashboard/' %}aria-current="page"{% endif %}>Dashboard Overview</a>
+          <a href="{{ '/guide/status-dashboard/' | relative_url }}" {% if page.url == '/guide/status-dashboard/' %}aria-current="page"{% endif %}>Status Dashboard</a>
+          <a href="{{ '/guide/desktop-widgets/' | relative_url }}" {% if page.url == '/guide/desktop-widgets/' %}aria-current="page"{% endif %}>Desktop Widgets <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/notifications/' | relative_url }}" {% if page.url == '/guide/notifications/' %}aria-current="page"{% endif %}>Notifications <span class="guide-new-pill">NEW</span></a>
+        </details>
+
+        <details class="guide-topic" open>
+          <summary>Credentials and Auth</summary>
+          <a href="{{ '/guide/creds/' | relative_url }}" {% if page.url == '/guide/creds/' %}aria-current="page"{% endif %}>Setting Up Credentials</a>
+          <a href="{{ '/guide/pem/' | relative_url }}" {% if page.url == '/guide/pem/' %}aria-current="page"{% endif %}>Working with PEM Keys</a>
+          <a href="{{ '/guide/assertion/' | relative_url }}" {% if page.url == '/guide/assertion/' %}aria-current="page"{% endif %}>JWT Client Assertion</a>
+          <a href="{{ '/guide/token/' | relative_url }}" {% if page.url == '/guide/token/' %}aria-current="page"{% endif %}>Token Exchange</a>
+          <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
+          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
+        </details>
+
+        <details class="guide-topic" open>
+          <summary>Coverage and Data</summary>
+          <a href="{{ '/guide/api/' | relative_url }}" {% if page.url == '/guide/api/' %}aria-current="page"{% endif %}>Using ABM APIs</a>
+          <a href="{{ '/guide/coverage/' | relative_url }}" {% if page.url == '/guide/coverage/' %}aria-current="page"{% endif %}>Coverage and Warranty Windows</a>
+          <a href="{{ '/guide/renewals/' | relative_url }}" {% if page.url == '/guide/renewals/' %}aria-current="page"{% endif %}>AppleCare+ Renewals</a>
+          <a href="{{ '/guide/needs-attention/' | relative_url }}" {% if page.url == '/guide/needs-attention/' %}aria-current="page"{% endif %}>Needs Attention Logic</a>
+          <a href="{{ '/guide/export/' | relative_url }}" {% if page.url == '/guide/export/' %}aria-current="page"{% endif %}>Exporting CSV</a>
+        </details>
+
+        <details class="guide-topic" open>
+          <summary>Filters and Views</summary>
+          <a href="{{ '/guide/filters/' | relative_url }}" {% if page.url == '/guide/filters/' %}aria-current="page"{% endif %}>Filters</a>
+          <a href="{{ '/guide/sorting/' | relative_url }}" {% if page.url == '/guide/sorting/' %}aria-current="page"{% endif %}>Sort Options</a>
+        </details>
+
+        <details class="guide-topic" open>
+          <summary>Command Line Interface <span class="guide-new-pill">NEW</span></summary>
+          <a href="{{ '/guide/cli-help/' | relative_url }}" {% if page.url == '/guide/cli-help/' %}aria-current="page"{% endif %}>Help Page</a>
+          <a href="{{ '/guide/cli-managing-notifications/' | relative_url }}" {% if page.url == '/guide/cli-managing-notifications/' %}aria-current="page"{% endif %}>Managing Notifications</a>
+          <a href="{{ '/guide/cli-helper-app/' | relative_url }}" {% if page.url == '/guide/cli-helper-app/' %}aria-current="page"{% endif %}>Helper App</a>
+        </details>
+
+        <details class="guide-topic" open>
+          <summary>Troubleshooting and Support</summary>
+          <a href="{{ '/guide/logging/' | relative_url }}" {% if page.url == '/guide/logging/' %}aria-current="page"{% endif %}>Viewing Logs</a>
+          <a href="{{ '/guide/connection/' | relative_url }}" {% if page.url == '/guide/connection/' %}aria-current="page"{% endif %}>Connection Issues</a>
+          <a href="{{ '/guide/errors/' | relative_url }}" {% if page.url == '/guide/errors/' %}aria-current="page"{% endif %}>Common Errors</a>
+          <a href="{{ '/guide/faq/' | relative_url }}" {% if page.url == '/guide/faq/' %}aria-current="page"{% endif %}>FAQ</a>
+          <a href="{{ '/guide/support-gpt/' | relative_url }}" {% if page.url == '/guide/support-gpt/' %}aria-current="page"{% endif %}>Support GPT</a>
+        </details>
+      </nav>
+
+      <div class="guide-sidebar-footer">
+        <a class="guide-back-link" href="{{ '/' | relative_url }}">Back to Site</a>
+        <span class="theme-switch-wrap">
+          <input id="theme-toggle" class="theme-toggle-input" type="checkbox" aria-label="Toggle theme">
+          <label for="theme-toggle" class="theme-toggle-switch" role="switch" aria-live="polite">
+            <span class="theme-toggle-track">
+              <span class="theme-icon theme-icon-light" aria-hidden="true">
+                <i class="bi bi-sun-fill" aria-hidden="true"></i>
+              </span>
+              <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+              </span>
+              <span class="theme-toggle-thumb"></span>
+            </span>
+            <span class="sr-only">Theme: light</span>
+          </label>
+        </span>
+      </div>
+    </aside>
+
+    <main class="guide-main">
+      <article class="guide-article">
+        <header class="guide-article-head">
+          <p class="eyebrow">Guide</p>
+          <h1>{{ page.title }}</h1>
+          {% if page.description and page.description != page.title %}
+            <p class="guide-lead">{{ page.description }}</p>
+          {% endif %}
+          {% if page.guide_shots and page.guide_shots.size > 0 %}
+            <div class="guide-shots {% if page.guide_shots.size > 1 %}guide-shots--split{% endif %} {% if page.guide_shots[0].step or page.guide_shots[0].caption %}guide-shots--steps{% endif %}">
+              {% for shot in page.guide_shots %}
+                {% if shot.step or shot.caption %}
+                  <div class="guide-shot-item">
+                    <figure class="guide-shot-card guide-shot-card--step">
+                      {% if shot.step %}
+                        <span class="guide-shot-step-pill">{{ shot.step }}</span>
+                      {% endif %}
+                      <img
+                        src="{{ shot.src | relative_url }}"
+                        alt="{{ shot.alt | default: page.title | escape }}"
+                        loading="lazy"
+                        decoding="async">
+                    </figure>
+                    {% if shot.caption %}
+                      <p class="guide-shot-caption">{{ shot.caption }}</p>
+                    {% endif %}
+                  </div>
+                {% else %}
+                  <figure class="guide-shot-card">
+                    <img
+                      src="{{ shot.src | relative_url }}"
+                      alt="{{ shot.alt | default: page.title | escape }}"
+                      loading="lazy"
+                      decoding="async">
+                  </figure>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </header>
+        <div class="guide-content">
+          {{ content }}
+        </div>
+      </article>
+    </main>
+    {% include cookie-consent.html %}
+    <script defer src="{{ '/assets/js/guide-lightbox.js' | relative_url }}"></script>
+  </body>
+</html>
