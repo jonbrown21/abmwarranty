@@ -1,0 +1,20 @@
+---
+layout: guide
+title: "Enterprise Sync Mode"
+description: "Enterprise Sync Mode"
+permalink: /guide/enterprise-sync-mode/
+---
+
+<p>
+Enterprise Sync Mode is a global strategy toggle in Settings that enables
+enterprise-style sync behavior across the app. When this preference is turned
+on, ABM Warranty applies a consistent job execution model intended for larger
+tenant environments and more structured operational flows.
+</p>
+
+<p>
+This section is a placeholder and will be expanded with full implementation
+details, UI screenshots, and rollout guidance. Final content will describe how
+the toggle changes runtime behavior, when to enable it, and which workflows are
+most impacted by this mode.
+</p>

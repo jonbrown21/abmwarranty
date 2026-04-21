@@ -1,0 +1,259 @@
+<section id="features" class="abm-section">
+  <div class="abm-container">
+    <p class="eyebrow">How it works</p>
+    <h2>Features</h2>
+    <p class="abm-note">ABM Warranty is a macOS app for Apple IT teams that instantly shows warranty and AppleCare+ status across ABM and ASM devices in one fast, private dashboard.</p>
+    <div class="abm-grid abm-grid--2-cols" id="feature-grid" data-page-size="6">
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Device inventory screenshot">
+          <img
+            id="feature-card-1-image"
+            src="{{ '/assets/images/home/screens/inventory.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/inventory.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/inventory_dk.png' | relative_url }}"
+            alt="ABM Warranty device inventory screenshot"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Device Inventory</h3>
+        <p>Retrieves device and warranty data directly from Apple Business Manager with pagination safety.</p>
+      </article>
+
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Screenshot placeholder">
+          <img
+            id="feature-card-2-image"
+            src="{{ '/assets/images/home/screens/dashboard.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/dashboard.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/dashboard_dk.png' | relative_url }}"
+            alt="ABM Warranty status dashboard with warranty and AppleCare+ coverage details"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Status Dashboard</h3>
+        <p>Provides a fast, reliable way to view warranty status, AppleCare+ coverage, and device lifecycle details.</p>
+      </article>
+
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Device counts screenshot">
+          <img
+            id="feature-card-3-image"
+            src="{{ '/assets/images/home/screens/inventory.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/inventory.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/inventory_dk.png' | relative_url }}"
+            alt="ABM Warranty device counts from Apple Business Manager and Apple School Manager"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Device Counts</h3>
+        <p>Shows accurate device counts from your Apple Business Manager or Apple School manager fleet.</p>
+      </article>
+
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Screenshot placeholder">
+          <img
+            id="feature-card-4-image"
+            src="{{ '/assets/images/home/screens/single.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/single.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/single_dk.png' | relative_url }}"
+            alt="ABM Warranty device view from Apple Business Manager or Apple School Manager"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Device View</h3>
+        <p>View device information from Apple Business Manager or Apple School Manager such as warranty coverage and warranty history.</p>
+      </article>
+
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Screenshot placeholder">
+          <img
+            id="feature-card-5-image"
+            src="{{ '/assets/images/home/screens/status.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/status.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/status_dk.png' | relative_url }}"
+            alt="ABM Warranty status information including credentials and sync details"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Status Information</h3>
+        <p>Gather meaningful API information for contextual awareness such as credential verification, last full sync, and API diagnostic details.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Screenshot placeholder">
+          <img
+            id="feature-card-7-image"
+            src="{{ '/assets/images/home/screens/progress.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/progress.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/progress_dk.png' | relative_url }}"
+            alt="ABM Warranty API sync progress and diagnostics"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>API Sync</h3>
+        <p>Verify the syncronization of the API information to your tennant database with real time statistics and diagnostics.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="API sync progress screenshot">
+          <img
+            id="feature-card-6-image"
+            src="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/tennant.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/tennant_dk.png' | relative_url }}"
+            alt="ABM Warranty multi-tenant credential management and switching"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Multi-tennancy</h3>
+        <p>ABM Warranty now supports multiple credential sets so you can easily swap between tennants within the application.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Managed preferences screenshot">
+          <img
+            id="feature-card-8-image"
+            src="{{ '/assets/images/home/screens/managed.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/managed.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/managed_dk.png' | relative_url }}"
+            alt="ABM Warranty managed preferences and MDM controlled credentials"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Managed Preferences</h3>
+        <p>Use MDM to enforce managed credentials via Managed Preferences via User Defaults. Managed tennants are not removable or editable.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Advanced logging screenshot">
+          <img
+            id="feature-card-9-image"
+            src="{{ '/assets/images/home/screens/log.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/log.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/log_dk.png' | relative_url }}"
+            alt="ABM Warranty advanced logging and diagnostics for API synchronization"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Advanced Logging</h3>
+        <p>View real time logging and diagnostics as well as debugging for larger API syncronizations and complex ecosystems.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Device exports screenshot">
+          <img
+            id="feature-card-10-image"
+            src="{{ '/assets/images/home/screens/export.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/export.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/export_dk.png' | relative_url }}"
+            alt="ABM Warranty CSV export interface for warranty and serial data"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Device Exports</h3>
+        <p>Quickly export your Apple Business or School Manager device data with warranty and serial information to CSV.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Desktop Widgets screenshot">
+          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
+          <img
+            id="feature-card-11-image"
+            src="{{ '/assets/images/home/screens/widgets.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/widgets.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/widgets_dk.png' | relative_url }}"
+            alt="ABM Warranty Desktop Widgets showing fleet warranty counts"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Desktop Widgets</h3>
+        <p>Show your fleet warranty count information from your Desktop using Desktop Widgets to load information from ABM Warranty. Updates on tenant switch.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Command Line Interface screenshot">
+          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
+          <img
+            id="feature-card-14-image"
+            src="{{ '/assets/images/guide/cli.png' | relative_url }}"
+            data-light="{{ '/assets/images/guide/cli.png' | relative_url }}"
+            data-dark="{{ '/assets/images/guide/cli.png' | relative_url }}"
+            alt="ABM Warranty command line interface output and diagnostics"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Command Line Interface</h3>
+        <p>Run notification diagnostics, helper-state checks, cadence changes, and local fire-test commands directly from Terminal.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Credential Replacement screenshot">
+          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
+          <img
+            id="feature-card-15-image"
+            src="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
+            data-light="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
+            data-dark="{{ '/assets/images/guide/managed_cred_change/step_1.png' | relative_url }}"
+            alt="ABM Warranty credential replacement and migration workflow"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Credential Replacement</h3>
+        <p>Replace revoked API credentials without losing tenant history using guided migration and managed update flows.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Notifications screenshot">
+          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
+          <img
+            id="feature-card-13-image"
+            src="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
+            data-light="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
+            data-dark="{{ '/assets/images/guide/notifications/notification_alerts.png' | relative_url }}"
+            alt="ABM Warranty notification permission prompts and helper alerts"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Notifications</h3>
+        <p>Configure local alerts for expiring and attention-needed devices with helper-backed delivery, cadence controls, and per-device mute support.</p>
+      </article>
+      <article class="abm-card feature-card">
+        <div class="feature-screenshot" role="img" aria-label="Localization screenshot">
+          <span class="feature-card-badge" aria-label="Beta feature">BETA</span>
+          <img
+            id="feature-card-12-image"
+            src="{{ '/assets/images/home/screens/local.png' | relative_url }}"
+            data-light="{{ '/assets/images/home/screens/local.png' | relative_url }}"
+            data-dark="{{ '/assets/images/home/screens/local_dk.png' | relative_url }}"
+            alt="ABM Warranty localization settings for multiple languages"
+            loading="lazy"
+            decoding="async"
+            width="1180"
+            height="700">
+        </div>
+        <h3>Localization</h3>
+        <p>App is now localized in English, French, German, Spanish, Japanese, Korean, Chinese Simplified, Chinese Traditional, Russian and Italian.</p>
+      </article>
+    </div>
+    <div id="feature-pagination" class="feature-pagination" aria-label="Feature pagination"></div>
+  </div>
+</section>

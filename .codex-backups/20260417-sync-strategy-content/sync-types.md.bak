@@ -1,0 +1,64 @@
+---
+layout: guide
+title: "Sync Types"
+description: "Sync Types"
+permalink: /guide/sync-types/
+---
+
+<h3>Summary</h3>
+
+<p>
+ABM Warranty supports multiple sync types so teams can choose the right scope
+for routine maintenance, broad refreshes, or targeted troubleshooting. Each
+mode aligns to a specific operational intent and provides a predictable path for
+running sync jobs in managed environments.
+</p>
+
+<p>
+This section is placeholder content and will be replaced with complete runtime
+behavior notes, expected outputs, and strategy recommendations for each mode.
+The final version will include when to use each type and how to sequence them
+within recurring operational workflows.
+</p>
+
+<h3>Full Sync with Update</h3>
+
+<p>
+Full Sync with Update is intended for comprehensive refresh operations where the
+entire tenant dataset needs to be reconciled against the latest source state.
+It provides broad coverage and is typically used for baseline updates or major
+state alignment events.
+</p>
+
+<p>
+Detailed implementation text will be added here later, including update
+semantics, expected processing duration, and recommended scheduling patterns for
+production tenants.
+</p>
+
+<h3>Partial Sync</h3>
+
+<p>
+Partial Sync is designed for ongoing operational cadence where teams need timely
+updates without running a full reconciliation each cycle. It offers a lighter
+execution profile while still keeping monitored data current.
+</p>
+
+<p>
+This placeholder will be expanded with concrete examples, tradeoffs, and
+guidance on where Partial Sync sits between full refresh and single-device
+investigations.
+</p>
+
+<h3>Single Device Sync</h3>
+
+<p>
+Single Device Sync targets an individual serial for focused diagnostics,
+validation, or post-change verification. This mode helps isolate one device
+without triggering broader tenant-wide processing.
+</p>
+
+<p>
+Final copy will explain entry points, required parameters, expected outcomes,
+and best practices for using this mode in support and triage workflows.
+</p>

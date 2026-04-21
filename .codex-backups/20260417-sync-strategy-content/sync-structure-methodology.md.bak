@@ -1,0 +1,49 @@
+---
+layout: guide
+title: "Sync Structure & Methodology"
+description: "Sync Structure & Methodology"
+permalink: /guide/sync-structure-methodology/
+---
+
+<h3>Reconciliation Layer</h3>
+
+<p>
+The reconciliation layer is where imported state is evaluated against existing
+records so the app can identify what should be created, updated, retained, or
+flagged for review. It provides consistency controls that keep sync results
+stable across repeated runs.
+</p>
+
+<p>
+This section is currently placeholder content and will later describe the
+specific reconciliation contracts, boundary rules, and how reconciliation output
+is surfaced in the interface and logs.
+</p>
+
+<h3>Orchestration Layer</h3>
+
+<p>
+The orchestration layer coordinates the runtime sync process and manages how API
+work is sequenced for each tenant. It governs execution order, dispatch timing,
+and job-level coordination so sync runs remain predictable.
+</p>
+
+<p>
+Detailed content will be added here later to document orchestration internals,
+error handling strategy, retry behavior, and how orchestration events map to
+observable job states.
+</p>
+
+<h3>Chunking and Cancellation</h3>
+
+<p>
+Chunking divides larger sync workloads into manageable units so the app can
+track progress incrementally and control processing pressure. This structure
+also supports clearer status reporting across long-running operations.
+</p>
+
+<p>
+Cancellation behavior will be documented in detail in a later update, including
+how stop requests are handled at runtime and what completion or partial state
+should be expected after interruption.
+</p>

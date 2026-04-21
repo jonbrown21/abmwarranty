@@ -1,0 +1,31 @@
+---
+layout: guide
+title: "Jobs View & Chunking"
+description: "Jobs View & Chunking"
+permalink: /guide/jobs-view-chunking/
+---
+
+<p>
+Jobs View is a dedicated window that presents sync activity with chunk-level
+visibility so operators can monitor progress in real time. It is intended to
+make run state easier to interpret during active processing and follow-up
+analysis.
+</p>
+
+<p>
+This page is placeholder content and will be expanded with detailed guidance on
+navigation, status interpretation, and expected behavior as jobs move through
+queued, active, and completed stages.
+</p>
+
+<p>
+Chunking in Jobs View is designed to expose how work is divided and processed
+throughout a sync run. This helps teams understand throughput, locate stalled
+work segments, and verify whether a run completed as expected.
+</p>
+
+<p>
+Additional detail will be added with screenshots and field-by-field definitions
+for chunk progress, timing, completion summaries, and any failure or retry
+signals shown in the window.
+</p>
