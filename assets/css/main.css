@@ -42,6 +42,109 @@ html[data-theme='light'] {
   --shadow: 0 8px 24px -14px rgba(15, 23, 42, 0.35);
 }
 
+/* Minimal “traffic light” header for existing code blocks
+   - Preserves your current colors, borders, shadows, etc.
+   - Adds only a small top bar area + the three dots
+*/
+
+.prose pre,
+.prose .highlight pre,
+.highlight pre,
+pre {
+  position: relative;
+  /* Make room for the dots row; tweak if you want it tighter/looser */
+  --termbar-h: 34px;
+  padding-top: calc(var(--termbar-h) + 8px);
+  
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  
+}
+
+/* Header strip (inherits the block's own background) + dots */
+.prose pre::before,
+.prose .highlight pre::before,
+.highlight pre::before,
+pre::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: var(--termbar-h);
+  background: inherit;              /* no new colors, borders, or shadows */
+  border-top-left-radius: inherit;  /* respect whatever you already have */
+  border-top-right-radius: inherit;
+
+  /* The dots (no extra styling besides these) */
+  background-image:
+    radial-gradient(circle at 16px 50%, #ff5f56 0 6px, transparent 7px),
+    radial-gradient(circle at 40px 50%, #ffbd2e 0 6px, transparent 7px),
+    radial-gradient(circle at 64px 50%, #27c93f 0 6px, transparent 7px);
+  background-repeat: no-repeat;
+}
+
+/* Optional: tiny filename/tag on the right without altering style
+   Usage: <pre data-title="server.js">… */
+.prose pre[data-title]::after,
+.prose .highlight pre[data-title]::after,
+.highlight pre[data-title]::after,
+pre[data-title]::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 8px; right: 12px;
+  font: 500 12px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  opacity: .7;                      /* subtle; won’t fight your theme */
+}
+
+/* Optional: opt-out class if you need a block without the dots */
+.prose pre.no-termbar::before,
+.prose .highlight pre.no-termbar::before,
+.highlight pre.no-termbar::before,
+pre.no-termbar::before {
+  content: none;
+  display: none;
+  /* also remove the extra padding if desired */
+}
+.prose pre.no-termbar,
+.prose .highlight pre.no-termbar,
+.highlight pre.no-termbar,
+pre.no-termbar {
+  padding-top: initial;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Terminal base */
+.highlight pre,
+pre[class*="language-"] {
+  background: #0f172a;        /* dark slate */
+  color: #e2e8f0;             /* light text */
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Ensure code inherits */
+.highlight code,
+pre code {
+  background: transparent;
+  color: inherit;
+}
+
+.highlight pre code,
+.prose pre code,
+pre code {
+  display: block;
+  padding-top: 1.0rem;   /* optional breathing room */
+}
+
+
 html[data-theme='dark'] .brand-copy {
   color: #e5ecfa;
 }
@@ -705,7 +808,18 @@ html[data-theme='dark'] .privacy-hero-glass {
 }
 
 .roadmap-timeline {
+  position: relative;
   margin-top: 0.8rem;
+}
+
+.roadmap-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.78rem; /* center of dot column */
+  width: 2px;
+  background: color-mix(in srgb, var(--border) 85%, transparent);
 }
 
 .changelog-date-heading {
@@ -750,10 +864,6 @@ html[data-theme='dark'] .privacy-hero-glass {
   display: none;
 }
 
-.roadmap-entry:last-child .roadmap-dot-col::after {
-  display: none;
-}
-
 .changelog-dot {
   position: relative;
   width: 7px;
@@ -789,40 +899,17 @@ html[data-theme='dark'] .privacy-hero-glass {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 0.18rem;
-}
-
-.roadmap-dot-col::after {
-  content: "";
-  position: absolute;
-  top: 0.45rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  bottom: -0.55rem;
-  height: calc(100% - 0.45rem);
-  background: color-mix(in srgb, var(--border) 72%, transparent);
+  padding-top: 0.35rem; /* slight alignment tweak */
+  z-index: 1; /* sit above line */
 }
 
 .roadmap-dot {
-  position: relative;
-  width: 7px;
-  height: 7px;
+  width: 12px;
+  height: 12px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
-  background: var(--surface);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
-}
-
-.roadmap-dot::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: 999px;
-  background: var(--text-muted);
+  background: var(--primary);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 40%, transparent);
 }
 
 .roadmap-card {
@@ -836,6 +923,12 @@ html[data-theme='dark'] .privacy-hero-glass {
   padding: 0.72rem var(--roadmap-card-pad-x) 0.9rem;
   background: var(--surface);
   position: relative;
+}
+
+.roadmap-card--complete ~ .roadmap-dot-col .roadmap-dot,
+.roadmap-entry:has(.roadmap-card--complete) .roadmap-dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .roadmap-card--complete {
