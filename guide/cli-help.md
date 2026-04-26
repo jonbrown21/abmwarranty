@@ -12,9 +12,12 @@ for local notification controls and diagnostics.
 
 <h3>Add ZSH Alias</h3>
 
-<pre class="terminal"><code>echo 'abm-warranty() { "/Applications/ABM Warranty.app/Contents/MacOS/ABM Warranty" "$@"; }' >> ~/.zshrc
-source ~/.zshrc
-hash -r</code></pre>
+<pre class="terminal"><code>echo '
+abm_warranty() {
+  "/Applications/ABM Warranty.app/Contents/MacOS/ABM Warranty" "$@"
+}
+alias abm-warranty=abm_warranty
+' >> ~/.zshrc && source ~/.zshrc && hash -r</code></pre>
 
 <h3>Run Help</h3>
 
