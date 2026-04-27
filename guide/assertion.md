@@ -3,6 +3,11 @@ layout: guide
 title: "JWT Client Assertion"
 description: "JWT Client Assertion"
 permalink: /guide/assertion/
+guide_shots:
+  - src: /assets/images/guide/cred_side1.png
+    alt: Credentials setup panel in ABM Warranty
+  - src: /assets/images/guide/assertion.png
+    alt: JWT Client Assertion
 ---
 
 

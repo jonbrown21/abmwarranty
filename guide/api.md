@@ -1,13 +1,13 @@
 ---
 layout: guide
-title: "Using Apple Business Manager APIs"
-description: "Using Apple Business Manager APIs"
+title: "Using Apple Business APIs"
+description: "Using Apple Business APIs"
 permalink: /guide/api/
 ---
 
 
 <p>
-ABM Warranty retrieves device inventory and warranty coverage data from Apple Business Manager (ABM)
+ABM Warranty retrieves device inventory and warranty coverage data from Apple Business (AB)
 using Apple’s official, read-only APIs. These APIs are used exclusively to <strong>observe</strong>
 device state and coverage information — no data is ever written back to ABM.
 </p>
@@ -49,7 +49,7 @@ Import progress is displayed in the Progress Bar and Status Dashboard, including
 
 <p>
 Only read-only API operations are performed. ABM Warranty
-<strong>never modifies, deletes, or writes</strong> data back to Apple Business Manager.
+<strong>never modifies, deletes, or writes</strong> data back to Apple Business.
 All device records are stored locally and scoped to the credential (tenant) that retrieved them.
 </p>
 

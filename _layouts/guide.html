@@ -39,14 +39,23 @@
           <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
           <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
         </details>
+        
+        <details class="guide-topic" open>
+          <summary>Outbound Connections <span class="guide-new-pill">BETA</span></summary>
+          <a href="{{ '/guide/connections/' | relative_url }}" {% if page.url == '/guide/connections/' %}aria-current="page"{% endif %}>Working with Connections</a>
+          <a href="{{ '/guide/jamf-connection/' | relative_url }}" {% if page.url == '/guide/jamf-connection/' %}aria-current="page"{% endif %}>Setting up the JAMF Connection</a>
+          <a href="{{ '/guide/oauth-builder/' | relative_url }}" {% if page.url == '/guide/oauth-builder/' %}aria-current="page"{% endif %}>OAUTH Builder Connection</a>
+          <a href="{{ '/guide/outbound-jobs/' | relative_url }}" {% if page.url == '/guide/outbound-jobs/' %}aria-current="page"{% endif %}>Outbound Jobs View</a>
+        </details>
 
         <details class="guide-topic" open>
           <summary>Coverage and Data</summary>
-          <a href="{{ '/guide/api/' | relative_url }}" {% if page.url == '/guide/api/' %}aria-current="page"{% endif %}>Using ABM APIs</a>
+          <a href="{{ '/guide/api/' | relative_url }}" {% if page.url == '/guide/api/' %}aria-current="page"{% endif %}>Using AB APIs</a>
           <a href="{{ '/guide/coverage/' | relative_url }}" {% if page.url == '/guide/coverage/' %}aria-current="page"{% endif %}>Coverage and Warranty Windows</a>
           <a href="{{ '/guide/renewals/' | relative_url }}" {% if page.url == '/guide/renewals/' %}aria-current="page"{% endif %}>AppleCare+ Renewals</a>
           <a href="{{ '/guide/needs-attention/' | relative_url }}" {% if page.url == '/guide/needs-attention/' %}aria-current="page"{% endif %}>Needs Attention Logic</a>
-          <a href="{{ '/guide/export/' | relative_url }}" {% if page.url == '/guide/export/' %}aria-current="page"{% endif %}>Exporting CSV</a>
+          <a href="{{ '/guide/detail-view/' | relative_url }}" {% if page.url == '/guide/detail-view/' %}aria-current="page"{% endif %}>Enhanced Detail View <span class="guide-new-pill">BETA</span></a>
+          <a href="{{ '/guide/export/' | relative_url }}" {% if page.url == '/guide/export/' %}aria-current="page"{% endif %}>Exporting CSV <span class="guide-new-pill">UPDATED</span></a>
         </details>
 
         <details class="guide-topic" open>
@@ -59,7 +68,8 @@
           <summary>Command Line Interface <span class="guide-new-pill">NEW</span></summary>
           <a href="{{ '/guide/cli-help/' | relative_url }}" {% if page.url == '/guide/cli-help/' %}aria-current="page"{% endif %}>Help Page</a>
           <a href="{{ '/guide/cli-managing-notifications/' | relative_url }}" {% if page.url == '/guide/cli-managing-notifications/' %}aria-current="page"{% endif %}>Managing Notifications</a>
-          <a href="{{ '/guide/cli-managing-sync-jobs/' | relative_url }}" {% if page.url == '/guide/cli-managing-sync-jobs/' %}aria-current="page"{% endif %}>Managing Sync Jobs <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/cli-managing-sync-jobs/' | relative_url }}" {% if page.url == '/guide/cli-managing-sync-jobs/' %}aria-current="page"{% endif %}>AB Sync Jobs <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/cli-managing-outbound-sync-jobs/' | relative_url }}" {% if page.url == '/guide/cli-managing-outbound-sync-jobs/' %}aria-current="page"{% endif %}>Outbound Sync Jobs <span class="guide-new-pill">BETA</span></a>
           <a href="{{ '/guide/cli-helper-app/' | relative_url }}" {% if page.url == '/guide/cli-helper-app/' %}aria-current="page"{% endif %}>Helper App</a>
         </details>
 

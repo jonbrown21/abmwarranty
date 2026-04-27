@@ -8,7 +8,7 @@
   function initCredentialRotationLightbox() {
     var stepImages = Array.prototype.slice.call(
       document.querySelectorAll(
-        ".credential-rotation-step img, .guide-shot-card--step img"
+        ".credential-rotation-step img, .guide-shot-card--step img, .guide-step-frame img"
       )
     );
 
