@@ -804,7 +804,18 @@ html[data-theme='dark'] .privacy-hero-glass {
 }
 
 .changelog-timeline {
+  position: relative;
   margin-top: 0.8rem;
+}
+
+.changelog-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.78rem; /* EXACT match to roadmap */
+  width: 2px;
+  background: color-mix(in srgb, var(--border) 85%, transparent);
 }
 
 .roadmap-timeline {
@@ -845,44 +856,30 @@ html[data-theme='dark'] .privacy-hero-glass {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 0.18rem;
-}
-
-.changelog-dot-col::after {
-  content: "";
-  position: absolute;
-  top: 0.45rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  bottom: -0.55rem;
-  height: calc(100% - 0.45rem);
-  background: color-mix(in srgb, var(--border) 72%, transparent);
-}
-
-.changelog-entry:last-child .changelog-dot-col::after {
-  display: none;
+  padding-top: 0.35rem;
+  z-index: 1; /* ensures dot sits above line */
 }
 
 .changelog-dot {
-  position: relative;
-  width: 7px;
-  height: 7px;
+  width: 12px;
+  height: 12px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
-  background: var(--surface);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
+  background: var(--primary);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 40%, transparent);
 }
 
 .changelog-dot::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: 999px;
-  background: var(--text-muted);
+  display: none;
+}
+
+.changelog-timeline::before {
+  z-index: 0;
+}
+
+.changelog-dot-col {
+  position: relative;
+  z-index: 2;
 }
 
 .roadmap-entry {
