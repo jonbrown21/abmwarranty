@@ -75,6 +75,13 @@ normal permission flow and should be reviewed so notification delivery can work
 as configured.
 </p>
 
+<div class="video-wrap">
+  <video class="w-full h-full" controls>
+    <source src="{{ '/assets/videos/guide/notifications_chrome.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 <div class="guide-shots guide-shots--split guide-shots--steps">
     <div class="guide-shot-item">
         <figure class="guide-shot-card guide-shot-card--step guide-shot-card--step-focus">

@@ -882,6 +882,19 @@ html[data-theme='dark'] .privacy-hero-glass {
   z-index: 2;
 }
 
+.video-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  /* Safari fix */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.video-wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .roadmap-entry {
   position: relative;
   display: flex;

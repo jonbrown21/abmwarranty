@@ -45,6 +45,13 @@ at-a-glance coverage metrics, and large widgets provide broader context with
 additional attention-oriented detail.
 </p>
 
+<div class="video-wrap">
+  <video class="w-full h-full" controls>
+    <source src="{{ '/assets/videos/guide/desktop-widgets_chrome.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 <p>
 Once placed, widgets continue updating from the latest shared snapshot and
 reflect tenant changes after app refresh and context updates. If no snapshot
