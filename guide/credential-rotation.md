@@ -55,10 +55,7 @@ from scratch.
 </div>
 
 <div class="video-wrap">
-  <video class="w-full h-full" controls>
-    <source src="{{ '/assets/videos/guide/cred-rotation_chrome.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  {% include videos/video.html id="NcTtSWuw1RY" %}
 </div>
 
 <h3>Managed Preferences Rotation Workflow</h3>

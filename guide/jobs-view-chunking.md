@@ -66,10 +66,7 @@ Jobs View timeline.
  |- Chunk 4  [pending]</code></pre>
  
  <div class="video-wrap">
-  <video class="w-full h-full" controls>
-    <source src="{{ '/assets/videos/guide/chunking_chrome.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  {% include videos/video.html id="YA-FDmBpu5E" %}
 </div>
 
 <h3>Progress and Outcomes</h3>

@@ -46,10 +46,7 @@ additional attention-oriented detail.
 </p>
 
 <div class="video-wrap">
-  <video class="w-full h-full" controls>
-    <source src="{{ '/assets/videos/guide/desktop-widgets_chrome.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  {% include videos/video.html id="cPUwXeVGXCk" %}
 </div>
 
 <p>

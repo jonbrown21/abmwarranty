@@ -76,10 +76,7 @@ as configured.
 </p>
 
 <div class="video-wrap">
-  <video class="w-full h-full" controls>
-    <source src="{{ '/assets/videos/guide/notifications_chrome.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  {% include videos/video.html id="G8Jy0FK37bc" %}
 </div>
 
 <div class="guide-shots guide-shots--split guide-shots--steps">
