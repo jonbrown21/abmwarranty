@@ -47,3 +47,46 @@ authentication, contract, and mapping behavior.
 This page is intentionally high-level. For field-level mapping behavior and contract configuration,
 use the connection wizard and Update Mapping / Update API Contract views.
 </p>
+
+<h3>Operational Behavior During Outbound Sync</h3>
+<p>
+Outbound jobs execute in the mapped connection order configured for each credential. If a
+credential has multiple connections, each connection runs as its own outbound job in sequence.
+</p>
+
+<h3>Source Modes</h3>
+<ul>
+  <li><strong>Database</strong>: outbound uses locally persisted ABM data as source.</li>
+  <li><strong>Live API</strong>: outbound reconciles using live source data flow where enabled.</li>
+</ul>
+
+<h3>Dry Run</h3>
+<p>
+Dry run evaluates updates without writing destination changes and reports diagnostics
+(would update, skipped, missing source, missing destination).
+</p>
+
+<figure class="guide-shot-card">
+    <img
+      src="{{ '/assets/images/guide/jamf/modes.png' | relative_url }}"
+      alt="Leverage Dry Run and API Based Modes"
+      loading="lazy"
+      decoding="async">
+</figure>
+
+
+<h3>Credential Association</h3>
+<p>
+After creation, connections are associated to credentials in the credential detail screen under
+<strong>Mapped Connections</strong>. Ordering in that section determines outbound execution order
+for that credential.
+</p>
+
+<figure class="guide-shot-card">
+    <img
+      src="{{ '/assets/images/guide/jamf/mapped_connections.png' | relative_url }}"
+      alt="Mapped Connections in ABM Warranty"
+      loading="lazy"
+      decoding="async">
+</figure>
+

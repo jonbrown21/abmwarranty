@@ -69,23 +69,7 @@
           <summary>Outbound Connections <span class="guide-new-pill">BETA</span></summary>
           <a href="{{ '/guide/connections/' | relative_url }}" {% if page.url == '/guide/connections/' %}aria-current="page"{% endif %}>Working with Connections</a>
           <a href="{{ '/guide/jamf-connection/' | relative_url }}" {% if page.url == '/guide/jamf-connection/' %}aria-current="page"{% endif %}>Setting up the JAMF Connection</a>
-          <a href="{{ '/guide/ezo-connection/' | relative_url }}" {% if page.url == '/guide/ezo-connection/' %}aria-current="page"{% endif %}>Setting up the EZO Connection</a>
-          <details class="guide-subtopic" open>
-            <summary>OAUTH Builder Connection</summary>
-            <a href="{{ '/guide/oauth-builder/' | relative_url }}" {% if page.url == '/guide/oauth-builder/' %}aria-current="page"{% endif %}>OAUTH Builder Overview</a>
-            {% assign oauth_builder_children = site.pages | where: "layout", "guide" | where: "guide_parent", "oauth-builder" | sort: "guide_child_order" %}
-            {% for child in oauth_builder_children %}
-              <a href="{{ child.url | relative_url }}" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.nav_title | default: child.title }}</a>
-            {% endfor %}
-          </details>
-          <details class="guide-subtopic" open>
-            <summary>API Builder Connection</summary>
-            <a href="{{ '/guide/api-builder/' | relative_url }}" {% if page.url == '/guide/api-builder/' %}aria-current="page"{% endif %}>API Builder Overview</a>
-            {% assign api_builder_children = site.pages | where: "layout", "guide" | where: "guide_parent", "api-builder" | sort: "guide_child_order" %}
-            {% for child in api_builder_children %}
-              <a href="{{ child.url | relative_url }}" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.nav_title | default: child.title }}</a>
-            {% endfor %}
-          </details>
+          <a href="{{ '/guide/oauth-builder/' | relative_url }}" {% if page.url == '/guide/oauth-builder/' %}aria-current="page"{% endif %}>OAUTH Builder Connection</a>
           <a href="{{ '/guide/outbound-jobs/' | relative_url }}" {% if page.url == '/guide/outbound-jobs/' %}aria-current="page"{% endif %}>Outbound Jobs View</a>
         </details>
 

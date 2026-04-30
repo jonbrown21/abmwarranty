@@ -1,51 +1,49 @@
 ---
 layout: guide
-title: "JAMF Connection"
-description: "JAMF Connection"
-permalink: /guide/jamf-connection/
+title: "EZO Connection"
+description: "EZO Connection"
+permalink: /guide/ezo-connection/
 ---
 
 <p>
-This page explains the out-of-the-box JAMF connection profile in ABM Warranty. This is
-specifically for the prebuilt JAMF profile, not the Builder profile. The JAMF profile is
+This page explains the out-of-the-box EZO connection profile in ABM Warranty. This is
+specifically for the prebuilt EZO profile, not the Builder profile. The EZO profile is
 designed to reduce setup complexity by providing predefined endpoint behavior and default
 mapping expectations for the ABM warranty fields used by outbound sync.
 </p>
 
 <h3>Purpose</h3>
 <p>
-The JAMF profile defines a known outbound integration contract for JAMF Pro. It lets you
+The EZO profile defines a known outbound integration contract for EZOfficeInventory. It lets you
 authenticate once, validate the connection, and then focus on mapping review and sync behavior.
 You are not required to manually design every endpoint contract in the way Builder requires.
 </p>
 
 <h3>Scope</h3>
 <p>
-The JAMF profile supports outbound sync of ABM warranty-related values to JAMF records and
+The EZO profile supports outbound sync of ABM warranty-related values to EZO asset records and
 uses serial number as the record matching key. The profile includes expected destination field
-names and endpoint patterns suitable for JAMF API workflows.
+names and endpoint patterns suitable for EZO API workflows.
 </p>
 
 <hr>
 
-<h3>JAMF Connection Wizard Flow</h3>
+<h3>EZO Connection Wizard Flow</h3>
 
-<h3>Step 1: Connection Basics + OAuth Details</h3>
+<h3>Step 1: Connection Basics + API Key Details</h3>
 <p>
-Enter friendly name, base URL, token URL, OAuth client ID, and client secret. Optional values
-such as scope/audience may exist depending on profile fields, but required fields are validated
-before continuing.
+Enter friendly name, base URL, API key, API key header name, and optional API key prefix.
+Required fields are validated before continuing.
 </p>
 
 <h3>Step 2: Connection Validation (Not Shown)</h3>
 <p>
 The wizard validates authentication and confirms the profile can communicate with destination APIs.
-For JAMF profile flows, this step is intended to be deterministic: when validation succeeds,
+For EZO profile flows, this step is intended to be deterministic: when validation succeeds,
 the flow advances to mapping review instead of requiring manual contract design.
 
-This step is typically shown by a progress spinner and authenticates very fast assuming that your information is correct, if not its kicked back to step 1. 
-
-Your Jamf Pro API Client needs the following privileges: Read Computers, Update Computers, Read Mobile Devices, Update Mobile Devices, Read Users, Update Users.
+This step is typically shown by a progress spinner and authenticates very fast assuming your
+information is correct; if not, it returns to Step 1.
 </p>
 
 <h3>Step 3: Field Mapping Review</h3>
@@ -59,28 +57,28 @@ rules. This is where you confirm update behavior prior to save.
         <figure class="guide-shot-card guide-step-frame">
             <span class="guide-step-pill">Step 1</span>
             <img
-              src="{{ '/assets/images/guide/jamf/wizard_1.png' | relative_url }}"
-              alt="Enter the information into the JAMF API Connection Wizard"
+              src="{{ '/assets/images/guide/ezo/wizard_1.png' | relative_url }}"
+              alt="Enter the information into the EZO API Connection Wizard"
               loading="lazy"
               decoding="async">
         </figure>
-        <p class="guide-step-caption">Enter the information into the JAMF API Connection Wizard.</p>
+        <p class="guide-step-caption">Enter the information into the EZO API Connection Wizard.</p>
     </div>
     <div class="guide-step-item">
         <figure class="guide-shot-card guide-step-frame">
             <span class="guide-step-pill">Step 3</span>
             <img
-              src="{{ '/assets/images/guide/jamf/wizard_3.png' | relative_url }}"
-              alt="Update Mapping fields for purchasing data"
+              src="{{ '/assets/images/guide/ezo/wizard_2.png' | relative_url }}"
+              alt="Update Mapping fields for warranty and purchasing data"
               loading="lazy"
               decoding="async">
         </figure>
-        <p class="guide-step-caption">Update Mapping fields for purchasing data.</p>
+        <p class="guide-step-caption">Update mapping fields for warranty and purchasing data.</p>
     </div>
 </div>
 
 <hr>
-<h2>Understanding Mapping in JAMF Profile</h2>
+<h2>Understanding Mapping in EZO Profile</h2>
 
 <h3>Key Matching Field</h3>
 <p>
@@ -105,7 +103,7 @@ Current warranty mapping surfaces these core ABM fields:
 
 <figure class="guide-shot-card">
     <img
-      src="{{ '/assets/images/guide/jamf/wizard_3.png' | relative_url }}"
+      src="{{ '/assets/images/guide/ezo/wizard_2.png' | relative_url }}"
       alt="Mapped Connections in ABM Warranty"
       loading="lazy"
       decoding="async">
@@ -129,28 +127,20 @@ destination values are already equivalent after normalization.
 <h3>How to Update Mappings Later</h3>
 <ul>
   <li>Settings → Connections.</li>
-  <li>Select the JAMF connection row.</li>
+  <li>Select the EZO connection row.</li>
   <li>Choose <strong>Update Mapping</strong>.</li>
 </ul>
 
-<figure class="guide-shot-card">
-    <img
-      src="{{ '/assets/images/guide/jamf/jamf_connection.png' | relative_url }}"
-      alt="Use the manual mapped connections to update connection mapping later"
-      loading="lazy"
-      decoding="async">
-</figure>
-
-<h3>Review Device Type Scope</h3>
+<h3>Profile Scope Behavior</h3>
 <p>
-Use the device type selector to switch between Computers and Mobile Devices where available.
-Mapping drafts and sample snapshots are scope-aware and should be reviewed per scope before save.
+For the direct EZO profile, mapping is a straight API profile path and does not expose a
+Computers/Mobile Devices scope selector in the mapping surface. Review and save mappings in the
+single profile mapping view provided.
 </p>
 
 <h3>Confirm Destination Samples</h3>
 <p>
 Destination sample values are used for operator confidence while mapping. If samples are empty,
-validate API auth, path contract behavior, and serial lookup viability before concluding mapping
+validate API auth, profile contract behavior, and serial lookup viability before concluding mapping
 is incorrect.
 </p>
-

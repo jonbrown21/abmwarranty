@@ -1,28 +1,31 @@
 ---
 layout: guide
-title: "OAUTH Builder"
-description: "OAUTH Builder"
-permalink: /guide/oauth-builder/
+title: "API Builder"
+description: "API Builder"
+permalink: /guide/api-builder/
 ---
 
 <p>
-This page explains the <strong>OAuth Builder</strong> connection type in ABM Warranty.
+This page explains the <strong>API Builder</strong> connection type in ABM Warranty.
 Builder is intended for cases where you need to define contract behavior directly
 instead of using a prebuilt profile.
 </p>
 
 <h3>Builder Wizard Flow (High-Level)</h3>
 
-<h4>Step 1: OAuth Connection Basics</h4>
+<h4>Step 1: API Connection Basics</h4>
 <p>
-Enter the base URL, token URL, client ID, client secret, and optional scope or
-audience details. The connection must validate OAuth before contract setup can proceed.
+Enter the base URL and API-key authentication details (API key, header name,
+and optional prefix). The connection must validate before contract setup can proceed. 
+Typically the header is "Authorization" and prefix is "Bearer" which is common with bearer token APIs.
 </p>
 
 <h4>Step 2: API Contract</h4>
 <p>
 Define required fetch and update endpoints by entity, plus method and formatter.
 This contract drives lookup behavior, destination sampling, and outbound update requests.
+If your destination API supports direct serial lookup (for example <code>{serial}</code>
+path tokens), set that in the fetch contract for faster ID resolution.
 </p>
 
 <h4>Step 3: Field Mapping</h4>
@@ -37,30 +40,30 @@ field path is explicitly selected by the operator.
     <figure class="guide-shot-card guide-step-frame">
       <span class="guide-step-pill">Step 1</span>
       <img
-        src="{{ '/assets/images/guide/jamf/builder/step_1.png' | relative_url }}"
-        alt="OAuth Builder step 1 for connection basics and OAuth credentials"
+        src="{{ '/assets/images/guide/api/builder/step_1.png' | relative_url }}"
+        alt="API Builder step 1 for connection basics and API key authentication"
         loading="lazy"
         decoding="async">
     </figure>
-    <p class="guide-step-caption">Enter connection basics and OAuth credentials, then validate authentication.</p>
+    <p class="guide-step-caption">Enter connection basics and API key authentication details, then validate connectivity.</p>
   </div>
   <div class="guide-step-item">
     <figure class="guide-shot-card guide-step-frame">
       <span class="guide-step-pill">Step 2</span>
       <img
-        src="{{ '/assets/images/guide/jamf/builder/step_2.png' | relative_url }}"
-        alt="OAuth Builder step 2 for API contract setup"
+        src="{{ '/assets/images/guide/api/builder/step_2.png' | relative_url }}"
+        alt="API Builder step 2 for API contract setup"
         loading="lazy"
         decoding="async">
     </figure>
-    <p class="guide-step-caption">Define API contract endpoints, methods, and formatter behavior for lookup and updates.</p>
+    <p class="guide-step-caption">Define API contract endpoints, methods, and formatter behavior for lookup, detail resolution, and updates.</p>
   </div>
   <div class="guide-step-item">
     <figure class="guide-shot-card guide-step-frame">
       <span class="guide-step-pill">Step 3</span>
       <img
-        src="{{ '/assets/images/guide/jamf/builder/step_3.png' | relative_url }}"
-        alt="OAuth Builder step 3 for ABM to destination field mapping"
+        src="{{ '/assets/images/guide/api/builder/step_3.png' | relative_url }}"
+        alt="API Builder step 3 for ABM to destination field mapping"
         loading="lazy"
         decoding="async">
     </figure>
@@ -74,8 +77,8 @@ field path is explicitly selected by the operator.
 
 <figure class="guide-shot-card">
   <img
-    src="{{ '/assets/images/guide/jamf/builder/update_contract.png' | relative_url }}"
-    alt="Update API Contract option in OAuth Builder connection settings"
+    src="{{ '/assets/images/guide/api/builder/step_1.png' | relative_url }}"
+    alt="Update API Contract option in API Builder connection settings"
     loading="lazy"
     decoding="async">
 </figure>
@@ -89,9 +92,9 @@ field path is explicitly selected by the operator.
 
 <h3>Why This Separation Matters</h3>
 <p>
-Contract errors (wrong path, method, or formatter) and mapping errors (wrong
-field selection or action) are different failure classes. Keeping these edit
-flows separate helps isolate root causes quickly.
+Contract errors (wrong path, method, formatter, or lookup token path) and mapping
+errors (wrong field selection or action) are different failure classes. Keeping
+these edit flows separate helps isolate root causes quickly.
 </p>
 
 <hr>
@@ -100,7 +103,7 @@ flows separate helps isolate root causes quickly.
 
 <h3>Recommended Order</h3>
 <ol>
-  <li>Validate OAuth connectivity.</li>
+  <li>Validate API-key connectivity.</li>
   <li>Set and save API Contract.</li>
   <li>Open Update Mapping and set fields, actions, and formatters.</li>
   <li>Run a single-record dry run.</li>
@@ -137,14 +140,14 @@ wide-scope write operation.
       <td>Verify JSON vs XML formatter selection</td>
     </tr>
     <tr>
-      <td>400 INVALID_CONTENT field errors</td>
-      <td>Field name or formatter mismatch</td>
-      <td>Check mapped destination path and formatter</td>
+      <td>400 field errors</td>
+      <td>Field name, payload envelope, or formatter mismatch</td>
+      <td>Check mapped destination path, formatter, and contract payload shape</td>
     </tr>
     <tr>
       <td>Destination missing</td>
-      <td>Lookup path does not expose serial fields</td>
-      <td>Check fetch contract path and serial visibility</td>
+      <td>Lookup path does not expose serial or ID</td>
+      <td>Check fetch/detail contract path and serial/ID resolution behavior</td>
     </tr>
     <tr>
       <td>No updates but sync completes</td>
