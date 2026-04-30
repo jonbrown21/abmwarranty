@@ -28,27 +28,7 @@
           <a href="{{ '/guide/desktop-widgets/' | relative_url }}" {% if page.url == '/guide/desktop-widgets/' %}aria-current="page"{% endif %}>Desktop Widgets <span class="guide-new-pill">NEW</span></a>
           <a href="{{ '/guide/notifications/' | relative_url }}" {% if page.url == '/guide/notifications/' %}aria-current="page"{% endif %}>Notifications <span class="guide-new-pill">NEW</span></a>
         </details>
-
-        <details class="guide-topic" open>
-          <summary>Credentials and Auth</summary>
-          <a href="{{ '/guide/creds/' | relative_url }}" {% if page.url == '/guide/creds/' %}aria-current="page"{% endif %}>Setting Up Credentials</a>
-          <a href="{{ '/guide/pem/' | relative_url }}" {% if page.url == '/guide/pem/' %}aria-current="page"{% endif %}>Working with PEM Keys</a>
-          <a href="{{ '/guide/assertion/' | relative_url }}" {% if page.url == '/guide/assertion/' %}aria-current="page"{% endif %}>JWT Client Assertion</a>
-          <a href="{{ '/guide/token/' | relative_url }}" {% if page.url == '/guide/token/' %}aria-current="page"{% endif %}>Token Exchange</a>
-          <a href="{{ '/guide/keychain-authorization/' | relative_url }}" {% if page.url == '/guide/keychain-authorization/' %}aria-current="page"{% endif %}>Keychain Authorization <span class="guide-new-pill">NEW</span></a>
-          <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
-          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
-          <a href="{{ '/guide/inbound-jobs/' | relative_url }}" {% if page.url == '/guide/inbound-jobs/' %}aria-current="page"{% endif %}>Inbound Jobs View <span class="guide-new-pill">NEW</span></a>
-        </details>
         
-        <details class="guide-topic" open>
-          <summary>Outbound Connections <span class="guide-new-pill">BETA</span></summary>
-          <a href="{{ '/guide/connections/' | relative_url }}" {% if page.url == '/guide/connections/' %}aria-current="page"{% endif %}>Working with Connections</a>
-          <a href="{{ '/guide/jamf-connection/' | relative_url }}" {% if page.url == '/guide/jamf-connection/' %}aria-current="page"{% endif %}>Setting up the JAMF Connection</a>
-          <a href="{{ '/guide/oauth-builder/' | relative_url }}" {% if page.url == '/guide/oauth-builder/' %}aria-current="page"{% endif %}>OAUTH Builder Connection</a>
-          <a href="{{ '/guide/outbound-jobs/' | relative_url }}" {% if page.url == '/guide/outbound-jobs/' %}aria-current="page"{% endif %}>Outbound Jobs View</a>
-        </details>
-
         <details class="guide-topic" open>
           <summary>Coverage and Data</summary>
           <a href="{{ '/guide/api/' | relative_url }}" {% if page.url == '/guide/api/' %}aria-current="page"{% endif %}>Using AB APIs</a>
@@ -66,20 +46,47 @@
         </details>
 
         <details class="guide-topic" open>
+          <summary>Credentials and Auth</summary>
+          <a href="{{ '/guide/creds/' | relative_url }}" {% if page.url == '/guide/creds/' %}aria-current="page"{% endif %}>Setting Up Credentials</a>
+          <a href="{{ '/guide/pem/' | relative_url }}" {% if page.url == '/guide/pem/' %}aria-current="page"{% endif %}>Working with PEM Keys</a>
+          <a href="{{ '/guide/assertion/' | relative_url }}" {% if page.url == '/guide/assertion/' %}aria-current="page"{% endif %}>JWT Client Assertion</a>
+          <a href="{{ '/guide/token/' | relative_url }}" {% if page.url == '/guide/token/' %}aria-current="page"{% endif %}>Token Exchange</a>
+          <a href="{{ '/guide/keychain-authorization/' | relative_url }}" {% if page.url == '/guide/keychain-authorization/' %}aria-current="page"{% endif %}>Keychain Authorization <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/managed-preferences/' | relative_url }}" {% if page.url == '/guide/managed-preferences/' %}aria-current="page"{% endif %}>Managed Preferences</a>
+          <a href="{{ '/guide/credential-rotation/' | relative_url }}" {% if page.url == '/guide/credential-rotation/' %}aria-current="page"{% endif %}>Credential Rotation <span class="guide-new-pill">NEW</span></a>
+          <a href="{{ '/guide/inbound-jobs/' | relative_url }}" {% if page.url == '/guide/inbound-jobs/' %}aria-current="page"{% endif %}>Inbound Jobs View <span class="guide-new-pill">NEW</span></a>
+        </details>
+        
+         <details class="guide-topic" open>
+          <summary>AB API Strategies <span class="guide-new-pill">NEW</span></summary>
+          <a href="{{ '/guide/enterprise-sync-mode/' | relative_url }}" {% if page.url == '/guide/enterprise-sync-mode/' %}aria-current="page"{% endif %}>Enterprise Sync Mode</a>
+          <a href="{{ '/guide/sync-types/' | relative_url }}" {% if page.url == '/guide/sync-types/' %}aria-current="page"{% endif %}>Sync Types</a>
+          <a href="{{ '/guide/sync-structure-methodology/' | relative_url }}" {% if page.url == '/guide/sync-structure-methodology/' %}aria-current="page"{% endif %}>Sync Structure &amp; Methodology</a>
+          <a href="{{ '/guide/jobs-view-chunking/' | relative_url }}" {% if page.url == '/guide/jobs-view-chunking/' %}aria-current="page"{% endif %}>Jobs View &amp; Chunking</a>
+        </details>
+        
+        <details class="guide-topic" open>
+          <summary>Outbound Connections <span class="guide-new-pill">BETA</span></summary>
+          <a href="{{ '/guide/connections/' | relative_url }}" {% if page.url == '/guide/connections/' %}aria-current="page"{% endif %}>Working with Connections</a>
+          <a href="{{ '/guide/jamf-connection/' | relative_url }}" {% if page.url == '/guide/jamf-connection/' %}aria-current="page"{% endif %}>Setting up the JAMF Connection</a>
+          <details class="guide-subtopic" {% if page.url == '/guide/oauth-builder/' or page.guide_parent == 'oauth-builder' %}open{% endif %}>
+            <summary>OAUTH Builder Connection</summary>
+            <a href="{{ '/guide/oauth-builder/' | relative_url }}" {% if page.url == '/guide/oauth-builder/' %}aria-current="page"{% endif %}>Overview</a>
+            {% assign oauth_builder_children = site.pages | where: "layout", "guide" | where: "guide_parent", "oauth-builder" | sort: "guide_child_order" %}
+            {% for child in oauth_builder_children %}
+              <a href="{{ child.url | relative_url }}" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.nav_title | default: child.title }}</a>
+            {% endfor %}
+          </details>
+          <a href="{{ '/guide/outbound-jobs/' | relative_url }}" {% if page.url == '/guide/outbound-jobs/' %}aria-current="page"{% endif %}>Outbound Jobs View</a>
+        </details>
+
+        <details class="guide-topic" open>
           <summary>Command Line Interface <span class="guide-new-pill">NEW</span></summary>
           <a href="{{ '/guide/cli-help/' | relative_url }}" {% if page.url == '/guide/cli-help/' %}aria-current="page"{% endif %}>Help Page</a>
           <a href="{{ '/guide/cli-managing-notifications/' | relative_url }}" {% if page.url == '/guide/cli-managing-notifications/' %}aria-current="page"{% endif %}>Managing Notifications</a>
           <a href="{{ '/guide/cli-managing-sync-jobs/' | relative_url }}" {% if page.url == '/guide/cli-managing-sync-jobs/' %}aria-current="page"{% endif %}>AB Sync Jobs <span class="guide-new-pill">NEW</span></a>
           <a href="{{ '/guide/cli-managing-outbound-sync-jobs/' | relative_url }}" {% if page.url == '/guide/cli-managing-outbound-sync-jobs/' %}aria-current="page"{% endif %}>Outbound Sync Jobs <span class="guide-new-pill">BETA</span></a>
           <a href="{{ '/guide/cli-helper-app/' | relative_url }}" {% if page.url == '/guide/cli-helper-app/' %}aria-current="page"{% endif %}>Helper App</a>
-        </details>
-
-        <details class="guide-topic" open>
-          <summary>Sync Strategies <span class="guide-new-pill">NEW</span></summary>
-          <a href="{{ '/guide/enterprise-sync-mode/' | relative_url }}" {% if page.url == '/guide/enterprise-sync-mode/' %}aria-current="page"{% endif %}>Enterprise Sync Mode</a>
-          <a href="{{ '/guide/sync-types/' | relative_url }}" {% if page.url == '/guide/sync-types/' %}aria-current="page"{% endif %}>Sync Types</a>
-          <a href="{{ '/guide/sync-structure-methodology/' | relative_url }}" {% if page.url == '/guide/sync-structure-methodology/' %}aria-current="page"{% endif %}>Sync Structure &amp; Methodology</a>
-          <a href="{{ '/guide/jobs-view-chunking/' | relative_url }}" {% if page.url == '/guide/jobs-view-chunking/' %}aria-current="page"{% endif %}>Jobs View &amp; Chunking</a>
         </details>
 
         <details class="guide-topic" open>

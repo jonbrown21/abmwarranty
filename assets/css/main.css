@@ -3254,6 +3254,50 @@ html[data-theme="dark"] .app-support-cta__copy {
   background: color-mix(in srgb, var(--surface-muted) 75%, transparent);
 }
 
+.guide-subtopic {
+  margin: 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.guide-subtopic summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.72rem 0.9rem 0.72rem 1.15rem;
+  position: relative;
+  color: var(--text);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+}
+
+.guide-subtopic summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-subtopic summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-right: 2px solid color-mix(in srgb, var(--text-muted) 88%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--text-muted) 88%, transparent);
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.guide-subtopic[open] summary::after {
+  transform: translateY(-56%) rotate(45deg);
+  border-color: color-mix(in srgb, var(--text) 88%, transparent);
+}
+
+.guide-subtopic a {
+  padding-left: 1.55rem;
+  font-size: 0.86rem;
+}
+
 .guide-sidebar-footer {
   padding: 0.85rem 1rem 1rem;
   border-top: 1px solid color-mix(in srgb, var(--border) 68%, transparent);
