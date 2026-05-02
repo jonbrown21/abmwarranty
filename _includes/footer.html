@@ -41,6 +41,17 @@
     </section>
   </div>
   <div class="abm-container abm-copy">
-    &copy; {{ 'now' | date: "%Y" }} ABM Warranty | A <a href="https://jonbrown.org/" target="_blank" rel="noopener noreferrer">Jon Brown</a> project
+    <div class="abm-copy-row">
+      <div class="made-on-mac-badge" aria-label="Made on a Mac">
+        <span>Made on a</span>
+        <i class="bi bi-apple" aria-hidden="true"></i>
+        <span>Mac</span>
+      </div>
+      <div class="abm-copy-text">
+        &copy; {{ 'now' | date: "%Y" }} ABM Warranty | A
+        <a href="https://jonbrown.org/" target="_blank" rel="noopener noreferrer">Jon Brown</a>
+        project
+      </div>
+    </div>
   </div>
 </footer>

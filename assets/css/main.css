@@ -2250,6 +2250,42 @@ html[data-theme='dark'] .github-og-placeholder__footer {
 .footer-list a { text-decoration: none; }
 .footer-list a:hover { text-decoration: underline; }
 .abm-copy { text-align: center; color: var(--text-muted); margin-top: 1.3rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+.abm-copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.abm-copy-text {
+  text-align: right;
+}
+
+.made-on-mac-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  border-radius: 0.55rem;
+  padding: 0.38rem 0.78rem;
+  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.made-on-mac-badge .bi-apple {
+  font-size: 0.95rem;
+}
+
+html[data-theme='dark'] .made-on-mac-badge {
+  border-color: color-mix(in srgb, var(--border) 72%, #5f6b8a);
+  background: color-mix(in srgb, #0f1d42 52%, var(--surface));
+  color: #e8edff;
+}
 
 @media (max-width: 900px) {
   .roadmap-footer {
@@ -2308,6 +2344,14 @@ html[data-theme='dark'] .github-og-placeholder__footer {
   }
   .hero-copy-col .abm-cta-row .abm-btn { margin-right: 0; }
   .footer-grid > section:first-child { margin-right: 0; }
+  .abm-copy-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .abm-copy-text {
+    text-align: center;
+  }
   .abm-grid, .pricing-grid, .abm-blog-grid, .footer-grid { grid-template-columns: 1fr; }
   .abm-main .abm-section:first-child { padding-top: 1.2rem; }
   .top-nav { position: absolute; left: 0; top: 64px; right: 0; background: var(--surface); border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); padding: 1rem; flex-direction: column; display: none; }
